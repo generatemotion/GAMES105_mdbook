@@ -1,14 +1,14 @@
 [book]
 authors = ["windmissing"]
 language = "en"
-description = "The note of GAMES102"
+description = "The note of GAMES105"
 multilingual = false
 src = "src"
-title = "GAMES102"
+title = "GAMES105"
 
 [output.html]
 mathjax-support = true
-git-repository-url = "https://github.com/CaterpillarStudyGroup/GAMES102_mdbook"
+git-repository-url = "https://github.com/CaterpillarStudyGroup/GAMES105_mdbook"
 git-repository-icon = "fa-github"
 additional-css = ["theme/pagetoc.css"]
 additional-js  = ["theme/pagetoc.js"]
