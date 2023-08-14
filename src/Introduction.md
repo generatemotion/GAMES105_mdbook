@@ -3,7 +3,7 @@ P2
 ## Topics for the Day
 
 
-![](./assets/05-1.png) 
+![](./assets/01-02.png) 
 
 GAMES 105
 Fundamentals of Character Animation
