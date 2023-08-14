@@ -3,18 +3,18 @@ P4
 ## Welcome & Course Information   
 
 
- - Instructor: Libin Liu (http://libliu.info)   
- - Website: https://games-105.github.io/    
- - Lecture: Monday 8:00PM to 9:00PM (12 Weeks)    
- - Prerequisites: linear algebra, calculus,   
-                  programming skills (python),   
-                  probability theory, mechanics, ML, RL…   
+ - Instructor: \\( \quad \quad \quad \\)Libin Liu (<http://libliu.info>)   
+ - Website: \\( \quad \quad \quad \\) <https://games-105.github.io/>    
+ - Lecture: \\( \quad \quad\quad  \\) Monday 8:00PM to 9:00PM (12 Weeks)    
+ - Prerequisites: \\( \quad  \\) linear algebra, calculus,   
+ \\( \quad \quad \quad \quad\quad \quad\\) programming skills (python),   
+  \\( \quad \quad \quad \quad\quad \quad\\) probability theory, mechanics, ML, RL…   
  - Exercise:
-     - Codebase: https://github.com/GAMES-105/GAMES-105    
-     - Submission: http://cn.ces-alpha.org/course/register/GAMES-105-Animation-2022/   
-     - Register code: GAMES-FCA-2022    
- - BBS: https://github.com/GAMES-105/GAMES-105/discussions    
- - QQ Group: 533469817     
+     - Codebase: \\( \quad  \\)<https://github.com/GAMES-105/GAMES-105>    
+     - **Submission**: \\( \quad  \\)<http://cn.ces-alpha.org/course/register/GAMES-105-Animation-2022/>   
+     - **Register code**: \\( \quad  \\)**GAMES-FCA-2022**    
+ - BBS: \\( \quad \quad \quad \quad \quad\\)<https://github.com/GAMES-105/GAMES-105/discussions>    
+ - QQ Group: \\( \quad \quad  \quad\\)533469817     
 
 
 
@@ -39,7 +39,7 @@ P12
     - It is not super high-dimensional, so most animation can be created manually, by posing the character at keyframes    
     - **Labor-intensive, not for interactive applications**    
 
- ![](/assets/01-04.png)  
+ ![](/assets/01-4.png)  
 
  - Character animation techniques   
     - Understanding the mechanism behind motions and behaviors   
@@ -108,6 +108,7 @@ P25
 
 ![](/assets/01-13.png)  
 
+[<http://the12principles.tumblr.com/>]
 
 
 
@@ -159,6 +160,11 @@ P38
 
 ![](/assets/01-19.png)  
 
+P39  
+## Motion Graphs / State Machines
+
+![](/assets/01-20.png)   
+
 [Heck and Gleicher 2007, Parametric Motion Graphs]  
 
 P40   
@@ -177,14 +183,14 @@ P43
 ## Complex Motion Graphs
 
 
-![](/assets/01-20.png)  
+![](/assets/01-21.png)  
 
 
 P46   
 ## Learning-based Approaches
 
 
-![](/assets/01-21.png)  
+![](/assets/01-22.png)  
 
 P50   
 ## Cross-Modal Motion Synthesis
@@ -207,7 +213,7 @@ P51
     - ……   
 
 
-![](/assets/01-22.png)  
+![](/assets/01-23.png)  
 
 
 
@@ -215,28 +221,28 @@ P53
 ## Character Animation Methods  
 
 
-![](/assets/01-23.png)  
+![](/assets/01-24.png)  
 
 
 P56  
 ## Character Animation Methods   
 
 
-![](/assets/01-24.png)  
+![](/assets/01-25.png)  
 
 
 P58  
 ## Kinematic Approaches
 
 
-![](/assets/01-25.png)  
+![](/assets/01-26.png)  
 
 
 P59   
 ## Physics-based Character Animation
 
 
-![](/assets/01-26.png)  
+![](/assets/01-27.png)  
 
 
 P60 
@@ -244,14 +250,30 @@ P60
 ## Ragdoll Simulation
 
 
-![](/assets/01-27.png)  
+![](/assets/01-28.png)  
 
 
 P62  
 ## Physics-based Character Animation
 
 
-![](/assets/01-28.png)  
+![](/assets/01-29.png)  
+
+
+P64   
+## Motion Reconstruction with Sparse Sensors
+
+![](/assets/01-30.png)  
+
+P65  
+## Motion Reconstruction with Sparse Sensors
+
+[DeepMotion: Virtual Reality Tracking]   
+
+P66
+
+[Ye et al. 2022: Neural3Points]   
+
 
 P67   
 [Yang et al. 2022: Learning to Use Chopsticks]
@@ -262,14 +284,14 @@ P67
 P68   
 ## Character Animation Methods
 
-![](/assets/01-29.png)  
+![](/assets/01-31.png)  
 
 
 P69  
 ## Physics-based/Dynamic Approaches   
 
 
-![](/assets/01-30.png)  
+![](/assets/01-32.png)  
 
 
 P70   
@@ -277,7 +299,7 @@ P70
 ## Physics-based/Dynamic Approaches   
 
 
-![](/assets/01-31.png)  
+![](/assets/01-33.png)  
 
 
 P71   
@@ -285,7 +307,7 @@ P71
 ## Force & Torque
 
 
-![](/assets/01-32.png)  
+![](/assets/01-34.png)  
 
 
 P72   
@@ -293,19 +315,33 @@ P72
 ## Proportional-Derivative (PD) Control  
   
 
-![](/assets/01-33.png)  
+![](/assets/01-35.png)  
 
 
 P73   
 ## Tracking Controllers
 
 
-![](/assets/01-34.png)  
+![](/assets/01-36.png)  
+
+P74   
+## Tracking Controllers
+
+[Hodgins and Wooten 1995, Animating Human Athletics]   
+
+
+
+P77   
+## Trajectory Crafting
+
+NaturalMotion - Endorphin   
+
+
 
 P80  
 ## Spacetime/Trajectory Optimization
 
-![](/assets/01-35.png)  
+![](/assets/01-037.png)  
 
 [Liu et al 2010. SAMCON]
 
@@ -327,7 +363,7 @@ P84
 ## Abstract Models   
 
 
-![](/assets/01-36.png)  
+![](/assets/01-38.png)  
 
 
 P86   
@@ -335,13 +371,16 @@ P86
 
 Inverted Pendulum Model
 
-![](/assets/01-37.png)  
+![](/assets/01-039.png)  
+
+[Coros et al. 2010]
+
 
 
 P88   
 ## Reinforcement Learning  
 
-![](/assets/01-38.png)  
+![](/assets/01-40.png)  
 
 P90   
 
@@ -349,7 +388,9 @@ P90
 
  
 [Liu et al. 2016. ControlGraphs]    
+
 [Liu et al. 2018]     
+
 [Peng et al. 2018. DeepMimic]    
 
 
@@ -364,7 +405,7 @@ P92
 
 ## Multi-skill Characters  
 
-![](/assets/01-39.png)  
+![](/assets/01-41.png)  
 
 [Liu et al. 2017: Learning to Schedule Control Fragments]  
 
@@ -374,7 +415,7 @@ P95
 ## Generative Control Policies
 
 
-![](/assets/01-40.png)  
+![](/assets/01-42.png)  
 
 
 
@@ -382,7 +423,7 @@ P96
 ## Generative Control Policies
 
 
-![](/assets/01-41.png)  
+![](/assets/01-43.png)  
 
 
 
@@ -390,7 +431,7 @@ P100
 ## Character Animation Methods  
 
 
-![](/assets/01-42.png)  
+![](/assets/01-44.png)  
 
 
 
@@ -398,7 +439,7 @@ P101
 
 ## Character Animation Methods   
 
-![](/assets/01-43.png)  
+![](/assets/01-45.png)  
 
 P103    
 ## About This Course    
