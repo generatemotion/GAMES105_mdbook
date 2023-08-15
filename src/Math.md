@@ -602,13 +602,48 @@ $$
  q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
  $$
 
-Conjugation:
-Scalar product:
-Addition:
-Dot product:
-Norm:
+Conjugation:   \\(\quad \quad q^*=a-bi-cj-dk\\)   
+\\(<br>\\)    
+Scalar product:  \\(\quad \quad tq=ta+tbi+tcj+tdk\\)   
+\\(<br>\\)  
+Addition:  \\(\quad \quad q_1+q_2=(a_1+a_2)+(b_1+b_2)i+(c_1+c_2)j+(d_1+d_2)k\\)   
+\\(<br>\\)   
+Dot product:  \\(\quad \quad q_1\cdot q_2=a_1a_2+b_1b_2+c_1c_2+d_1d_2\\)   
+\\(<br>\\)  
+Norm:  \\(\quad \quad ||q||=\sqrt{a^2+b^2+c^2+d^2} =\sqrt{q\cdot q}\\)
+
+P118   
+
+## [𡇌] Quaternion Multiplication   
+
+$$
+q_1q_2=(a_1+b_1i+c_1j+d_1k)*(a_2+b_2i+c_2j+d_2k)
+$$
+
+$$
+q_1q_2=a_1a_2-b_1b_2-c_1c_2-d_1d_2
+$$
+
+$$
++(b_1a_2+a_1b_2-d_1c_2+c_1d_2)i   
+$$
+
+$$
++(c_1a_2+d_1b_2+a_1c_2-b_1d_2)j  
+$$
+
+$$
++(d_1a_2-c_1b_2+b_1c_2+a_1d_2)k
+$$
 
 
+note:   
+ - \\(i^2=j^2=k^2=ijk=-1\\)    
+ - \\(ij=k,ji=-k (^*\text{cross product})\\)   
+ - \\(jk=i,kj=-i\\)   
+ - \\(ki=j,ik=-j\\)   
+
+P119   
 
 
 
