@@ -346,6 +346,277 @@ $$
 
 
 
+P83  
+## Rotation Axis and Angle   
+
+![](/assets/02-17.png)    
+
+
+P85   
+
+## Coordinate Transformation   
+
+![](/assets/02-18.png)    
+
+
+
+P86   
+## Coordinate Transformation
+
+![](/assets/02-19.png) 
+
+
+P87   
+
+## Representations of 3D Rotation   
+
+P90  
+
+| degrees of freedom (DoF) = 3 |
+|---|
+
+
+P91   
+
+## Parameterization of Rotation
+
+ - A rotation matrix, 9 parameters: \\(𝑎_{𝑖𝑗}\\)   
+ $$
+ R=\begin{bmatrix}
+ a_{11} & a_{12} & a_{13} \\\\
+ a_{21} & a_{22} &a_{23} \\\\
+ a_{31} & a_{32} &a_{33}
+ \end{bmatrix}
+ $$
+
+\\( R^TR=I   \quad \text{det }R=1 \\)  
+
+| degrees of freedom (DoF) = 3 |
+|---|
+
+
+P93  
+## Interpolation of Translations
+
+
+![](/assets/02-20-1.png) 
+
+
+
+$$
+x_t=(1-t)x_0+tx_1
+$$
+
+
+P95   
+##  Interpolation of Rotations    
+
+![](/assets/02-21.png) 
+
+P98   
+## Interpolation of Rotations  
+
+ - What is good interpolation?   
+    - Rotation is valid at any time \\(t\\)   
+    - Constant rotational speed is preferred   
+
+
+P99   
+
+ - Easy to compose?   \\(\quad \quad \quad {\color{Red} \times } \\)
+ - Easy to apply?   \\(\quad \quad \quad \quad {\color{Green}  \surd }\\)
+ - Easy to interpolate?  \\(\quad  \quad {\color{Red} \times } \\)
+
+
+P100  
+## Euler angles
+
+
+ - Basic rotations
+
+
+![](/assets/02-22.png) 
+
+$$
+R_x(\alpha )=\begin{pmatrix}
+ 1 & 0 & 0 \\\\
+ 0 & \cos\alpha  & -\sin \alpha \\\\
+ 0 & \sin \alpha  & \cos \alpha 
+\end{pmatrix}
+$$
+
+$$
+R_y(\beta )=\begin{pmatrix}
+ \cos \beta & 0 & \sin \beta \\\\
+ 0 & 1  & 0  \\\\
+ -\sin \beta & 0   & \cos \beta 
+\end{pmatrix}
+$$
+
+$$
+R_z(\gamma  )=\begin{pmatrix}
+ \cos \gamma & -\sin \gamma & 0 \\\\
+ \sin \gamma & \cos \gamma  & 0  \\\\
+ 0 & 0   & 1 
+\end{pmatrix}
+$$
+
+
+P101  
+## [囘] Euler Angles   
+
+ - Any rotation can be represented as a combination of three basic rotations
+
+
+P102   
+
+## [囘] Euler Axes   
+
+
+ - Any combination of three basic rotations are allowed   
+    - Excluding those rotate twice around the same axis   
+    - XYZ, XZY, YZX, YXZ, ZYX, ZXY, XYX, XZX, YXY, YZY, ZXZ, ZYZ    
+
+
+P103  
+
+## [囘] Conventions of Euler Angles   
+
+intrinsic rotations: axes attached to the **object**
+
+$$
+R_x(\alpha )R_y(\beta )R_z(\gamma )
+$$
+
+extrinsic rotations: axes fixed to the **world**   
+
+
+$$
+R_z(\gamma )R_y(\beta )R_x(\alpha )
+$$
+
+P104   
+
+## [囘] Gimbal Lock    
+
+ - When two local axes are driven into a parallel configuration, 
+one degree of freedom is “locked”   
+
+P105  
+
+## [囘] Euler Angles   
+
+![](/assets/02-23.png) 
+
+
+P107  
+
+## [囬] Rotation Vectors / Axis Angles   
+
+
+ - Axis angle \\((u,\theta) \\) : represent a rotation using    
+    - A vector \\(u\\): rotation axis   
+    - A scalar \\(\theta \\): rotation angle   
+
+ - Rotation vector: represent a rotation as
+    - \\(\theta =\theta u \\)   
+    - Obviously:   
+    $$
+    \theta=||\theta||  \quad u=\frac{\theta}{||\theta||} 
+    $$
+
+
+![](/assets/02-24.png) 
+
+
+P110   
+## [囬] Interpolating Rotation Vectors / Axis Angles   
+
+![](/assets/02-25.png) 
+
+
+P111   
+
+## [囬] Interpolating Rotation Vectors / Axis Angles   
+
+Compute offset rotation   
+
+$$
+\begin{align*}
+ R(\delta \theta )= & R^T(\theta _0)R(\theta _1)\\\\
+ \delta \theta _t= & (1-t)0+t\delta \theta \\\\
+ R( \theta_t)= & R( \theta _0)R(\delta \theta _t)
+\end{align*}
+$$
+
+ - \\(\theta _t\\) is valid \\(\quad {\color{Green} \surd } \\)   
+ - Constant speed \\({\quad \color{Green} \surd } \\) 
+
+P112  
+
+## [囬] Rotation Vectors / Axis Angles   
+
+$$
+(u,\theta) \text{ or } \theta =\theta u
+$$
+
+Representation is not unique    
+
+$$
+\begin{matrix}
+ (u,\theta ), & (-u,-\theta ),  & (u,\theta+2n\pi), 
+\end{matrix}
+$$
+
+
+ - Easy to compose?   \\(\quad \quad {\color{Green} \surd } \quad \quad \\)   But hard to manipulate    
+ - Easy to apply?   \\(\quad \quad \quad {\color{Red} \times }  \quad \quad \\)     Need to convert to matrix    
+ - Easy to interpolate?  \\(\quad \quad {\color{Green} \surd } \quad \quad \\)  Linear interpolation works, but not perfect    
+ - No Gimbal lock    \\(\quad \quad {\color{Green} \surd } \quad \quad \\)  need to deal with singularities     
+ 
+
+P113   
+
+## Quaternions   
+
+
+P116   
+## [𡇌] Quaternions   
+
+ - Extending complex numbers    
+ $$
+ q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
+ $$
+
+ - \\(i^2=j^2=k^2=ijk=-1\\)   
+ - \\(ij=k,ji=-k(^*\text{cross product})\\)   
+ - \\(jk=i,kj=-i\\)   
+ - \\(ki=j,ik=-j\\)   
+
+
+P117  
+
+## [𡇌] Quaternion Arithmetic
+
+$$
+ q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
+ $$
+
+Conjugation:
+Scalar product:
+Addition:
+Dot product:
+Norm:
+
+
+
+
+
+
+
+
+
+
 
 
 
