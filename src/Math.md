@@ -645,17 +645,415 @@ note:
 
 P119   
 
+## [𡇌] Quaternions   
+
+$$
+q=w+xi+yj+zk \quad \Rightarrow  \quad  q=\begin{bmatrix}
+ w\\\\
+ x\\\\
+ y\\\\
+z
+\end{bmatrix}=\begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix}
+$$
+
+
+P120  
+## [𡇌] Quaternion Arithmetic
+
+Conjugation:   \\(\quad \quad q^*=[w,-v]^T\\)   
+\\(<br>\\)    
+Scalar product:  \\(\quad \quad tq=[tw,tv]^T\\)   
+\\(<br>\\)  
+Addition:  \\(\quad \quad q_1+q_2=[w_1+w_2,v_1+v_2]^T\\)   
+\\(<br>\\)   
+Dot product:  \\(\quad \quad q_1\cdot q_2=w_1w_2+v_1 \cdot v_2\\)   
+\\(<br>\\)  
+Norm:  \\(\quad \quad ||q||=\sqrt{w_1w_2+v_1 \cdot v_2} =\sqrt{q\cdot q}\\)
+
+
+P122   
+## [𡇌] Quaternion Multiplication   
+
+$$
+q_1q_2=\begin{bmatrix}
+ w_1\\\\
+v_1
+\end{bmatrix}\begin{bmatrix}
+w_2 \\\\
+v_2
+\end{bmatrix}=\begin{bmatrix}
+ w_1w_2-v_1\cdot v_2\\\\
+w_1v_2+w_2v_1+v_1\times v_2
+\end{bmatrix}
+$$
+
+Non-Commutativity: 
+
+$$
+q_1q_2\ne q_2q_1
+$$
+
+Associativity:    
+
+$$
+q_1q_2q_3=(q_1q_2)q_3=q_1(q_2q_3)
+$$
+
+
+
+P123   
+## [𡇌] Quaternion Multiplication   
+
+Conjugation:   
+
+$$
+(q_1q_2)^\ast=q^\ast_2q^\ast_1
+$$
+
+Norm:    
+
+$$
+||q||^2 = q^ \ast q =qq^\ast
+$$
+
+
+Reciprocal:    
+
+$$
+\begin{matrix}
+qq^{-1}=1  & \Rightarrow & q^{-1}=\frac{q^*}{||q||^2}\\\\
+q^{-1}q=1  &  &
+\end{matrix}
+$$
+
+
+P124   
+
+## [𡇌] Unit Quaternions   
+
+$$
+\begin{matrix}
+ q=\begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix} &||q||=1
+\end{matrix}
+$$
+
+For any non-zero quaternion \\(\tilde{q} \\):   
+
+$$
+q=\frac{\tilde{q}}{||\tilde{q}||}
+$$
+
+Reciprocal:   
+
+$$
+\begin{matrix}
+ q^{-1}=q^\ast =\begin{bmatrix}
+ w\\\\
+-v
+\end{bmatrix} &\Leftrightarrow & R^{-1}=R^T
+\end{matrix}
+$$
+
+
+P125   
+## [𡇌] Unit Quaternions   
+
+![](/assets/02-26.png)  
+
+$$
+\begin{matrix}
+\text{unit complex number} \\\\
+z = \cos \theta  + i\sin \theta 
+\end{matrix}
+$$
+
+
+![](/assets/02-27.png)  
+
+$$
+\begin{matrix}
+\text{unit quaternion} \\\\
+q = [\cos \frac{\theta}{2} ,  + u\sin \frac{\theta}{2} ]&||u||=1 
+\end{matrix}
+$$
+
+P126   
+## [𡇌] Unit Quaternions  
+
+$$
+\begin{matrix}
+q =  \begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix}= [\cos \frac{\theta}{2} ,   u\sin \frac{\theta}{2} ]&||u||=1 
+\end{matrix}
+$$
+
+same information as axis angles \\((u,\theta)\\) But in a different form   
+
+P127   
+## [𡇌] Unit Quaternions as 3D Rotations   
+
+Any 3D rotation \\((v,\theta)\\) can be represented as a **unit quaternion**   
+
+$$
+\begin{matrix}
+ \text{Angle}: & \theta =2 \text{ arg } \cos w\\\\
+\text{ Axis}:  & u=\frac{v}{||v||} 
+\end{matrix}
+$$
+
+P128   
+## [𡇌] Rotation a Vector Using Unit Quaternions   
+
+
+![](/assets/02-29.png)  
+
+$$
+\begin{matrix}
+ \text{Unit quaternion}: & q=\begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix}=[\cos \frac{\theta }{2} ,u\sin \frac{\theta }{2}]\\\\
+\text{ 3D vector}:p  & \text{ Rotation result }: {p}'
+\end{matrix}
+$$
+
+Then the rotation can be applied by **quaternion multiplication**:  
+
+$$
+\begin{bmatrix}
+0 \\\\
+{p}' 
+\end{bmatrix}=q\begin{bmatrix}
+ 0\\\\
+p
+\end{bmatrix}q^\ast 
+$$
+
+
+P129   
+
+## [𡇌] Rotation a Vector Using Unit Quaternions  
+
+![](/assets/02-30.png)  
+
+$$
+\begin{bmatrix}
+0 \\\\
+{p}' 
+\end{bmatrix}=q\begin{bmatrix}
+ 0\\\\
+p
+\end{bmatrix}q^\ast =(-q)\begin{bmatrix}
+ 0\\\\
+p
+\end{bmatrix}(-q)^\ast 
+$$
+
+\\(\mathbf{q}\\) **and** \\(−\mathbf{q}\\) **represent the same rotation**   
+
+
+P131   
+## [𡇌] Combination of Rotations   
+
+$$
+\begin{matrix}
+ \text{Unit quaternion}&: & q_1,q_2\\\\
+ \text{3D vector}&: & p\\\\
+\end{matrix}
+$$
 
 
 
 
+$$
+\begin{align*}
+ \begin{bmatrix}
+ 0\\\\
+{p}' 
+\end{bmatrix} = & q _ 1 \begin{bmatrix}
+ 0 \\\\
+ p
+\end{bmatrix} q ^ \ast _ 1  \\\\
+  \begin{bmatrix}
+ 0 \\\\
+{p}''
+\end{bmatrix} =& q _ 2 \begin{bmatrix}
+ 0 \\\\
+{p}' 
+\end{bmatrix}q ^ \ast _ 2 = q_ 2 (q_1\begin{bmatrix}
+ 0 \\\\
+p
+\end{bmatrix} q ^ \ast _1)q ^ \ast _ 2=(q _ 2 q _ 1)\begin{bmatrix}
+ 0 \\\\
+{p} 
+\end{bmatrix}(q_2q_1) ^ \ast \\\\
+  = & q \begin{bmatrix}
+ 0 \\\\
+p 
+\end{bmatrix}q^\ast 
+\end{align*}
+$$
+
+
+$$
+\begin{matrix}
+  \text{Combined rotation}: & q=q_2q_1
+\end{matrix}
+$$
+
+
+P133  
+## [𡇌] Quaternion Interpolation    
+ 
+$$
+\begin{matrix}
+  q=\begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix} & ||q||=1
+\end{matrix}
+$$
+
+A unit hypersphere in 4D space   
+
+
+P134   
+
+## [𡇌] Quaternion Interpolation   
+
+
+![](/assets/02-31.png)  
+
+A unit hypersphere in 4D space    
 
 
 
+P135   
+## [𡇌] Linear Interpolation   
+
+$$
+q_t=(1-t)q_0+tq_1
+$$
+
+![](/assets/02-32.png)  
+
+\\(q_t\\) is not a unit quaternion   
+
+P136  
+
+## [𡇌] Linear Interpolation + Projection
+
+
+$$
+\begin{matrix}
+  \tilde{q}_t=(1-t)q_0+tq_1  & q_t=\frac{\tilde{q}_t }{||\tilde{q}_t||} 
+\end{matrix}
+$$
+
+![](/assets/02-33.png)  
+
+
+$$
+\begin{matrix}
+ q_t \text{ is a unit quaternion}\\\\
+\text{Rotational speed is not constant}
+\end{matrix}
+$$
+
+P137   
+
+## [𡇌] SLERP: Spherical Linear Interpolation   
+
+$$
+q_t=a(t)q_0+b(t)q_1
+$$
+
+
+![](/assets/02-34.png)  
+
+P138   
+
+## [𡇌] SLERP: Spherical Linear Interpolation   
+
+$$
+r=a(t)p+b(t)q
+$$
+
+Consider the angle \\(\theta\\) between \\(p,q\\):    
+
+$$
+\cos \theta =p\cdot q
+$$
+
+We have:
+
+$$
+\begin{matrix}
+ p \cdot r=a(t)p\cdot p+b(t)q\cdot p\\\\
+\Rightarrow \cos t \theta =a(t)+b(t)\cos \theta 
+\end{matrix}
+$$
+
+
+similarly:   
+
+$$
+\begin{matrix}
+ q \cdot r=a(t)q\cdot p+b(t)\\\\
+\Rightarrow \cos (1- t) \theta =a(t)\cos\theta +b(t)  
+\end{matrix}
+$$
+
+then we have：   
+
+$$
+a(t)=\frac{\sin [(1-t)\theta ]}{\sin \theta  } ,b(t)=\frac{\sin t \theta }{\sin \theta } 
+$$
+
+
+![](/assets/02-35.png)  
+
+
+P139  
+## [𡇌] SLERP: Spherical Linear Interpolation   
+
+$$
+q_t=\frac{\sin [(1-t)\theta ]}{\sin \theta  }q_0+\frac{\sin t \theta }{\sin \theta }q_1 
+$$
+
+$$
+\cos \theta=q_0\cdot  q_1
+$$
+
+![](/assets/02-36.png)  
+
+
+P140   
+## [𡇌] Quaternions  
+
+Rotations can be represented by **unit quaternions**    
 
 
 
-![](/assets/01-45.png)  
+Representation is not unique   
+
+\\(q, −q\\) represent the same rotation   
+
+• Easy to compose?   \\(\quad \quad {\color{Green} \surd }\quad \quad \\)     Need normalization, hard to manipulate,   
+• Easy to apply?    \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)       Quaternion multiplication   
+• Easy to interpolate?  \\(\quad   {\color{Green} \surd }\quad \quad \\)   SLERP, need to deal with singularities   
+• No Gimbal lock  \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)   
+
+
+
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
