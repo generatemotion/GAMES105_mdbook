@@ -62,7 +62,7 @@ $$
  Q_1=I\quad\\\\\
  Q_2=I\quad\\\\\
  Q_3=I\quad\\\\\
-Q_4={\color{Red}R_4}
+Q_4={\color{Red}{R_4}}
 \end{matrix}
 $$
 
@@ -148,7 +148,14 @@ P21
 P23   
 ## Kinematics of a Chain   
 
-![](/assets/03-011.png)  
+![](/assets/03-11.png)  
+
+
+P31   
+## Kinematics of a Chain   
+
+![](/assets/03-011.png)
+
 
 P37   
 ## Kinematics of a Chain: Summary
@@ -163,6 +170,9 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) i
 
      
 P38    
+Forward kinematics:    
+
+Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
 
 ![](/assets/03-15.png)  
 
@@ -223,8 +233,8 @@ P50
 
 ||||
 |---|---|---|
-| ![](/assets/03-025.png)  |![](/assets/03-023.png)  | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br>  hinge joint <br>  revolute joint  |
-|  |![](/assets/03-024.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> ball-and-socket joint |
+| ![](/assets/03-025-2.png)  |![](/assets/03-023.png)  | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br>  hinge joint <br>  revolute joint  |
+| ![](/assets/03-025-1.png)  |![](/assets/03-024.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> ball-and-socket joint |
 
  
 P51   
@@ -237,13 +247,35 @@ P52
 Joint Limits
 
 
+||||
+|---|---|---|
+| ![](/assets/03-025-2.png)  |![](/assets/03-26.png)    | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br> \\(\theta_{\min }\le \theta\le  \theta_{\max } \\) <br> hinge joint <br>  revolute joint  |
+| ![](/assets/03-025-1.png)  |![](/assets/03-27.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> \\(\theta_{\min }\preceq  \theta \preceq  \theta_{\max } \\) <br> ball-and-socket joint |
 
-![](/assets/03-26.png)  
 
-![](/assets/03-27.png)  
+P55  
 
-![](/assets/03-28.png)  
+## Forward Kinematics   
 
+$$
+(t_0,R_0,R_1,R_2\dots \dots ) 
+$$
+
+$$
+\text{root } \mid \text{ internal joints}
+$$
+
+joints are typically in the order that every joint precedes its offspring   
+
+for \\(i\\) in joint_list:    
+
+$$
+\begin{align*}
+ p_i= & i^,\text{ s parent joint} \\\\
+  Q_i=& Q_{pi}R_i \\\\
+ x_i= & x_{pi} + Q_{pi}l_i
+\end{align*}
+$$
 
 
 
