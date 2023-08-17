@@ -27,7 +27,7 @@ P6
 ## Learning Motion Models   
 
 
-![](/assets/06a-02.png)  
+![](/assets/06a-2.png)  
 
 
 P7   
@@ -200,7 +200,7 @@ P49
 ## PFNN: Phase-Functioned Neural Networks
 
 $$
-x_t=f(x_{t-1};c_t,\theta _t=\sum_{i}^{} w_i(\phi _t)\theta _i)
+x_t = f (x_{t-1}; c_t, \theta _ t = \sum _ {i}^{} w_i(\phi _t) \theta _i)
 $$
 
 ![](/assets/06a-16.png)   
@@ -246,7 +246,7 @@ P55
 |---|---|
 |![](/assets/06a-21.png)  | *SIGGRAPH 2018 |
 | ![](/assets/06a-22.png)  | *SIGGRAPH 2020 |
-| ![](/assets/06a-23.png)  | *SIGGRAPH 2022 |
+| ![](/assets/06a-023.png)  | *SIGGRAPH 2022 |
 
 
 P57  
