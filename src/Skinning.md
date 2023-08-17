@@ -29,6 +29,12 @@ P7
 ![](/assets/07-02.png)   
 
 
+P9   
+## Skinning Deformation
+
+![](/assets/07-2.png)  
+
+
 P12   
 ## Skinning Deformation    
 
@@ -99,6 +105,10 @@ P33
 
 ![](/assets/07-12.png)   
 
+Pinocchio [Baran et al., 2007]   
+
+
+
 P37   
 ## Linear Blend Skinning (LBS)
 
@@ -144,7 +154,7 @@ P43
 ## Non-linear Skinning   
 
 $$
-{x}' _i=(\sum_{j=1}^{m}w_{ij}R_j)x_i+ \sum_{j=1}^{m}w_{ij}t_j
+{x}' _ i = ( \sum _ {j=1}^{m} w _ {ij} R _ j) x _ i+ \sum _ {j=1}^{m}w _ {ij}t_ j
 $$
 
 $$
@@ -247,12 +257,12 @@ $$
 $$
 
 $$
-\mathrm{II}:\hat{q}^ {\circ}  =q _ 0 + \varepsilon q _ \varepsilon 
+\mathrm{II}:\hat{q}^ {\circ}  =q _ 0 - \varepsilon q _ \varepsilon 
 $$
 
 
 $$
-\mathrm{III}: \hat{q} ^ \star    = q ^ * _ 0 + \varepsilon q ^ *_ \varepsilon 
+\mathrm{III}: \hat{q} ^ \star    = q ^ * _ 0 - \varepsilon q ^ *_ \varepsilon 
 $$
 
 $$
@@ -316,6 +326,8 @@ $$
 {\hat{v} }' =\hat{q} \hat{v} \hat{q} ^\star 
 $$
 
+where   
+
 $$
 \begin{align*}
  \hat{v} & = 1+\varepsilon (0,v) \\\\
@@ -323,7 +335,9 @@ $$
 \end{align*}
 $$
 
-where   
+$$
+\quad
+$$
 
 $$
 \mathrm{III}: \hat{q} ^ \star    = q ^ * _ 0 - \varepsilon q ^ *_ \varepsilon 
@@ -364,6 +378,12 @@ P63
 ## Interpolating Dual-Quaternion
 
 ![](/assets/07-22.png)   
+
+
+P64  
+## Dual-Quaternion Linear Blending (DLB)
+
+![](/assets/07-022.png)   
 
 
 P65   
@@ -408,7 +428,7 @@ P76
  - Radial Basis Function   
  - ……   
 
-![](/assets/07-27.png)   
+![](/assets/07-28.png)   
 
 
 P81   
@@ -418,7 +438,7 @@ $$
 y=\sum_{i=1}^{k} w_i\varphi (||x-x_i||)
 $$
 
-![](/assets/07-28.png)   
+![](/assets/07-29.png)   
 
 
 P83   
@@ -453,7 +473,7 @@ $$
 R_{i,j}=\varphi (||x_i-x_j||)
 $$
 
-![](/assets/07-29.png)   
+![](/assets/07-30.png)   
 
 
 P84   
@@ -463,13 +483,248 @@ $$
 y=\sum_{i=1}^{k} w_i\varphi (||x-x_i||)
 $$
 
+ - Gaussian:   
+
+$$
+\varphi (r)=e^{-(r/c)^2}
+$$
+
+ - Inverse multiquadric:    
+
+$$
+\varphi (r)=\frac{1}{\sqrt{r^2+c^2} } 
+$$
+
+ - Thin plate spline:    
+
+$$  
+\varphi (r)=r^2 \log r
+$$
+
+ - Polyharmonic splines:  
 
 
 
+$$
+\varphi (r)=\begin{cases}
+ r^k,k=2n+1\\\\
+\\\\\
+r^k \log r,k=2n
+\end{cases}
+$$
+
+P85     
+## Pose Space Deformation   
+$$
+{x}' =\sum_{j=1}^{m} w_iT_j (x+\delta (x,\theta ))
+$$
+
+ - \\({x}'= SKIN(PSD(x))\\)   
+ - 𝑃𝑆𝐷 is implemented as RBF interpolation   
+ - Example shapes can be created manually   
+    - Or by 3D scanning real people → the SMPL model   
 
 
+J. P. Lewis, Matt Cordner, and Nickson Fong. 2000. **Pose space deformation: a unified approach to shape**   
 
-![](/assets/07-30.png)   
+**interpolation and skeleton-driven deformation**. In *Proceedings of the 27th annual conference on Computer*    
+
+*graphics and interactive techniques* (SIGGRAPH ’00), ACM Press/Addison-Wesley Publishing Co., USA, 165–172.   
+
+
+P86   
+## Pose Space Deformation
+
+![](/assets/07-31.png)   
+
+
+P87   
+## Issues   
+
+ - Per-shape or per-vertex interpolation   
+    - Should we interpolate a shape as a whole?   
+ - Local or global interpolation?   
+    - Should a vertex be affected by all joints?   
+ - Interpolation algorithm?   
+    - Is RBF the only choice?   
+
+SIGGRAPH Course 2014 — Skinning: Real-time Shape Deformation   
+
+
+P88  
+## Example-based Skinning (EBS) vs. Skeleton Subspace Deformation (SSD)    
+
+\\(\ast \\)EBS: PSD   
+\\(\quad\\)
+
+ - Good: Easy to control   
+ - Good: Good quality   
+ - Good: **Pose-dependent details** (e.g. bulging muscle and extruding veins)   
+
+\\(\quad\\)
+
+ - Bad: Creating examples can be cumbersome   
+ - Bad: Extra storage for examples   
+ - Bad: Interpolation needs careful tuning   
+
+\\(\quad\\)
+
+\\(\ast \\)SSD: LBS, DQS, etc.   
+\\(\quad\\)
+
+ - Good: Easy to implement   
+ - Good: Fast and GPU friendly   
+
+\\(\quad\\)
+
+ - Bad: Various artifacts   
+ - Bad: Skinning weights needs careful tuning   
+ - Bad: Hard to create pose-dependent details   
+
+
+P89   
+## Example: SMPL Model   
+
+
+ - A widely adopted human model in ML/CV   
+ - Learned on real scan data   
+ - Combines SSD and EBS techniques   
+
+![](/assets/07-32.png)   
+
+
+P92   
+## Recall: Principal Component Analysis (PCA)  
+
+ - Given a dataset {\\(x_i\\)}, \\(x_i \in \mathbb{R} ^N\\), then PCA gives    
+
+$$
+x_i=\bar{x}+\sum_{k=1}^{n} w_{i,k}u_k
+$$
+
+ - \\(u_k\\) is the \\(k\\)-th principal component    
+    - A direction in \\( \mathbb{R} ^N\\) along which the rojection of {\\(x_i\\)} has the \\(k\\)-th maximal **variance**   
+ - \\(w_{i,k}=(x_i-\bar{x})\cdot u_k\\) is the score of \\(x_i\\) on \\(u_k\\)    
+
+
+P93   
+## Recall: Principal Component Analysis (PCA)   
+
+• Given a dataset  {\\(x_i\\)}, \\(x_i \in \mathbb{R} ^N\\), the PCA can be computed by apply **eigen decomposition** on the covariance matrix   
+
+$$
+\sum =X^TX=U\begin{bmatrix}
+ \sigma ^2_1 &  &  & \\\\
+  & \sigma ^2_2 &  & \\\\
+  &  & \ddots  & \\\\
+  &  &  \sigma ^2_N
+\end{bmatrix}U^T
+$$
+
+ - \\(X=[x_0-\bar{x}, x_1-\bar{x},\dots ,x_N-\bar{x}]^T\\)   
+
+ - \\(\sigma _i\ge \sigma _j\ge 0\\) when \\(i< j\\), corresponds to the Explained Variance   
+
+ - \\(U=[u_1,u_2,\dots,u_N]\\)   
+
+
+![](/assets/07-007.png)   
+
+
+P94   
+## PCA over Body Shapes
+
+![](/assets/07-33.png)   
+
+
+P95  
+## SMPL Model: Body Shape
+
+![](/assets/07-34.png)   
+
+
+P96   
+## SMPL Model: Pose Blend Shapes
+
+![](/assets/07-35.png)   
+
+
+P97   
+## SMPL Model: Deformation
+
+$$
+T(\beta ,\theta )=\bar{T} + \sum _ {m=1}^{|\beta |} \beta _ m S_ n + \sum _ {n=1}^{|\theta |}\theta _np_n
+$$
+
+$$
+x=SKIN(T(\beta ,\theta ),\theta ,w)
+$$
+
+
+$$
+SKIN:\text{LBS, DQS, etc}\dots 
+$$
+
+![](/assets/07-36.png)   
+
+[SMPL: A Skinned Multi-Person Linear Model]   
+
+
+P99   
+## Facial Animation
+
+![](/assets/07-37.png)   
+
+
+P101   
+## Facial Animation
+
+![](/assets/07-38.png)   
+
+
+P102   
+## Facial Blendshapes   
+
+![](/assets/07-39.png)   
+
+
+P103   
+## A Typical Set of Blendshapes (ARKit)
+
+![](/assets/07-40.png)   
+
+
+P104   
+## Blendshapes vs. Example-based Skinning
+
+![](/assets/07-41.png)   
+
+![](/assets/07-42.png)   
+
+![](/assets/07-43.png)   
+
+
+P105  
+## Morphable Face Models
+
+![](/assets/07-44.png)   
+![](/assets/07-45.png)   
+   
+
+Egger et al. 2020. **3D Morphable Face Models - Past, Present, and Future**. *ACM Trans. Graph*. 39, 5 (June 2020), 157:1-157:38.   
+
+P107   
+## How to Animate a Face?
+
+
+![](/assets/07-47.png)
+
+P110   
+## Face Tracking
+
+![](/assets/07-48.png)
+
+
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
