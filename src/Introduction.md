@@ -1,3 +1,5 @@
+# Lecture 01
+
 
 P4   
 ## Welcome & Course Information   

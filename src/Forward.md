@@ -1,3 +1,6 @@
+# Lecture 03
+
+
 
 P3   
 ## Outline   
