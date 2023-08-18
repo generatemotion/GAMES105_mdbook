@@ -5,6 +5,7 @@ P2
 
  - Simulating & Actuating Characters   
     - Joint torques   
+    
  - PD (Proportional-Derivative) control   
 
 
@@ -156,11 +157,24 @@ $$
 $$
 
 
-P34  
-## Joint Torques
+P34   
+## Joint Torques  
+
+$$
+\sum _ {i}^{}  f_i=0
+$$
 
 $$
 \tau _1= \sum _ {i}^{} r_i \times f_i
+$$
+
+
+P35  
+## Joint Torques
+
+
+$$
+\sum _ {i}^{}  f_i=0
 $$
 
 ![](/assets/09-15.png)
@@ -220,9 +234,151 @@ P44
 
 
 
+P47   
+## Fully-Actuated vs. Underactuated
+
+|||
+|--|--|
+|![](/assets/09-20.png) | ![](/assets/09-21.png)|
+|If #actuators ≥ #dofs, the system is **fully-actuated** | If #actuators < #dofs, the system is **underactuated** |
 
 
-![](/assets/09-19.png)
+
+P48   
+## Fully-Actuated vs. Underactuated
+
+For any \\([x,v,\dot{v} ]\\), there exists an \\(f\\) that produces the motion
+
+For many \\([x,v,\dot{v} ]\\) , there is no such \\(f\\) that produces the motion
+
+
+
+P50  
+## Feedforward vs. Feedback   
+
+Feedforward control:   
+$$
+f,\tau =\pi (t)
+$$
+
+
+ - Apply predefined control signals **without considering the current state** of the system   
+ - Assuming unchanging system.    
+   Perturbations may lead to unpredicted results   
+
+
+![](/assets/09-22.png)
+
+
+P51  
+## Feedforward vs. Feedback   
+
+Feedforward control:   
+$$
+f,\tau =\pi (s_t,t)
+$$
+
+
+ - Adjust control signals based on the current state of the system
+ - Certain perturbations are expected.    
+   The feedback signal will be used to improves the performance at the next state.   
+
+P56   
+## Proportional-Derivative Control
+
+![](/assets/09-23.png)
+
+
+P57   
+## Proportional-Derivative Control
+
+
+![](/assets/09-24.png)
+
+
+P60   
+## Proportional-Derivative Control
+
+![](/assets/09-25.png)
+
+![](/assets/09-26.png)
+
+
+P61   
+## Proportional-Derivative Control
+
+Increase stiffness \\(k_p\\) reduces the steady-state error, but can make the system too stiff and numerically unstable    
+
+
+P62   
+## Proportional-Integral-Derivative controller 
+
+![](/assets/09-27.png)  
+![](/assets/09-28.png)  
+
+
+P63   
+## PD Control for Characters
+
+![](/assets/09-29.png)
+
+![](/assets/09-30.png)
+
+
+
+P64  
+## PD Control for Characters
+
+
+![](/assets/09-31.png)
+
+
+P67  
+## Tracking Controllers
+
+
+![](/assets/09-32.png)   
+
+
+P68  
+## Full-body Tracking Controllers
+
+
+![](/assets/09-33.png)   
+
+
+P72   
+## Full-body Tracking Controllers
+
+Is PD control a **feedforward** control?   
+a **feedback** control?   
+
+P73  
+## Tracking Mocap with Joint Torques   
+
+\\(\tau _j\\): joint torques   
+Apply \\(\tau _j\\) to “child” body    
+Apply \\(-\tau _j\\) to “parent” body   
+**All forces/torques sum up to zero**   
+
+
+
+P74   
+## Tracking Mocap with Root Forces/Torques
+
+\\(f_0,\tau _0\\): root force / torque    
+Apply \\(f_0\\) to the root body    
+Apply \\(\tau _0\\) to the root body   
+Non-zero net force/torque on the character!   
+
+
+P76  
+## Mixture Simulation and Mocap
+
+![](/assets/09-34.png)
+
+
+
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
