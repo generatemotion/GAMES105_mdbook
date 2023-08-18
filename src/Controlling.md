@@ -32,9 +32,7 @@ This arm never reaches the target angle under gravity
 
 ![](/assets/10-03.png)  
 
-$$
-\tau =k_p(\bar{q} -q)-k_d\dot{q} 
-$$
+
 
 
 P5   
@@ -120,7 +118,7 @@ if \\(|\lambda _1|> 1\\)
 
 The system is unstable!    
 
-Condition of stability: \\(|\lambda _1|\le  1 \text{ for all } \lambda _i\\)   
+Condition of stability: \\(|\lambda _i|\le  1 \text{ for all } \lambda _i\\)   
 
 
 
@@ -337,7 +335,7 @@ find a target trajectory
 P40  
 ## Problem with Gradient-Based Methods
 
- - The optimization problem is usually highly nonlinear, gradients are unreliable    
+ - The optimization problem is usually **highly nonlinear**, gradients are unreliable    
  - The system is a black box with unknow dynamics, gradients are not available   
 
 
@@ -496,7 +494,7 @@ P68
 P69   
 ## Jacobian Transpose Control
 
-![](/assets/10-31.png)   
+![](/assets/10-32.png)   
 
 Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) applied at \\(x\\)   
 
@@ -533,10 +531,51 @@ $$
 P76  
 ## Jacobian Transpose Control
 
+$$
+\tau =J^Tf
+$$
+
+$$
+\Downarrow 
+$$
+
+$$
+\tau _i=(x-p_i)\times f
+$$
 
 
+P77  
+## Static Balance
 
-![](/assets/10-32.png)   
+A simple strategy to maintain balance:   
+ - Keep projected CoM close to the center of support polygon **while tracking a standing pose**    
+
+ - Use PD control to compute feedback **virtual force**    
+
+$$
+f=k_p(\bar{c} -c)-k_d\dot{c}
+$$
+
+
+P78   
+## Static Balance   
+
+ - Assuming \\(f\\) **is applied to the CoM**, compute necessary joint torques using Jacobian transpose control to achieve it   
+
+ - Usually using the joints in the legs   
+
+
+P79   
+## Static Balance
+A fancier strategy:   
+
+ - Mocap tracking as an objective function   
+ - Controlling both the CoM position/**momentum** and the **angular** momentum   
+ - Solve a **one-step** optimization problem to compute joint torques   
+ 
+![](/assets/10-34.png)   
+
+
 
 
 
