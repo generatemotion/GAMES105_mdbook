@@ -36,9 +36,18 @@ P7
 ![](/assets/12-04.png)  
 
 
+> &#x1F446; 前馈控制优化的是轨迹。  
+反馈控制优化的是控制策略，控制策略是一个函数，根据当前状态优代轨迹。  
+
+
+
 P9  
 
 ![](/assets/12-05.png)  
+
+
+> &#x1F446; Feedback类似构造一个场，把任何状态推到目标状态。   
+
 
 
 P10  
@@ -79,6 +88,14 @@ $$
 L(x,\lambda )=f(x)+\lambda ^Tg(x)
 $$
 
+
+
+> &#x1F446; 充分非必要条件。  
+拉格朗日乘子法。  
+
+
+
+
 P18   
 ## Lagrange Multiplier 
 
@@ -112,11 +129,22 @@ L(s,a,\lambda ) = h(s _ T)+ \sum _ {t=0} ^ {T-1} h(s _t,a _t) + \lambda _ {t+1}^
 $$
 
 
+P21  
+
+> &#x1F446; 因为把时间离散化，此处用求和不用积分。    
+
+
+
 P27   
 ## Solving Trajectory Optimization Problem  
 
 
 ![](/assets/12-10-1.png)  
+
+
+> &#x1F446; 拉格朗日方程，对每个变量求导，并令导数为零。
+因此得到方程组。
+
 
 
 P30  
@@ -126,6 +154,10 @@ P30
 ![](/assets/12-11.png)  
 
 ![](/assets/12-12.png)  
+
+
+> &#x1F446; 方程组整理得到左边，称为PMP条件。  
+
 
 
 P32   
@@ -161,6 +193,10 @@ J(s_0)=\sum _ {t=0}^{ } h(s_t,s_{t+1})
 $$
 
 
+> &#x1F446; 动态规划问题。  
+
+
+
 P35  
 ## Dynamic Programming   
 
@@ -175,6 +211,10 @@ subject to
 $$
 s_{t+1}=f(s_t,a_t)
 $$
+
+
+> &#x1F446; 轨迹问题。  
+
 
 
 P36  
@@ -192,6 +232,10 @@ subject to
 $$
 s_{t+1}=f(s_t,a_t)
 $$
+
+
+
+> &#x1F446; 控制策略问题。  
 
 
 P37   
@@ -232,6 +276,12 @@ Value of a state \\(V(s)\\) :
  - the minimal total cost for finishing the task starting from \\(s\\)   
  \\(\Updownarrow \\)
  - the total cost for finishing the task starting from \\(s\\) using the optimal policy    
+
+
+
+> &#x1F446; Value Funcron，计算从某个结点到gool的最小代价。   
+后面动态规划原理跳过。   
+
 
 
 P49   
@@ -297,6 +347,12 @@ $$
 
 Q-function State-action value function    
 
+
+> &#x1F446; 强化学习最主要的目的是学习\\(V\\)函数和\\(Q\\)函数，如果\\(a\\)是有限状态，遍历即可。  
+但在角色动画里，\\(a\\)是连续状态。  
+
+
+
 P52   
 ## Linear Quadratic Regulator (LQR)   
 
@@ -306,6 +362,10 @@ P52
  - LQR is a special class of optimal control problems with   
     - **Linear** dynamic function   
     - **Quadratic** objective function   
+
+
+> &#x1F446; LQR是控制领域一类经典问题，它对原控制问题做了一些特定的约束。
+
 
 
 P53   
@@ -386,6 +446,10 @@ P65
     - Non-quadratic objective function?   
 
 
+> &#x1F446; 人体运动涉及到角度旋转，因此是非线性的。  
+
+
+
 P68  
 ## Linear Quadratic Regulator (LQR)  
 
@@ -432,10 +496,22 @@ a_t-\bar{a} _t
 \end{bmatrix}
 $$
 
-DDP: Differential Dynamic Programming
+DDP: Differential Dynamic Programming  
+
+
+> &#x1F446; 方法：把问题近似为线性问题。  
+目标函数：泰勒展开，保留二次。  
+转移函数：泰勒展开，保留一次或二次。  
+
+
 
 P69  
 [Muico et al 2011 - Composite Control of Physically Simulated Characters]   
+
+
+> &#x1F446; 选择合适的\\(Q\\)和\\(R\\)，需要一些工程上的技巧．
+为了求解方程，需要显式地建模运动学方程。  
+
 
 
 P70  
@@ -448,6 +524,11 @@ P70
 > What if the system has noise?    
 
 > What if the system is highly nonlinear?     
+
+
+
+> &#x1F446; \\(f\\)未知只是把\\(f\\)当成一个黑盒子，仍需要根据\\(S_t\\)得到\\(S_{t＋1}\\).   
+
 
 
 P72  
@@ -465,6 +546,10 @@ P72
  - Example: CMA-ES
 
 
+> &#x1F446; 是于采样的方法。  
+
+
+
 P73   
 ## Example: Locomotion Controller with Linear Policy
 
@@ -479,16 +564,33 @@ Find open-loop control using SAMCON
 ![](/assets/12-26.png) 
 
 
+> &#x1F446; 使用开环轨迹优化得到开环控制轨迹。    
+
+
+
 P76  
 ## Stage 1b: Linear Feedback Policy
 
 ![](/assets/12-27.png)   
 
 
+> &#x1F446; 使用反馈控制更新控制信号。由于假设了线性关系，
+根据偏离offset可直接得到调整offset.  
+
+
+
+
 P78   
 ## Stage 1b: Reduced-order Closed-loop Policy
 
 ![](/assets/12-28.png)  
+
+
+
+> &#x1F446; 把\\(M\\)分解为两个矩阵，\\(M_{AxB}=M_{Axc}\cdot M_{cxB}\\)如果\\(C\\)比较小，可以明显减少矩阵的参数量。    
+好处：（1）减少参数，减化优化过程。  
+（2）抹掉状态里不需要的信息。  
+
 
 
 P79   
@@ -500,6 +602,10 @@ P79
 ![](/assets/12-29.png) 
 
 
+> &#x1F446; （1）根结点旋转（2）质心位置（3）质心速度（4）支撑脚位置   
+
+
+
 P80  
 ## Manually-selected Controls: a  
 
@@ -507,6 +613,10 @@ P80
 
 
 ![](/assets/12-30.png)   
+
+
+> &#x1F446; 仅对少数关节加反馈。   
+
 
 
 P81   
@@ -550,6 +660,11 @@ $$
  $$
 
 
+
+> &#x1F446; 最优化控制要求有精确的运动方程，而RL不需要。   
+RL通过不断与世界交互进行采样。   
+
+
 P87   
 ## Markov Decision Process (MDP)  
 
@@ -570,6 +685,12 @@ Reward  \\(\quad \quad r_t=r (s_t,a_t)\\)
 $$
 \text{Return }\quad \quad R = \sum _{t}^{} \gamma ^t r (s_t,a_t)\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 
 $$   
+
+
+
+> &#x1F446; 真实场景中轨迹无限长，会导到\\(r\\)无限大。   
+因比会使用小于1的\\(r,t\\)越大则对结果的影响越小。   
+
 
 
 P88  
@@ -603,6 +724,12 @@ A MDP problem:
 \\(A\\): action space   
 
 
+> &#x1F446; Markov性质：当当前状态已知的情况下，下一时刻状态只与当前状态相关，而不与之前任一时刻状态相关。   
+p：状态转移概率，即运动学方程。   
+r：代价函数。   
+
+
+
 P91  
 ## Markov Decision Process (MDP)   
 
@@ -618,6 +745,12 @@ J=E[R]=E_{\tau \sim \pi }[\sum_{t}^{} \gamma ^tr(s_t,a_t)]
 $$
 
 Overall all trajectories \\(\tau \\) = { \\(s_0, a_0 , s_1 , a_1 ,  \dots  \\)} induced by \\(\pi \\)   
+
+
+
+> &#x1F446; 使期望最优，而不是直接找最优解。   
+假设\\(\pi \\)函数和\\(p\\)函数都是有噪音的，即得到的结果不是确定值，而是以一定概率得到某个结果。   
+
 
 
 P93   
@@ -660,6 +793,11 @@ P96
 [Liu et al. 2017: Learning to Schedule Control Fragments ]   
 
 
+> &#x1F446; DQN方法要求控制空间必须是离散的，但状态空间可以是连续的。  
+因此可用于高阶的控制。  
+
+
+
 P97   
 ## How to Solve MDP   
 
@@ -672,6 +810,10 @@ P97
     - Suitable for **continuous** problems   
 
     - Exa pl : REINFORCE, TRPO, PPO, …   
+
+
+
+> &#x1F446; policy grodient是 Value function对状态参数的求导。但这个没法算，所以用统计的方法得到近似。
 
 
 

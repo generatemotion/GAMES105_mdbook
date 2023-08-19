@@ -67,6 +67,10 @@ P17
 
 ![](/assets/04-05.png)  
 
+
+> &#x1F446; 对于骨骼动画来讲，\\(A\\)或T都一样。对于骼骼绑定与蒙皮来讲，更倾向于\\(A\\). 因为\\(A\\)的肩膀是自然状态。  
+
+
 P19   
 ## T-Pose? A-Pose?
 
@@ -80,16 +84,26 @@ P20
 P21   
 ![](/assets/04-08.png)  
 
+
+> &#x1F446; 这个动作跟建模师建模时的动作镜像操作有关。  
+
+
 P23   
 ## **Same motion** under different reference poses   
 
 ![](/assets/04-09.png)  
+
+> &#x1F446; 相同的姿态参数放在不同的参考姿态下呈现出的姿态不同。
 
 
 P29    
 ## **Retargeting** between reference poses
 
 ![](/assets/04-10.png)  
+
+
+> &#x1F446; 让不同参考姿态的角色做出同样的动作，根据\\(R_A\\)求\\(R_B\\).   
+重定向还有其它问题，例和关节长度、穿模。   
 
 
 P31    
@@ -110,11 +124,18 @@ P37
 ![](/assets/04-13.png)  
 
 
+> &#x1F446; 把\\(B\\)先转到\\(A\\)的姿态，再做指定动作。
+
+
 P45    
 
 ## Retargeting for a chain of links
 
 ![](/assets/04-14.png)  
+
+
+> &#x1F446; 两个关节的场景   
+
 
 P49    
 ## Retargeting for a chain of links
@@ -188,6 +209,12 @@ The kinematic chain passes the root joint…
  - Apply IK to the chain   
  - Set root transformation based on the FK along the chain   
  - Revert joint rotations between the foot and the root   
+
+
+> &#x1F446; 固定一只脚，移动身体关节。  
+由于链条经过Root，算出Root的状态后再正向更新一下。   
+曲线插值与拟合全部跳过，见GAMES 102．
+
 
 P97   
 ## Full-body IK

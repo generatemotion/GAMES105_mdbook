@@ -147,6 +147,8 @@ P21
 ![](/assets/03-10-1.png)  
 
 
+> &#x1F446; 这些Q都是全局旋转，\\(R\\)是局部旋转。  
+
 
 P23   
 ## Kinematics of a Chain   
@@ -160,6 +162,9 @@ P31
 ![](/assets/03-011.png)
 
 
+> &#x1F446; \\(p\\)是全局位置，\\(\iota\\)是局部偏移。   
+
+
 P37   
 ## Kinematics of a Chain: Summary
 
@@ -170,6 +175,10 @@ Forward kinematics:
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
 
 ![](/assets/03-14.png)  
+
+
+> &#x1F446; \\(x_0\\)是\\(R_4\\)坐标系下的点，求它在全局坐标系下的位置。 
+
 
      
 P38    
@@ -188,6 +197,10 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) r
 
 ![](/assets/03-16.png)  
 
+
+> &#x1F446; 已知全局坐标系下的坐标，求\\(Q_k\\)下的坐标。  
+
+
 P40    
 ## Kinematics of a Chain: Summary
 
@@ -198,6 +211,10 @@ P41
 ## Kinematics of a Character
 
 ![](/assets/03-18.png)  
+
+
+> &#x1F446; 把角色建模成多条关节链。   
+
 
 P43    
 ## Root Location
@@ -231,6 +248,10 @@ $$
 \end{matrix}
 $$
 
+
+> &#x1F446; 自由度，一个物理系统，需要多少参数可以唯一准确地描述它的状态。   
+> &#x1F446; 6 DOF＝3平移＋3旋转。   
+
 P50   
 ## Degrees of Freedom (DoF)  
 
@@ -240,10 +261,18 @@ P50
 | ![](/assets/03-025-1.png)  |![](/assets/03-024.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> ball-and-socket joint |
 
  
+> &#x1F446; 关节的自由度最多为3，因为不能自主移动。Hips 除外。
+
+
+
 P51   
 ## Degrees of Freedom (DoF)
    
 ![](/assets/03-25.png)  
+
+
+> &#x1F446; 手腕。其实手腕不能自转。
+
 
 P52   
 ## 
@@ -282,10 +311,9 @@ $$
 
 
 
-
-
-
-
+> &#x1F446; 一个动作的参数化表示：   
+全局位置＋root 朝向＋各关节旋转   
+通常要求，关节顺序为父在前子在后，这样只须遍历一遍就能完成FK.    
 
 
 
@@ -375,6 +403,10 @@ $$
 ![](/assets/03-35.png)  
 
 
+> &#x1F446; 使用余弦公式
+
+
+
 P70   
 ## A simple solution to a two-joint IK problem   
 
@@ -423,6 +455,10 @@ $$
 Q=Q(\theta )
 $$
 
+
+> &#x1F446; 机械臂场景，关节有多个，指定末端结点的位置和朝向   
+
+
 P74   
 ## IK as an Optimization Problem
 
@@ -443,6 +479,13 @@ $$
 \min_{\theta } \frac{1}{2} ||f(\theta )-\tilde{x} ||^2_2
 $$
 
+
+P87   
+
+> &#x1F446; 用迭代的方法，从当前motion出发，优化出目标motion.   
+
+
+
 P88   
 ## Cyclic Coordinate Descent (CCD)   
 
@@ -459,6 +502,10 @@ P90
 Rotate joint 3 such that \\(𝒍_{34}\\) points towards \\(\tilde{x}\\)   
 
 ![](/assets/03-41.png)  
+
+
+> &#x1F446; 叉乘得到旋转轴，点乘得到旋转角度。  
+
 
 P92   
 ## Cyclic Coordinate Descent (CCD) IK   
@@ -537,6 +584,11 @@ Easy to implement, very fast
 The “first” joint moves more than the others May take **many iterations** to **converge** Result can be sensitive to the **initial solution**    
 
 
+> &#x1F446; 一个动作序列做CCD，可能结果不稳定，有跳变。   
+前面例子是3210的调整顺序，也可以是0123的顺序。   
+关于梯度下降法跳过。   
+
+
 P105   
 
 ## Gradient Descent   
@@ -565,6 +617,10 @@ P121
 
 First-order approach, convergence can be slow Need to re-compute Jacobian at each iteration   
 
+> &#x2753; 怎么求了，这里讲了3种方法（1）backward框架（2）差分（3）几何计算。实际上直接用l可以解决，不需要自己去算，因此跳过。   
+特点：（1）迭代次数比CCD少（2）计算量比CCD大。   
+
+
 P124    
 
 ## Example: Quadratic Programming   
@@ -578,6 +634,9 @@ where \\(A\\) is positive definite:
 $$
 A=A^T,\theta ^TA\theta \ge 0 \text{ for any } \theta 
 $$
+
+
+> &#x1F446; 这几页介绍二次函数求极值的问题。   
 
 
 
@@ -614,6 +673,10 @@ $$
 \end{align*}
 $$
 
+> &#x1F446; IK问题可以转化为二次函数求极值问题。   
+把\\(f(\theta )\\)在\\(\theta ^{\circ} \\) 处一阶泰勒展开。   
+
+
 P128    
 
 \begin{align*}
@@ -621,6 +684,9 @@ P128
  = &\frac{1}{2} (\theta -\theta ^0)^TJ^TJ(\theta -\theta ^0)\\\\
  & +(\theta -\theta ^0)^TJ^T(f(\theta ^0)-\tilde{x})+c 
 \end{align*}
+
+> &#x1F446; 把它代入目标函数。  
+
 
 P129   
 ## Gauss-Newton Method   
@@ -634,6 +700,16 @@ $$
 $$
 
 first-order optimality condition    
+
+
+> &#x1F446; 令 \\((\nabla F (\theta ))^T=0\\)   
+
+
+
+P132   
+
+> &#x1F446; J的维度是\\(3\times N\\)，因此\\(J^TJ\\)不可逆。   
+
 
 
 P133   
@@ -651,6 +727,10 @@ P134
 ## Jacobian Inverse Method
  
 ![](/assets/03-042.png)  
+
+
+> &#x1F446; \\(\nabla\\) 是当前和目标的末端点位置之差。  
+
 
 
 P135   
@@ -702,16 +782,28 @@ P141
 
 ![](/assets/03-49.png)  
 
+
+> &#x1F446; 改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变\\(J\\)的形状为方阵或高瘦阵，此时\\(J^TJ\\)可逆，则换一种方式求逆。   
+
+
+
 P143   
 ## Jacobian Inverse Method
 
 ![](/assets/03-50.png)     
+
+
+> &#x1F446; 左：次约束，右：过约束。  
+
 
 P145   
 
 Usually faster than gradient descent/Jacobian transpose method.   
 
 Any problem? \\(JJ^T/J^TJ\\) can be (near) singular!    
+
+
+> &#x1F446; 快一点是因为\\(J^＋\\)是近似的\\(J\\)，计算量较小，问题是可能得到一个错很远的\\(J^＋\\)，导致结果不稳定。   
 
 
 
@@ -727,24 +819,48 @@ $$
 J^\ast =(J^TJ+\lambda I)^{-1}J^T
 $$
 
+> &#x1F446; 解决方法，引入阻尼项   
+
+
 P148   
 Also called Levenberg-Marquardt algorithm    
+
+
+> &#x1F446; 引入阻尼顶后，两种方式的计算结果相同   
+当入很大时，此方法等价于梯度下降法。   
+
+
 
 P149   
 ## Damped Jacobian Inverse Method
 
 Using the minimal rotations to reach the target    
 
+
+> &#x1F446; 入的几何意义
+
+
 P150  
 ## Damped Jacobian Inverse Method  
 
 ![](/assets/03-51.png)  
+
+> &#x1F446; 进一步地，分别给每个关节移动权重。  
+权重越大，移动越小。   
+
+
 
 P152   
 ## Character IK
 
 
 ![](/assets/03-052.png)  
+
+
+> &#x1F446; 全身IK，不同链条上都有目标点。   
+可从同时优化所有链，或选一个或选一些。   
+IK要更新哪关节也可以自由设定。   
+
 
 P156   
 ## Outline   

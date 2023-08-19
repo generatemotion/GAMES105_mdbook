@@ -319,6 +319,12 @@ How to find axis 𝒖 and angle \\(\theta \\)?
 
 ![](/assets/02-13.png)    
 
+
+> &#x1F446; 用\\(R\\)风旋转时，向量\\(u\\)不会变化。   
+对于任意\\(R\\)，都存在这样一个\\(u\\).     
+
+
+
 P80   
 
 ## Rotation Axis and Angle   
@@ -329,6 +335,9 @@ P80
 P81  
 
 ![](/assets/02-015.png)   
+
+
+> &#x1F446; \\({u}' \\)与\\({u} \\)共线，\\({u}' \\)单位化得到\\({u} \\)．  
 
 
 P82  
@@ -352,6 +361,9 @@ P83
 ## Rotation Axis and Angle   
 
 ![](/assets/02-17.png)    
+
+
+> &#x1F446; 从\\(R\\)的公式也能得出相同的结论    
 
 
 P85   
@@ -397,6 +409,10 @@ P91
 |---|
 
 
+> &#x1F446; det只是把空间减少一半，没有降低自由度
+
+
+
 P93  
 ## Interpolation of Translations
 
@@ -408,6 +424,10 @@ P93
 $$
 x_t=(1-t)x_0+tx_1
 $$
+
+
+> &#x1F446; 平移使用线性插值    
+
 
 
 P95   
@@ -497,6 +517,11 @@ $$
 R_z(\gamma )R_y(\beta )R_x(\alpha )
 $$
 
+
+> &#x1F446; 使用欧拉角时应先明确所使用的convetion 和顺序。  
+不同的商业软件可能有不同的内置参数。   
+
+
 P104   
 
 ## [囘] Gimbal Lock    
@@ -504,11 +529,19 @@ P104
  - When two local axes are driven into a parallel configuration, 
 one degree of freedom is “locked”   
 
+
+> &#x1F446; 当其中两个轴共线时，会丢失一个自由度，此时表示不唯一（奇异点）   
+
+
+
 P105  
 
 ## [囘] Euler Angles   
 
 ![](/assets/02-23.png) 
+
+
+> &#x1F446; 插值时需注意作用域为 \\([-\pi ,\pi ]\\)，否则容易出现翻转现象。   
 
 
 P107  
@@ -529,6 +562,10 @@ P107
 
 
 ![](/assets/02-24.png) 
+
+
+
+
 
 
 P110   
@@ -644,6 +681,11 @@ note:
  - \\(ij=k,ji=-k (^*\text{cross product})\\)   
  - \\(jk=i,kj=-i\\)   
  - \\(ki=j,ik=-j\\)   
+
+
+> &#x1F446; \\(q^1\cdot q^2\\)和\\(q^1q^2\\)是两种不同的运算。
+
+
 
 P119   
 
@@ -840,6 +882,9 @@ p
 $$
 
 
+> &#x1F446; 纯方向\\(P\\)可用四元数表示为 \\([o p]\\)   
+
+
 P129   
 
 ## [𡇌] Rotation a Vector Using Unit Quaternions  
@@ -937,6 +982,9 @@ P134
 A unit hypersphere in 4D space    
 
 
+> &#x1F446; 单位四元数表现出来是4D空间中的球核，\\(q_1q_2\\)是球核上的两个点，希望沿球面轨迹插值。   
+
+
 
 P135   
 ## [𡇌] Linear Interpolation   
@@ -970,6 +1018,11 @@ $$
 \end{matrix}
 $$
 
+
+> &#x1F446; 当\\(u_o＝-u_1\\)时，可能得到某个\\(\tilde{q} _t=0\\)，无法单位化    
+解决方法:根据\\(u_0＝-u_0\\)，先找到\\(u_0\\)和\\(u_1\\)在数值上最接近的四元数表示。   
+
+
 P137   
 
 ## [𡇌] SLERP: Spherical Linear Interpolation   
@@ -980,6 +1033,9 @@ $$
 
 
 ![](/assets/02-34.png)  
+
+
+> &#x1F446; 如何让插值结果速度恒定？
 
 P138   
 

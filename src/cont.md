@@ -17,6 +17,10 @@ P4
 
 Given a set of example motions {\\(x_i\\)}∼ \\(p(x)\\)   
 
+
+> &#x1F446; 由于\\(p（x）\\) 无法由计算得出，所以从数据去学。   
+
+
 P5   
 ## Learning Motion Models
 
@@ -28,6 +32,9 @@ P6
 
 
 ![](/assets/06a-2.png)  
+
+
+> &#x1F446; 不止是每个动作合理，一组动作序列也要合理。   
 
 
 P7   
@@ -60,6 +67,16 @@ $$
   & …… 
 \end{align*}
 $$
+
+
+> &#x1F446; 如果概率分布是正确的，基于这个分布采样能得到一个合理的动作，且满足前提条件。   
+
+
+
+P13   
+
+> &#x1F446; 序列\\(\times \\)合理 ＝ 已知序列中的前\\(t-1\\) 帧时第七帧应当合理。  
+
 
 
 P14   
@@ -99,6 +116,11 @@ $$
 Markov Property   
 
 
+
+> &#x1F446; Markov性：无记忆性  
+
+
+
 P18   
 ## Two Perspectives on a Motion Sequence
 
@@ -106,6 +128,10 @@ P18
 |---|---|
 |![](/assets/06a-03.png) |![](/assets/06a-04.png) |
 |![](/assets/06a-05.png) |![](/assets/06a-06.png) |
+
+
+> &#x1F446; 游戏里面通常用后者    
+无交互无实时通常用前者   
 
 
 P25   
@@ -119,6 +145,10 @@ $$
 ![](/assets/06a-07.png)   
 
 
+> &#x1F446; 由于只和上一帧相关，二元组\\(（X_{t-1}，X_t）\\)构成了一个数据，希望从里面学到一些信息。   
+Neural Network相关部分跳过。  
+
+
 P40   
 ## Ambiguity Issue   
 
@@ -129,6 +159,10 @@ $$
 ![](/assets/06a-08.png)   
 
 
+> &#x1F446; 但是 \\(x_t\\) 和 \\(x_{t-1}\\) 的关系是有歧义性的，最后学到一个平均的\\(X_t\\).   
+
+
+
 P41   
 ## Hidden Variables
 
@@ -137,6 +171,9 @@ x_t=f(x_{t-1};z)
 $$
 
 ![](/assets/06a-09.png)    
+
+
+> &#x1F446; 需要加入一个额外的变量，可以来自用户输入或先验信息。关键是怎么找到\\(Z\\)，使学习比较有效。   
 
 
 P42  
@@ -151,6 +188,9 @@ P43
 
 
 ![](/assets/06a-11.png)  
+
+
+> &#x1F446; 控制参数，表明用户希望角色怎么走。   
 
 
 P44  
@@ -174,6 +214,9 @@ $$
 ![](/assets/06a-13.png)   
 
 
+> &#x1F446; 调整相位与时间的对应关系，可影响走路速度。   
+
+
 P47    
 ## Mixture of Experts
 
@@ -182,6 +225,8 @@ P47
 $$
 y=\sum_{i}^{} w_if(x;\theta _i)
 $$
+
+> &#x1F446; 对专家结果混合。  
 
 
 P48  
@@ -196,6 +241,9 @@ y=f(x;\sum_{i}^{} w_i\theta _i)
 $$
 
 
+> &#x1F446; 对专家模型参数混合。
+
+
 P49   
 ## PFNN: Phase-Functioned Neural Networks
 
@@ -204,6 +252,10 @@ x_t = f (x_{t-1}; c_t, \theta _ t = \sum _ {i}^{} w_i(\phi _t) \theta _i)
 $$
 
 ![](/assets/06a-16.png)   
+
+
+> &#x1F446; 专家混合的权重由phase决定。  
+让每个专家专一地学特定的phase.   
 
 
 P50   
@@ -223,6 +275,8 @@ $$
 $$
 
 
+> &#x1F446; PFNN缺点（1）轻微滑步（2）急转身时无减速。   
+
 
 P53   
 ## Advanced Phase Functions
@@ -236,6 +290,11 @@ P54
 
 
 ![](/assets/06a-20.png)   
+
+
+
+> &#x1F446; PFNN有确定的象位及对应的权重，但打篮球等动作，或动物走路，没有确定的象位。  
+因此权重由当前状态与用户输入算出来。   
 
 
 
@@ -255,12 +314,19 @@ P57
 ![](/assets/06a-24.png)   
 
 
+> &#x1F446;不学两帧关系，而是直接学概率密度函数。   
+难点：（1）真实PDF可能非常复杂（2）从一个PDF中采样也很难。   
+
+
 P59   
 ## Generative Models
 
 
 ![](/assets/06a-025.png)   
 
+
+> &#x1F446; 一般生成式模型是这样的形式：从一个简单的PDF，通过\\(f（Z）\\)，映射到\\(p（x）\\).   
+关键是\\(f（z）\\)要学好。  
 
 
 P60   
@@ -272,6 +338,10 @@ P60
 | Generative Adversarial Network |![](/assets/06a-26.png) |
 
 
+> &#x1F446; VAE：已知一些真实数据采样，用Encoder编码到简单分布上的点，再用Decoder变回原分布上的点。  
+GAN：无Encoder，增加一个判别器。   
+
+
 P61   
 ## Generative Models
 
@@ -279,6 +349,11 @@ P61
 |--|--|
 | Normalizing Flows |![](/assets/06a-27.png)   |
 | Diffusion Models  |![](/assets/06a-28.png)   |
+
+
+> &#x1F446; 标准化流：类似VAE，使用一个可逆函数。   
+扩散模型：多次编码与解码。   
+一个动作序列相当于隐空间里的一条轨迹。   
 
 
 P62  

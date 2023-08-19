@@ -13,6 +13,10 @@ P2
      - ……   
 
 
+> &#x1F446; 基于数据：对现有数据进行连接重组   
+甚于学习：对数据处理，放入模型，再生成数据。   
+
+
 P3   
 ## Recap: Interactive Animation    
 
@@ -29,6 +33,11 @@ P9
 
 ![](/assets/06-02.png)   
 
+> &#x1F446; 坐标系对齐后，根据用户输选择下一个片断。   
+可以结合路径规划算，实现一些智能角色。  
+Motion Graph 只是一个底层数据结构。   
+
+
 
 P14   
 ## Need a Faster Response?
@@ -40,12 +49,17 @@ P14
 | ![](/assets/06-03.png) | ![](/assets/06-04.png)   |
 
 
+> &#x1F446; Mation Matching 是将 Motion Fields 简化以后加一些比较好的工程实践。   
+
 
 P17  
 
 ## Motion Fields
 
 ![](/assets/06-05.png)   
+
+
+> &#x1F446; 每条链路代表一个动作，灰圈代表动作里的一帧，整体构成一个很大的Field.   
 
 
 P20   
@@ -55,12 +69,22 @@ P20
 ![](/assets/06-06.png)   
 
 
+> &#x1F446; 每一帧有一些最近邻，它们来自不同动作，有不同的状态。   
+绿色代表向右，挑出对应帧。做混合。  
+
+
 P23   
 ## Motion Fields
 
 ![](/assets/06-07.png)   
 
 ![](/assets/06-08.png)   
+
+
+> &#x1F446; 根据用户输入设置不同权重，会得到不同结果    
+优点：(1) 自由控制（2）支持外力，可结果物理仿真（3）不需要使首尾帧相似的预处理。  
+缺点：需要设计一些规则来计算最近邻的混合。    
+解决方法：强化学习
 
 
 P24  
@@ -74,6 +98,13 @@ P31
 
 
 ![](/assets/06-10.png)   
+
+
+P32  
+
+
+> &#x1F446; 简化一：只找一个最近邻，不需要blend. 然后用平滑解决跳变问题。
+
 
 
 P34   
@@ -118,8 +149,17 @@ P36
 ![](/assets/06-11.png)   
 
 
+
+> &#x1F446; 保证所使用的动作集能够覆盖到目标。  
+优点：（1）实现简单（2）控制灵活（3）可结合物理仿真。   
+缺点：（1）不能解决滑步   
+
+
 P39   
 ## Statistical Models of Human Motion   
+
+
+> &#x1F446; 根据已有数据，对“动作自然“建模。   
 
 
 P43   
@@ -132,6 +172,9 @@ P43
  - ……   
 
 
+> &#x1F446; “自然的动作”参数集有多成高维的动作参数空间的流形曲面。   
+
+
 P45   
 ## Principal Component Analysis (PCA)   
 
@@ -140,6 +183,9 @@ P45
     - dimensionality reduction   
  
 
+> &#x1F446; PCA细节跳过，目的：降维，抓住主要特征。   
+
+
 P65   
 
 a pose \\(x\\) with smaller \\(\sum _k\frac{((x-\bar{x})\cdot u_k)^2 }{\sigma ^2_k}\\) is more likely to be a good pose   
@@ -147,6 +193,9 @@ a pose \\(x\\) with smaller \\(\sum _k\frac{((x-\bar{x})\cdot u_k)^2 }{\sigma ^2
 
 ![](/assets/06-12.png)   
 
+
+
+> &#x1F446; 可作为动作生成的先验，告诉我一个动作是否合理。   
 
 
 P66  
@@ -174,16 +223,30 @@ $$
 $$
 
 
+> &#x1F446; 把P65方法应用到IK来判断动作好坏的实例。   
+
+
+
 P71  
 ## Data Distribution   
 
 \\(p(x)\\) : probability that \\(x\\) is a natural pose    
 
 
+> &#x1F446; 假设存在这样一个分布，但不知道分布的具体形式，要估计这样的分布
+（1）从分布中采样，例如：动捕   
+（2）通过各种模型把分布估计出来，即从数据中估计出模型参数。   
+
+
 P75   
 ## Gaussian Distribution
 
 ![](/assets/06-19.png)   
+
+
+P77  
+
+> &#x1F446; PCA可以看作一种高斯混合分布。  
 
 
 P76   
@@ -249,6 +312,9 @@ $$
 $$
 
 
+> &#x1F446; 第一项：符合目标。第二项：动作合理。   
+
+
 P81   
 ## Motion Synthesis with a Motion Prior  
 
@@ -293,12 +359,24 @@ P86
 ![](/assets/06-15.png)   
 
 
-P87  
-Min et al. 2009
+> &#x1F446; 使用高斯混合模型，用于动作编辑。
+> &#x2753; 单顺动作合理，动作序列就合理吗？
+
+
+P87    
+Min et al. 2009   
+
+
+> &#x1F446; 视频动捕是欠约束问题，但可以通过分布过滤掉不合理的结果。  
+
+
 
 P88  
 
 ![](/assets/06-16.png)   
+
+
+> &#x1F446; 缺点：实现麻烦，很多超参。   
 
 
 P90   
@@ -332,7 +410,7 @@ Learning Multi-Objective Control]
 [Holden et al 2020, Learned Motion Matching]
 
 
-
+> &#x1F446; 用DL代替复来的模型，来估计动作先验。  
 
 
 ---------------------------------------

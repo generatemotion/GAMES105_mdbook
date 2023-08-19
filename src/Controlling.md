@@ -75,6 +75,10 @@ $$
 
 
 
+> &#x1F446; PD control 的过程类似于一个弹簧系统。  
+
+
+
 P11   
 ## Stability of PD Control
 
@@ -92,6 +96,11 @@ v_n \\\\
 x_n
 \end{bmatrix}
 $$
+
+
+> &#x1F446; (1) 假设\\(m＝1\\) (2) 代入f到方程组
+(3) 方程组写成矩阵形式  
+\\(h\\)为时间步长。  
 
 
 
@@ -121,11 +130,18 @@ The system is unstable!
 Condition of stability: \\(|\lambda _i|\le  1 \text{ for all } \lambda _i\\)   
 
 
+> &#x1F446; 根据矩阵特征值的性质可直接得出结论。  
+基于中间变是\\(Z_n\\)推导的过程跳过。   
+
 
 P20
 ## Stability of PD Control
 
 ![](/assets/10-07.png)
+
+
+> &#x1F446; 如果\\(K_p\\)和\\(K_d\\)变大，就必须以一个较小的时间步长进行仿真。   
+
 
 
 P21  
@@ -167,6 +183,12 @@ $$
 $$
 
 
+> &#x1F446; 解决方法：半隐式欧拉 → 隐式欧拉，即用下一时刻的力计算下一时刻的速度。  
+实际上，计算\\(f_{n＋1}\\)只使用\\(V_{n＋1}\\)，不使用\\(x_{n＋1}\\)，因为\\(x_{n＋1}\\)会引入非常复杂的计算。   
+由于\\(v_{n＋1}\\)未知，需通过解方程组来求解。   
+
+
+
 P23  
 ## A More Stable PD Control
 
@@ -190,6 +212,10 @@ P24
 ![](/assets/10-08.png)
 
 
+> &#x1F446; \\(v_{n}\\)换成\\(v_{n＋1}\\)，很大承度上提高了稳定性。  
+
+
+
 P25  
 ## Stable PD Control   
 
@@ -199,6 +225,10 @@ $$
 
 
 ![](/assets/10-09.png)
+
+
+> &#x1F446; 把隐式方法应用到角色控制上。  
+
 
 
 P26  
@@ -235,6 +265,10 @@ Apply \\(\tau _0\\) to the root body
 Non-zero net force/torque on the character!    
 
 
+> &#x1F446; 当前系统仍存的问题。(1) 稳态误差，相位延迟 (2) 缺少对根结点的力。   
+净外力能解决问题2，但会有“提线木偶”的artifacts.   
+
+
 
 P30   
 ## Trajectory Optimization
@@ -268,6 +302,10 @@ M\dot{v}+C(x,v)   & =f+J^T\lambda & \text{Equations of motion} \\\\
 $$
 
 
+> &#x1F446; 解决方法：不直接学习目标轨迹，而是先对目标轨迹增加一个修正。  
+
+
+
 P33 
 ## A very simple example   
 
@@ -287,6 +325,11 @@ $$
 ![](/assets/10-11.png)
 
 
+> &#x1F446; 仍以方块移动到目标高度为例。  
+目标函数：目标顶＋正则项   
+约束：半隐式积分的运动方程   
+
+
 P34   
 ## A very simple example
  
@@ -295,6 +338,12 @@ P34
 |--|--|
 |Hard constraints: | ![](/assets/10-12.png) |
 | Soft constraints:  |![](/assets/10-013.png) |
+
+
+> &#x1F446; 以两种方式体现约束：
+（1）Hard：必须满足，难解，不稳定。  
+（2）Suft：尽可能满足，易求解。
+
 
 
 P35   
@@ -308,6 +357,10 @@ Assume the optimization variables {\\(x_n, v_n, \tilde{x}_n\\)} are values of a 
 
 Optimize the parameters of the curves \\(\theta\\) instead     
  - with smaller number of variables than the original problem    
+
+
+> &#x1F446; 参数量太大，难以优化。  
+解决方法：假设参数符合特定的曲线，只学习曲线的参数，再生成完整的参数。   
 
 
 
@@ -357,6 +410,10 @@ P42
     - Bayesian optimization, Evolution strategies (e.g. CMA-ES), Stochastic optimization, Sequential Monte Carlo methods, ……   
 
 
+> &#x1F446; 启发式方法或随机采样方法，不需要梯度。   
+慢、不精确。   
+
+
 P43  
 ## CMA-ES   
 
@@ -377,6 +434,10 @@ Goal: find the variables 𝒙 that optimize \\(f(x)\\)
 
 
 
+> &#x1F446; 优点：稳定，无梯度，可用于黑盒系统。  
+
+
+
 P44  
 ## CMA-ES   
 
@@ -386,6 +447,9 @@ P44
 P45    
 
 [Al Borno et al. 2013 - Trajectory Optimization for Full-Body Movements with Complex Contacts]   
+
+
+> &#x1F446; 只优化目标轨迹，不优化仿真轨迹。  
 
 
 P46  
@@ -398,16 +462,33 @@ P46
 ![](/assets/10-18.png)
 
 
+> &#x1F446; CMA-ES的缺点：
+（1）每次都从头到尾做仿真，计算量大。   
+（2）如果仿真轨迹长，则难收敛。   
+改进方法：每次采样，只考虑下面一帧。   
+
+
+
 P47  
 ## SAMCON   
 
 ![](/assets/10-19.png)
 
 
+> &#x1F446; 把轨迹分割开，每次优化一小段。  
+
+
+
 P48  
 ## Sampling & Simulation
 
 ![](/assets/10-20.png)
+
+
+> &#x1F446; 在目标轨迹上增加偏移，跟踪偏移之后的轨迹。  
+偏移量未知，因此以高斯分布对偏移量采样。  
+高斯分布可由其它分布代替。  
+
 
 
 P49  
@@ -417,16 +498,30 @@ P49
 ![](/assets/10-21.png)
 
 
+> &#x1F446; 对每个偏移量做一次仿真，生成新的状态，保留其中与当目标接近的N个。   
+
+
+
 P50  
 ## SAMCON Iterations
 
 ![](/assets/10-22.png)
 
 
+> &#x1F446; 从上一步N个中随机选择出发点，以及随机的偏移量，再做仿真与筛选。  
+
+
+
 P51  
 ## Constructed Open-loop Control Trajectory
 
 ![](/assets/10-23.png)
+
+> &#x1F446; 最终找到一组最接近的。   
+原理：只选一个容易掉入局部最优，因此保留多个。
+蒙特卡罗＋动态规划   
+优点：穿膜问题也能被修正掉，可还原动捕数据，可根据环境影响而自动调整。  
+
 
 P54  
 ## Feedforward Control
@@ -435,11 +530,19 @@ P54
 ![](/assets/10-24.png)
 
 
+> &#x1F446; 前馈控制，要求每一步的起始状态都是在获取轨迹过程中能得到的状态。  
+如果对起始状态加一点挠动，状态会偏离很远。  
+
+
 P56  
 ## Feedback Control
 
 
 ![](/assets/10-025.png)
+
+
+> &#x1F446; 解决方法：引入反馈策略。根据当前偏差，自动计算出更正，把更正叠加到控制轨迹上。   
+
 
 
 P57  
@@ -462,6 +565,9 @@ What is balance?
 ![](/assets/10-28.png)   
 
 
+> &#x1F446; Static Balance：在不发生移动的情况下，通过简单的控制策略，保证角色不摔倒。  
+平衡：质心在支撑面内。  
+
 
 P64  
 ## Static Balance   
@@ -469,6 +575,10 @@ P64
 What is balance?   
 
 ![](/assets/10-29.png)   
+
+
+> &#x1F446; 人的质心：每一段的质心的加权平均。  
+人的支撑面：两脚之内。   
 
 
 P66 
@@ -483,6 +593,11 @@ A simple strategy to maintain balance:
 
 
 ![](/assets/10-30.png)   
+
+
+> &#x1F446; 力矩1：让角色保持某个姿势。  
+力矩2：让质心与目标质心位置接近。  
+
 
 
 P68  
@@ -502,10 +617,18 @@ Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) ap
  - Also called **“virtual force”**   
 
 
+> &#x1F446; 实现static balance，除了PD控制还有其它方法。  
+通过施下\\(\tau _1 ，\tau _2，\tau _3\\)来达到给\\(x\\)施加\\(f\\)的效果！  
+
+
+
 P70   
 ## Jacobian Transpose Control  
 
 Make \\(f\\) and \\(\tau _i\\) done the same work    
+
+
+> &#x1F446; 从做功的角度。  
 
 
 
@@ -557,12 +680,20 @@ f=k_p(\bar{c} -c)-k_d\dot{c}
 $$
 
 
+> &#x1F446; P66中在Hips上加力矩的方式只能进行简单的控制。  
+可以通过虚力实现相似的效果。  
+
+
+
 P78   
 ## Static Balance   
 
  - Assuming \\(f\\) **is applied to the CoM**, compute necessary joint torques using Jacobian transpose control to achieve it   
 
  - Usually using the joints in the legs   
+
+
+> &#x1F446; C 不一定是投影距离，还可以描述高度距离，实现站起蹲下的效果。 
 
 
 P79   
