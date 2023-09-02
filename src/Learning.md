@@ -18,9 +18,9 @@ P2
 P3  
 ## Walking
 
-![](/assets/11-01.png)
+![](./assets/11-01.png)
 
-![](/assets/11-02.png)
+![](./assets/11-02.png)
 
 phases of a walking gait cycle   
 Pirker and Katzenschlager 2017.    
@@ -30,14 +30,14 @@ Pirker and Katzenschlager 2017.
 P4   
 ## Walking
 
-![](/assets/11-04.png)
+![](./assets/11-04.png)
 
 Walking: move without loss of contact, or flight phases   
 
 P5  
 ## Walking   
 
-![](/assets/11-05.png)
+![](./assets/11-05.png)
 
 Running   
 
@@ -45,24 +45,24 @@ Running
 P7  
 ## Walking with Static Balance  
 
-![](/assets/11-6.png)
+![](./assets/11-6.png)
 
-![](/assets/11-7.png) 
+![](./assets/11-7.png) 
 
 
 P8   
 ## Walking with Static Balance   
 
 
-![](/assets/11-08.png)
-![](/assets/11-09.png)
+![](./assets/11-08.png)
+![](./assets/11-09.png)
 
 P9   
 ## Walking with Static Balance  
 
-![](/assets/11-10.png)
+![](./assets/11-10.png)
 
-![](/assets/11-11.png)
+![](./assets/11-11.png)
 
 
 > &#x2705; 以上过程假设角色处于static状态。   
@@ -79,12 +79,12 @@ GRF＝支持力（向上）＋动摩擦力（有速度时才有）
 P12  
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-12.png)   
+![](./assets/11-12.png)   
 
 P13   
 ## Recall: A System of Links and Joints
 
-![](/assets/11-13.png)   
+![](./assets/11-13.png)   
 
 $$
 M\dot{v} +C(x,v)=f+f_J
@@ -101,9 +101,9 @@ P15
 P16  
 ## Zero-Moment Point (ZMP)  
 
-![](/assets/11-14.png)   
+![](./assets/11-14.png)   
 
-![](/assets/11-15.png)   
+![](./assets/11-15.png)   
 
 
 P18   
@@ -113,7 +113,7 @@ Assuming the ground is flat and level
 so \\(p_i\\) - \\(p\\)  is always in the horizontal plane   
 
 
-![](/assets/11-16.png)   
+![](./assets/11-16.png)   
 
 
 > &#x2705; 把 \\(\tau _{GRF} \\) 分解为与地面垂直部分和与地面平行部分。  
@@ -122,25 +122,25 @@ so \\(p_i\\) - \\(p\\)  is always in the horizontal plane
 P19  
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-1.png)   
+![](./assets/11-1.png)   
 
 
 P20   
 ## Zero-Moment Point (ZMP)
 
 
-![](/assets/11-17.png)   
+![](./assets/11-17.png)   
 
 
 P21  
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-19.png)   
+![](./assets/11-19.png)   
 
-![](/assets/11-20.png)   
+![](./assets/11-20.png)   
 
 
-![](/assets/11-11-1.png)   
+![](./assets/11-11-1.png)   
 
 Can we find \\(p\\) such that \\(\tau _{GRF}^{xz}=0\\) ?     
 
@@ -148,13 +148,13 @@ Can we find \\(p\\) such that \\(\tau _{GRF}^{xz}=0\\) ?
 P22   
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-18.png)   
+![](./assets/11-18.png)   
 
 
 P23  
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-19.png)     
+![](./assets/11-19.png)     
 
 $$
 \begin{align*}
@@ -189,7 +189,7 @@ P26
 P27  
 ## Zero-Moment Point (ZMP)
 
-![](/assets/11-20.png)   
+![](./assets/11-20.png)   
 
 The foot should not move in a **stance phase**   
 
@@ -308,11 +308,11 @@ P37
     - Inverse Kinematics   
     - Inverse Dynamics   
 
-![](/assets/11-24.png) 
+![](./assets/11-24.png) 
 
-![](/assets/11-22.png)   
+![](./assets/11-22.png)   
 
-![](/assets/11-23.png)   
+![](./assets/11-23.png)   
 
   
 
@@ -324,11 +324,11 @@ P38
 ## Example: ZMP-Guided Control   
 
 
-![](/assets/11-26-1.png)  
+![](./assets/11-26-1.png)  
 
-![](/assets/11-25.png)   
+![](./assets/11-25.png)   
 
-![](/assets/11-26.png)  
+![](./assets/11-26.png)  
 
 
 > &#x2705; 局限性：(1) 脚必须与地面平行。 (2) 脚必须弯曲。 (3) 整体移动速度慢。  
@@ -339,7 +339,7 @@ P39
 ## Example: ZMP-Guided Control
 
 
-![](/assets/11-27.png)   
+![](./assets/11-27.png)   
 
 
 > &#x2705; 人的特点是重心偏离再拉回来，这样比始终保持平更省。   
@@ -359,9 +359,9 @@ P42
 P43  
 ## Inverted Pendulum Model (IPM)
 
-![](/assets/11-27-1.png)   
+![](./assets/11-27-1.png)   
 
-![](/assets/11-27-2.png)   
+![](./assets/11-27-2.png)   
 
 Inverted pendulum on a cart   
 
@@ -371,7 +371,7 @@ P45
 
  - Step Plan with IPM
 
-![](/assets/11-28.png)  
+![](./assets/11-28.png)  
 
 
 > &#x2705; 脚到重心是一个倒立摆。  
@@ -388,7 +388,7 @@ P46
     - Create foot trajectory based on the step plan   
     - Compute target poses using IK   
 
-![](/assets/11-29.png)  
+![](./assets/11-29.png)  
 
 
 > &#x2705; 动能转势能，能量守恒．算出高度。   
@@ -400,7 +400,7 @@ P47
 
  - Step Plan with IPM
 
-![](/assets/11-30.png)  
+![](./assets/11-30.png)  
 
 
 P48   
@@ -415,7 +415,7 @@ P49
  - SIMBICON (SIMple BIped Locomotion CONtrol)   
     - Yin et al. 2007   
  
-![](/assets/11-31.png)  
+![](./assets/11-31.png)  
 
 
 > &#x2705; 本质上是一个跟踪控制器。  
@@ -430,7 +430,7 @@ P50
     - FSM (Finite State Machine) or mocap   
 
 
-![](/assets/11-32.png)  
+![](./assets/11-32.png)  
 
 
 > &#x2705; 控制目标：上半身保持竖直。  
@@ -444,7 +444,7 @@ P51
  - Step 2:    
     - control torso and swing-hip wrt world frame   
 
-![](/assets/11-33.png)  
+![](./assets/11-33.png)  
 
 
 
@@ -457,7 +457,7 @@ P52
 
  - Step 3: COM feedback   
 
-![](/assets/11-34.png)  
+![](./assets/11-34.png)  
 
 
 > &#x2705; 简化问题：\\(d\\) 和 \\(v\\) 与 \\(\theta _d\\) 的速度是线性关系。速度会转化为PD目标的修正。   
@@ -469,12 +469,12 @@ P53
 
  - Step 3: COM feedback    
 
-![](/assets/11-35.png)  
+![](./assets/11-35.png)  
 
 P54   
 ## SIMBICON   
  
-![](/assets/11-36.png)  
+![](./assets/11-36.png)  
 
 
 P55   
@@ -482,7 +482,7 @@ P55
 
  - How to generalize to other motion?    
 
-![](/assets/11-37.png)  
+![](./assets/11-37.png)  
 
 
 ---------------------------------------

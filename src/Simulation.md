@@ -36,7 +36,7 @@ P5
 P57  
 ## Kinematics vs. Dynamics
 
-![](/assets/08-01.png)
+![](./assets/08-01.png)
 
 > &#x2705; 运动学与动力学，主要区别在于有没有考虑角色质量。因为质量代表贯性，有贯性就不能瞬移。   
 动力学基本概念跳过。P58-P89   
@@ -50,7 +50,7 @@ P91
 P92   
 ## A System with Two Links
 
-![](/assets/08-02.png)
+![](./assets/08-02.png)
 
 
 
@@ -63,7 +63,7 @@ P93
 P94  
 ## A System with Two Links
 
-![](/assets/08-03.png)
+![](./assets/08-03.png)
 
 
 $$
@@ -82,7 +82,7 @@ P95
 P96   
 ## A System with Two Links and a Joint
 
-![](/assets/08-04.png)
+![](./assets/08-04.png)
 
 $$
 M\dot{v} +C(x,v)=f+f_J
@@ -100,12 +100,12 @@ P98
 ## Constraints  
 
 
-![](/assets/08-05.png)
+![](./assets/08-05.png)
 
 
 P99 
 
-![](/assets/08-5.png)
+![](./assets/08-5.png)
 
 
 > &#x2705; 为了让小球满足约束，需给小球一个约束力。   
@@ -116,7 +116,7 @@ P99
 P100  
 ## Constraint Force
 
-![](/assets/08-06.png)
+![](./assets/08-06.png)
 
 \\(\ast \\) Constraint is passive No energy gain or loss!!!   
 
@@ -132,7 +132,7 @@ $$
 
 P101   
 
-![](/assets/08-07.png)
+![](./assets/08-07.png)
 
 
 > &#x2705; 假设\\(M，x，v．f\\) 已知，求 \\(f_c\\)    
@@ -145,7 +145,7 @@ P101
 P102   
 ## Equation of Motion with Constraints
 
-![](/assets/08-08.png)
+![](./assets/08-08.png)
 
 $$
 \begin{align*}
@@ -190,7 +190,7 @@ P105
 ## Numerical Solution   
 
 
-![](/assets/08-09.png)
+![](./assets/08-09.png)
 
 
 > &#x2705; 前面是约束应用的简单例子，如何把约束应用到两个物体的连接约束上。   
@@ -201,7 +201,7 @@ P105
 P106   
 ## Joint Constraint
 
-![](/assets/08-10.png)
+![](./assets/08-10.png)
 
 $$
 x_1+R_1r_1=x_J=x_2+R_2r_2
@@ -262,7 +262,7 @@ Hinge约束：除了位置还有角速度约束，在某个轴上的角速度应
 P110   
 ## Different Types of Joints
 
-![](/assets/08-11.png)
+![](./assets/08-11.png)
 
 
 > &#x2705; 分段多刚体在公式上没有本质区别，只是矩阵更大一点。   
@@ -272,7 +272,7 @@ P111
 ## A System with Many Links Joints   
 
 
-![](/assets/08-12.png)
+![](./assets/08-12.png)
 
 
 > &#x2705; 如何处理与地面的接触，让人站在地面上。  
@@ -283,7 +283,7 @@ P111
 P112  
 ## Contacts
 
-![](/assets/08-13.png)
+![](./assets/08-13.png)
 
 
 P114  
@@ -297,7 +297,7 @@ P115
 ## Penalty-based Contact Model   
 
 
-![](/assets/08-14.png)
+![](./assets/08-14.png)
 
 $$
 f_n=-k_pd-k_dv_{c,\perp }
@@ -312,7 +312,7 @@ $$
 P116  
 ## Frictional Contact  
 
-![](/assets/08-15.png)
+![](./assets/08-15.png)
 
 
 > &#x2705; 存在的问题：\\(K_p\\)必须很大，否则脚陷地明显，步长必须非常小，否则不稳定。   
@@ -338,7 +338,7 @@ P118
 P119  
 ## Contact as a Constraint
 
-![](/assets/08-17.png)
+![](./assets/08-17.png)
 
 $$
 x_c  =x+r_c \quad\quad\quad\quad\quad\quad
@@ -373,7 +373,7 @@ P120
 P121   
 ## Contact as a Constraint
 
-![](/assets/08-19.png)
+![](./assets/08-19.png)
 
 
 P122
@@ -412,7 +412,7 @@ P124
 ## Simulation of a Rigid Body System
 
 
-![](/assets/08-18.png)   
+![](./assets/08-18.png)   
 
 
 

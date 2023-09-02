@@ -28,19 +28,19 @@ n. the study of the motion of bodies without reference to mass or force
 P8   
 ## Skeleton
 
-![](/assets/03-01.png)  
+![](./assets/03-01.png)  
 
 P9   
 ## Skeleton
 
-![](/assets/03-02.png)  
+![](./assets/03-02.png)  
 
 
 
 P14    
 ## Kinematics of a Chain
 
-![](/assets/03-03.png)  
+![](./assets/03-03.png)  
 
 $$
 \begin{matrix}
@@ -57,7 +57,7 @@ P15
 ## Kinematics of a Chain
 
 
-![](/assets/03-04.png)  
+![](./assets/03-04.png)  
 
 $$
 \begin{matrix}
@@ -74,7 +74,7 @@ P16
 
 ## Kinematics of a Chain
 
-![](/assets/03-05.png) 
+![](./assets/03-05.png) 
 
 $$
 \begin{matrix}
@@ -90,7 +90,7 @@ $$
 P17    
 ## Kinematics of a Chain
 
-![](/assets/03-06.png) 
+![](./assets/03-06.png) 
 
 $$
 \begin{matrix}
@@ -106,7 +106,7 @@ $$
 P18   
 ## Kinematics of a Chain
 
-![](/assets/03-07.png)  
+![](./assets/03-07.png)  
 
 $$
 \begin{matrix}
@@ -121,7 +121,7 @@ $$
 P19   
 ## Kinematics of a Chain
 
-![](/assets/03-08.png)  
+![](./assets/03-08.png)  
 
 $$
 \begin{matrix}
@@ -137,14 +137,14 @@ P20
 
 ## Kinematics of a Chain
 
-![](/assets/03-09-1.png)  
+![](./assets/03-09-1.png)  
 
 
 
 P21   
 ## Kinematics of a Chain   
 
-![](/assets/03-10-1.png)  
+![](./assets/03-10-1.png)  
 
 
 > &#x2705; 这些Q都是全局旋转，\\(R\\)是局部旋转。  
@@ -153,13 +153,13 @@ P21
 P23   
 ## Kinematics of a Chain   
 
-![](/assets/03-11.png)  
+![](./assets/03-11.png)  
 
 
 P31   
 ## Kinematics of a Chain   
 
-![](/assets/03-011.png)
+![](./assets/03-011.png)
 
 
 > &#x2705; \\(p\\)是全局位置，\\( l\\)是局部偏移。   
@@ -168,13 +168,13 @@ P31
 P37   
 ## Kinematics of a Chain: Summary
 
-![](/assets/03-13.png)  
+![](./assets/03-13.png)  
 
 Forward kinematics:    
 
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
 
-![](/assets/03-14.png)  
+![](./assets/03-14.png)  
 
 
 > &#x2705; \\(x_0\\)是\\(R_4\\)坐标系下的点，求它在全局坐标系下的位置。 
@@ -186,7 +186,7 @@ Forward kinematics:
 
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
 
-![](/assets/03-15.png)  
+![](./assets/03-15.png)  
 
 P39   
 ## Kinematics of a Chain: Summary
@@ -195,7 +195,7 @@ Forward kinematics:
 
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) relative to the local frame of \\(Q_k\\):    
 
-![](/assets/03-16.png)  
+![](./assets/03-16.png)  
 
 
 > &#x2705; 已知全局坐标系下的坐标，求\\(Q_k\\)下的坐标。  
@@ -204,13 +204,13 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) r
 P40    
 ## Kinematics of a Chain: Summary
 
-![](/assets/03-17.png)  
+![](./assets/03-17.png)  
 
 
 P41   
 ## Kinematics of a Character
 
-![](/assets/03-18.png)  
+![](./assets/03-18.png)  
 
 
 > &#x2705; 把角色建模成多条关节链。   
@@ -219,20 +219,20 @@ P41
 P43    
 ## Root Location
 
-![](/assets/03-19.png)  
+![](./assets/03-19.png)  
 
 P45   
 ## Types of Joints
 
-![](/assets/03-20.png)  
+![](./assets/03-20.png)  
 
 P46   
 ## Types of Joints
 
 |||
 |---|---|
-| ![](/assets/03-026.png) |knee, elbow  <br>  <br> hinge joint   <br> revolute joint  |
-| ![](/assets/03-022.png) | hip, shoulder  <br>  <br>ball-and-socket joint   |
+| ![](./assets/03-026.png) |knee, elbow  <br>  <br> hinge joint   <br> revolute joint  |
+| ![](./assets/03-022.png) | hip, shoulder  <br>  <br>ball-and-socket joint   |
 
 
 
@@ -257,8 +257,8 @@ P50
 
 ||||
 |---|---|---|
-| ![](/assets/03-025-2.png)  |![](/assets/03-023.png)  | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br>  hinge joint <br>  revolute joint  |
-| ![](/assets/03-025-1.png)  |![](/assets/03-024.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> ball-and-socket joint |
+| ![](./assets/03-025-2.png)  |![](./assets/03-023.png)  | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br>  hinge joint <br>  revolute joint  |
+| ![](./assets/03-025-1.png)  |![](./assets/03-024.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> ball-and-socket joint |
 
  
 > &#x2705; 关节的自由度最多为3，因为不能自主移动。Hips 除外。
@@ -268,7 +268,7 @@ P50
 P51   
 ## Degrees of Freedom (DoF)
    
-![](/assets/03-25.png)  
+![](./assets/03-25.png)  
 
 
 > &#x2705; 手腕。其实手腕不能自转。
@@ -281,8 +281,8 @@ Joint Limits
 
 ||||
 |---|---|---|
-| ![](/assets/03-025-2.png)  |![](/assets/03-26.png)    | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br> \\(\theta_{\min }\le \theta\le  \theta_{\max } \\) <br> hinge joint <br>  revolute joint  |
-| ![](/assets/03-025-1.png)  |![](/assets/03-27.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> \\(\theta_{\min }\preceq  \theta \preceq  \theta_{\max } \\) <br> ball-and-socket joint |
+| ![](./assets/03-025-2.png)  |![](./assets/03-26.png)    | knee, elbow <br>  \\({\color{Red}{1 \text{DoF}}}\\)  <br> \\(\theta_{\min }\le \theta\le  \theta_{\max } \\) <br> hinge joint <br>  revolute joint  |
+| ![](./assets/03-025-1.png)  |![](./assets/03-27.png) |hip, shoulder <br>  \\({\color{Red}{3 \text{DoF}}}\\) <br> \\(\theta_{\min }\preceq  \theta \preceq  \theta_{\max } \\) <br> ball-and-socket joint |
 
 
 P55  
@@ -332,9 +332,9 @@ P58
 
 See: <https://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html>
 
-![](/assets/03-30-1.png)  
+![](./assets/03-30-1.png)  
 
-![](/assets/03-31-1.png)  
+![](./assets/03-31-1.png)  
 
 
 P59   
@@ -374,14 +374,14 @@ Inverse problem:
 P62   
 ## Inverse Kinematics
 
-![](/assets/03-32.png)  
+![](./assets/03-32.png)  
 
 Given the position of the end-effector \\(x\\), Compute the joint rotations \\(R_i\\)    
 
 P64   
 ## Solutions of IK Problems
 
-![](/assets/03-33.png)  
+![](./assets/03-33.png)  
 
 P67   
 ## A simple solution to a two-joint IK problem
@@ -389,7 +389,7 @@ P67
 1. Rotate joint 1 such that    
 
 
-![](/assets/03-34.png)  
+![](./assets/03-34.png)  
 
 P68   
 ## A simple solution to a two-joint IK problem
@@ -400,7 +400,7 @@ $$
 ||l_{ox}||=||l_{02}||
 $$
 
-![](/assets/03-35.png)  
+![](./assets/03-35.png)  
 
 
 > &#x2705; 使用余弦公式
@@ -410,7 +410,7 @@ $$
 P70   
 ## A simple solution to a two-joint IK problem   
 
-![](/assets/03-36.png)  
+![](./assets/03-36.png)  
 
 1. Rotate joint 1 such that   
 
@@ -427,7 +427,7 @@ $$
 P71   
 ## A simple solution to a two-joint IK problem
 
-![](/assets/03-37.png)  
+![](./assets/03-37.png)  
 
 1. Rotate joint 1 such that 
 
@@ -445,7 +445,7 @@ $$
 
 P72   
 
-![](/assets/03-38.png)  
+![](./assets/03-38.png)  
 
 $$
 x=f(\theta )
@@ -462,7 +462,7 @@ $$
 P74   
 ## IK as an Optimization Problem
 
-![](/assets/03-39.png)  
+![](./assets/03-39.png)  
 
 Find \\(\theta \\) such that      
 
@@ -493,7 +493,7 @@ Update parameters along each axis of the coordinate system
 
 Iterate cyclically through all axes    
 
-![](/assets/03-40.png)  
+![](./assets/03-40.png)  
 
 
 P90   
@@ -501,7 +501,7 @@ P90
 
 Rotate joint 3 such that \\(𝒍_{34}\\) points towards \\(\tilde{x}\\)   
 
-![](/assets/03-41.png)  
+![](./assets/03-41.png)  
 
 
 > &#x2705; 叉乘得到旋转轴，点乘得到旋转角度。  
@@ -515,7 +515,7 @@ Rotate joint 3 such that \\(𝒍_{34}\\) points towards \\(\tilde{x}\\)
 Rotate joint 2 such that \\(𝒍_{24}\\) points towards \\(\tilde{x}\\)   
 
 
-![](/assets/03-42.png)  
+![](./assets/03-42.png)  
 
 
 
@@ -526,7 +526,7 @@ Rotate joint 3 such that \\(𝒍_{34}\\) points towards \\(\tilde{x}\\)
 
 Rotate joint 2 such that \\(𝒍_{24}\\) points towards \\(\tilde{x}\\)  
 
-![](/assets/03-43.png)  
+![](./assets/03-43.png)  
 
 
 P94   
@@ -539,7 +539,7 @@ Rotate joint 2 such that \\(𝒍_{24}\\) points towards \\(\tilde{x}\\)
 
 Rotate joint 1 such that \\(𝒍_{14}\\) points towards \\(\tilde{x}\\)   
 
-![](/assets/03-44.png) 
+![](./assets/03-44.png) 
 
 P95   
 ## Cyclic Coordinate Descent (CCD) IK
@@ -552,7 +552,7 @@ Rotate joint 1 such that \\(𝒍_{14}\\) points towards \\(\tilde{x}\\)
 
 Rotate joint 0 such that \\(𝒍_{14}\\) points towards \\(\tilde{x}\\)   
 
-![](/assets/03-45.png)  
+![](./assets/03-45.png)  
 
 
 P96   
@@ -571,7 +571,7 @@ Rotate joint 3 such that \\({l}'_{34}\\) points towards \\(\tilde{x}\\)
 
 ……    
 
-![](/assets/03-46.png)  
+![](./assets/03-46.png)  
 
 
 P97   
@@ -661,7 +661,7 @@ $$
 F(\theta )=\frac{1}{2} ||f(\theta )-\tilde{x} ||^2_2
 $$
 
-![](/assets/03-47.png)   
+![](./assets/03-47.png)   
 
 Consider the first-order approximation of \\(f(\theta)\\) at \\(\theta^0\\)    
 
@@ -726,7 +726,7 @@ $$
 P134   
 ## Jacobian Inverse Method
  
-![](/assets/03-042.png)  
+![](./assets/03-042.png)  
 
 
 > &#x2705; \\(\Delta\\) 是当前和目标的末端点位置之差。  
@@ -737,7 +737,7 @@ P135
 ## Jacobian Inverse Method
 
 
-![](/assets/03-047.png)  
+![](./assets/03-047.png)  
 
 $$
 J(\theta-\theta^0)=\tilde{x} -f(\theta^0)
@@ -763,7 +763,7 @@ $$
 F(\theta )=\frac{1}{2} ||f(\theta )-\tilde{x} ||^2_2
 $$
 
-![](/assets/03-47.png)  
+![](./assets/03-47.png)  
 
 $$
 J^TJ(\theta-\theta^0)=-J^T\Delta 
@@ -780,7 +780,7 @@ but when can \\(J^TJ\\) be invertible?
 P141   
 ## Gauss-Newton Method
 
-![](/assets/03-49.png)  
+![](./assets/03-49.png)  
 
 
 > &#x2705; 改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变\\(J\\)的形状为方阵或高瘦阵，此时\\(J^TJ\\)可逆，则换一种方式求逆。   
@@ -790,7 +790,7 @@ P141
 P143   
 ## Jacobian Inverse Method
 
-![](/assets/03-50.png)     
+![](./assets/03-50.png)     
 
 
 > &#x2705; 左：次约束，右：过约束。  
@@ -843,7 +843,7 @@ Using the minimal rotations to reach the target
 P150  
 ## Damped Jacobian Inverse Method  
 
-![](/assets/03-51.png)  
+![](./assets/03-51.png)  
 
 > &#x2705; 进一步地，分别给每个关节移动权重。  
 权重越大，移动越小。   
@@ -854,7 +854,7 @@ P152
 ## Character IK
 
 
-![](/assets/03-052.png)  
+![](./assets/03-052.png)  
 
 
 > &#x2705; 全身IK，不同链条上都有目标点。   

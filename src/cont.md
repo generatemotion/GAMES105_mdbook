@@ -24,14 +24,14 @@ Given a set of example motions {\\(x_i\\)}∼ \\(p(x)\\)
 P5   
 ## Learning Motion Models
 
-![](/assets/06a-01.png)   
+![](./assets/06a-01.png)   
 
 
 P6   
 ## Learning Motion Models   
 
 
-![](/assets/06a-2.png)  
+![](./assets/06a-2.png)  
 
 
 > &#x2705; 不止是每个动作合理，一组动作序列也要合理。   
@@ -126,8 +126,8 @@ P18
 
 |||
 |---|---|
-|![](/assets/06a-03.png) |![](/assets/06a-04.png) |
-|![](/assets/06a-05.png) |![](/assets/06a-06.png) |
+|![](./assets/06a-03.png) |![](./assets/06a-04.png) |
+|![](./assets/06a-05.png) |![](./assets/06a-06.png) |
 
 
 > &#x2705; 游戏里面通常用后者    
@@ -142,7 +142,7 @@ $$
 x_t=f(x_{t-1})
 $$
 
-![](/assets/06a-07.png)   
+![](./assets/06a-07.png)   
 
 
 > &#x2705; 由于只和上一帧相关，二元组\\(（X_{t-1}，X_t）\\)构成了一个数据，希望从里面学到一些信息。   
@@ -156,7 +156,7 @@ $$
 x_t=f(x_{t-1})
 $$
 
-![](/assets/06a-08.png)   
+![](./assets/06a-08.png)   
 
 
 > &#x2705; 但是 \\(x_t\\) 和 \\(x_{t-1}\\) 的关系是有歧义性的，最后学到一个平均的\\(x_t\\).   
@@ -170,7 +170,7 @@ $$
 x_t=f(x_{t-1};z)
 $$
 
-![](/assets/06a-09.png)    
+![](./assets/06a-09.png)    
 
 
 > &#x2705; 需要加入一个额外的变量，可以来自用户输入或先验信息。关键是怎么找到 \\(z\\)，使学习比较有效。   
@@ -180,14 +180,14 @@ P42
 
 ## PFNN: Phase-Functioned Neural Networks
 
-![](/assets/06a-10.png)   
+![](./assets/06a-10.png)   
 
 
 P43  
 ## PFNN: Phase-Functioned Neural Networks
 
 
-![](/assets/06a-11.png)  
+![](./assets/06a-11.png)  
 
 
 > &#x2705; 控制参数，表明用户希望角色怎么走。   
@@ -197,7 +197,7 @@ P44
 ## PFNN: Phase-Functioned Neural Networks
 
  
-![](/assets/06a-12.png) 
+![](./assets/06a-12.png) 
 
 phases of a walking gait cycle   
 Pirker and Katzenschlager 2017.    
@@ -211,7 +211,7 @@ $$
 x_t=f(x_{t-1};z_t)  \quad \quad z_t=(c_t,\phi _t)
 $$
 
-![](/assets/06a-13.png)   
+![](./assets/06a-13.png)   
 
 
 > &#x2705; 调整相位与时间的对应关系，可影响走路速度。   
@@ -220,7 +220,7 @@ $$
 P47    
 ## Mixture of Experts
 
-![](/assets/06a-14.png)   
+![](./assets/06a-14.png)   
 
 $$
 y=\sum_{i}^{} w_if(x;\theta _i)
@@ -234,7 +234,7 @@ P48
 ## Weighted-Blended Mixture of Experts
 
 
-![](/assets/06a-15.png)   
+![](./assets/06a-15.png)   
 
 $$
 y=f(x;\sum_{i}^{} w_i\theta _i)
@@ -251,7 +251,7 @@ $$
 x_t = f (x_{t-1}; c_t, \theta _ t = \sum _ {i}^{} w_i(\phi _t) \theta _i)
 $$
 
-![](/assets/06a-16.png)   
+![](./assets/06a-16.png)   
 
 
 > &#x2705; 专家混合的权重由phase决定。  
@@ -261,7 +261,7 @@ $$
 P50   
 ## PFNN: Phase-Functioned Neural Networks
 
-![](/assets/06a-18.png)   
+![](./assets/06a-18.png)   
 
 Cubic Catmull-Rom Spline:   
 
@@ -282,14 +282,14 @@ P53
 ## Advanced Phase Functions
 
 
-![](/assets/06a-19.png)     
+![](./assets/06a-19.png)     
 
 
 P54  
 ## Advanced Phase Functions
 
 
-![](/assets/06a-20.png)   
+![](./assets/06a-20.png)   
 
 
 
@@ -303,15 +303,15 @@ P55
 
 |||
 |---|---|
-|![](/assets/06a-21.png)  | *SIGGRAPH 2018 |
-| ![](/assets/06a-22.png)  | *SIGGRAPH 2020 |
-| ![](/assets/06a-023.png)  | *SIGGRAPH 2022 |
+|![](./assets/06a-21.png)  | *SIGGRAPH 2018 |
+| ![](./assets/06a-22.png)  | *SIGGRAPH 2020 |
+| ![](./assets/06a-023.png)  | *SIGGRAPH 2022 |
 
 
 P57  
 ## Generative Models
 
-![](/assets/06a-24.png)   
+![](./assets/06a-24.png)   
 
 
 > &#x2705;不学两帧关系，而是直接学概率密度函数。   
@@ -322,7 +322,7 @@ P59
 ## Generative Models
 
 
-![](/assets/06a-025.png)   
+![](./assets/06a-025.png)   
 
 
 > &#x2705; 一般生成式模型是这样的形式：从一个简单的PDF，通过 \\(f(z)\\)，映射到 \\(p(x)\\).   
@@ -334,8 +334,8 @@ P60
 
 |||
 |--|--|
-| Variational Autoencoders |![](/assets/06a-25.png)   |
-| Generative Adversarial Network |![](/assets/06a-26.png) |
+| Variational Autoencoders |![](./assets/06a-25.png)   |
+| Generative Adversarial Network |![](./assets/06a-26.png) |
 
 
 > &#x2705; VAE：已知一些真实数据采样，用Encoder编码到简单分布上的点，再用Decoder变回原分布上的点。  
@@ -347,8 +347,8 @@ P61
 
 |||
 |--|--|
-| Normalizing Flows |![](/assets/06a-27.png)   |
-| Diffusion Models  |![](/assets/06a-28.png)   |
+| Normalizing Flows |![](./assets/06a-27.png)   |
+| Diffusion Models  |![](./assets/06a-28.png)   |
 
 
 > &#x2705; 标准化流：类似VAE，使用一个可逆函数。   
@@ -359,12 +359,12 @@ P61
 P62  
 ## Generative Models
 
-![](/assets/06a-29.png) 
+![](./assets/06a-29.png) 
 
 [Ling et al. 2021 Character Controllers Using Motion **VAEs**] 
 
 
-![](/assets/06a-30.png) 
+![](./assets/06a-30.png) 
 
 [Henter et al. 2020, MoGlow: Probabilistic and Controllable 
 Motion Synthesis Using **Normalising Flows**]
@@ -373,12 +373,12 @@ Motion Synthesis Using **Normalising Flows**]
 P63  
 ## Generative Models  
 
-![](/assets/06a-31.png)   
+![](./assets/06a-31.png)   
 
 [Zhang et al. 2022, **arXiv**, MotionDiffuse: Text-Driven Human Motion Generation with **Diffusion Model**]
 
 
-![](/assets/06a-32.png)   
+![](./assets/06a-32.png)   
 
 [Tevet et al. 2022, **arXiv**, MDM: Human Motion **Diffusion Model**]  
 

@@ -16,9 +16,9 @@ P2
 P3  
 ## PD Control for Characters   
 
-![](/assets/10-01.png)
+![](./assets/10-01.png)
 
-![](/assets/10-02.png)
+![](./assets/10-02.png)
 
 
 P4  
@@ -30,7 +30,7 @@ PD control computes torques based on **errors**
 
 This arm never reaches the target angle under gravity   
 
-![](/assets/10-03.png)  
+![](./assets/10-03.png)  
 
 
 
@@ -43,7 +43,7 @@ PD control computes torques based on **errors**
  - Steady state error   
  - Motion falls behind the reference   
 
-![](/assets/10-04.png)
+![](./assets/10-04.png)
 
 
 P7   
@@ -64,7 +64,7 @@ v_{n+1}  & =v_n+h\frac{f}{m} \\\\
 \end{align*}
 $$
 
-![](/assets/10-05.png)
+![](./assets/10-05.png)
 
 $$
 \begin{matrix}
@@ -116,7 +116,7 @@ A=\begin{bmatrix}
 $$
 
 
-![](/assets/10-06.png)
+![](./assets/10-06.png)
 
 
 P19   
@@ -138,7 +138,7 @@ Condition of stability: \\(|\lambda _i|\le  1 \text{ for all } \lambda _i\\)
 P20
 ## Stability of PD Control
 
-![](/assets/10-07.png)
+![](./assets/10-07.png)
 
 
 > &#x2705; 如果 \\(k_p\\) 和 \\(k_d\\) 变大，就必须以一个较小的时间步长进行仿真。   
@@ -210,7 +210,7 @@ $$
 P24  
 ## A More Stable PD Control
 
-![](/assets/10-08.png)
+![](./assets/10-08.png)
 
 
 > &#x2705; \\(v_{n}\\) 换成 \\(v_{n＋1}\\) ，很大承度上提高了稳定性。  
@@ -225,7 +225,7 @@ $$
 $$
 
 
-![](/assets/10-09.png)
+![](./assets/10-09.png)
 
 
 > &#x2705; 把隐式方法应用到角色控制上。  
@@ -250,7 +250,7 @@ P26
 P28  
 ## Tracking Mocap with Root Forces/Torques   
 
-![](/assets/10-10.png)
+![](./assets/10-10.png)
 
 \\(\tau _j\\): joint torques   
 Apply \\(\tau _j\\) to “child” body   
@@ -323,7 +323,7 @@ $$
 \end{align*}
 $$
 
-![](/assets/10-11.png)
+![](./assets/10-11.png)
 
 
 > &#x2705; 仍以方块移动到目标高度为例。   
@@ -337,8 +337,8 @@ P34
 
 |||
 |--|--|
-|Hard constraints: | ![](/assets/10-12.png) |
-| Soft constraints:  |![](/assets/10-013.png) |
+|Hard constraints: | ![](./assets/10-12.png) |
+| Soft constraints:  |![](./assets/10-013.png) |
 
 
 > &#x2705; 以两种方式体现约束：   
@@ -379,11 +379,11 @@ Gradient-based approaches:
 P39   
 ## Trajectory Optimization for Tracking Control  
 
-![](/assets/10-14.png)
+![](./assets/10-14.png)
 
 find a target trajectory    
 
-![](/assets/10-15.png)
+![](./assets/10-15.png)
 
 
 P40  
@@ -393,7 +393,7 @@ P40
  - The system is a black box with unknow dynamics, gradients are not available   
 
 
-![](/assets/10-16.png)
+![](./assets/10-16.png)
 
 
 P42   
@@ -421,7 +421,7 @@ P43
  - Covariance matrix adaptation evolution strategy (CMA-ES)   
     - A widely adopted derivative-free method in character animation   
 
-![](/assets/10-17.png)
+![](./assets/10-17.png)
 
 
 Goal: find the variables 𝒙 that optimize \\(f(x)\\) 
@@ -460,7 +460,7 @@ P46
     - Motion Clip → Open-loop control trajectory   
     - A sequential Monte-Carlo method   
 
-![](/assets/10-18.png)
+![](./assets/10-18.png)
 
 
 > &#x2705; CMA-ES的缺点：   
@@ -473,7 +473,7 @@ P46
 P47  
 ## SAMCON   
 
-![](/assets/10-19.png)
+![](./assets/10-19.png)
 
 
 > &#x2705; 把轨迹分割开，每次优化一小段。  
@@ -483,7 +483,7 @@ P47
 P48  
 ## Sampling & Simulation
 
-![](/assets/10-20.png)
+![](./assets/10-20.png)
 
 
 > &#x2705; 在目标轨迹上增加偏移，跟踪偏移之后的轨迹。  
@@ -496,7 +496,7 @@ P49
 ## Sample Selection
 
 
-![](/assets/10-21.png)
+![](./assets/10-21.png)
 
 
 > &#x2705; 对每个偏移量做一次仿真，生成新的状态，保留其中与当目标接近的N个。   
@@ -506,7 +506,7 @@ P49
 P50  
 ## SAMCON Iterations
 
-![](/assets/10-22.png)
+![](./assets/10-22.png)
 
 
 > &#x2705; 从上一步N个中随机选择出发点，以及随机的偏移量，再做仿真与筛选。  
@@ -516,7 +516,7 @@ P50
 P51  
 ## Constructed Open-loop Control Trajectory
 
-![](/assets/10-23.png)
+![](./assets/10-23.png)
 
 > &#x2705; 最终找到一组最接近的。   
 原理：只选一个容易掉入局部最优，因此保留多个。   
@@ -528,7 +528,7 @@ P54
 ## Feedforward Control
 
 
-![](/assets/10-24.png)
+![](./assets/10-24.png)
 
 
 > &#x2705; 前馈控制，要求每一步的起始状态都是在获取轨迹过程中能得到的状态。  
@@ -539,7 +539,7 @@ P56
 ## Feedback Control
 
 
-![](/assets/10-025.png)
+![](./assets/10-025.png)
 
 
 > &#x2705; 解决方法：引入反馈策略。根据当前偏差，自动计算出更正，把更正叠加到控制轨迹上。   
@@ -549,13 +549,13 @@ P56
 P57  
 ## Feedback Control
 
-![](/assets/10-026.png)   
+![](./assets/10-026.png)   
 
 
 P58  
 ## Feedback Control
 
-![](/assets/10-027.png)   
+![](./assets/10-027.png)   
 
 
 P62  
@@ -563,7 +563,7 @@ P62
 
 What is balance?   
 
-![](/assets/10-28.png)   
+![](./assets/10-28.png)   
 
 
 > &#x2705; Static Balance：在不发生移动的情况下，通过简单的控制策略，保证角色不摔倒。  
@@ -575,7 +575,7 @@ P64
 
 What is balance?   
 
-![](/assets/10-29.png)   
+![](./assets/10-29.png)   
 
 
 > &#x2705; 人的质心：每一段的质心的加权平均。  
@@ -593,7 +593,7 @@ A simple strategy to maintain balance:
  - Use **PD control** to compute feedback torque   
 
 
-![](/assets/10-30.png)   
+![](./assets/10-30.png)   
 
 
 > &#x2705; 力矩1：让角色保持某个姿势。  
@@ -610,7 +610,7 @@ P68
 P69   
 ## Jacobian Transpose Control
 
-![](/assets/10-32.png)   
+![](./assets/10-32.png)   
 
 Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) applied at \\(x\\)   
 
@@ -705,7 +705,7 @@ A fancier strategy:
  - Controlling both the CoM position/**momentum** and the **angular** momentum   
  - Solve a **one-step** optimization problem to compute joint torques   
  
-![](/assets/10-34.png)   
+![](./assets/10-34.png)   
 
 
 

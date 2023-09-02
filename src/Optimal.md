@@ -14,26 +14,26 @@ P2
 P3   
 ## Recap: Trajectory Optimization
 
-![](/assets/12-01.png)
+![](./assets/12-01.png)
 
 
 P4  
 ## Recap: Feedforward Control
 
-![](/assets/12-02.png)   
+![](./assets/12-02.png)   
 
 
 P5   
 ## Recap: Feedback Control
 
 
-![](/assets/12-03.png)  
+![](./assets/12-03.png)  
 
 
 P7   
 ## Recap: Feedback Control
 
-![](/assets/12-04.png)  
+![](./assets/12-04.png)  
 
 
 > &#x2705; 前馈控制优化的是轨迹。  
@@ -43,7 +43,7 @@ P7
 
 P9  
 
-![](/assets/12-05.png)  
+![](./assets/12-05.png)  
 
 
 > &#x2705; Feedback类似构造一个场，把任何状态推到目标状态。   
@@ -60,7 +60,7 @@ $$
 \end{matrix}
 $$
 
-![](/assets/12-06.png)    
+![](./assets/12-06.png)    
 
 
 P12  
@@ -78,9 +78,9 @@ $$
 P16   
 ## Lagrange Multiplier    
 
-![](/assets/12-08.png)  
+![](./assets/12-08.png)  
 
-![](/assets/12-07.png)  
+![](./assets/12-07.png)  
 
 Lagrange function   
 
@@ -100,7 +100,7 @@ P18
 ## Lagrange Multiplier 
 
 
-![](/assets/12-09-1.png)  
+![](./assets/12-09-1.png)  
 
 
 P20   
@@ -139,7 +139,7 @@ P27
 ## Solving Trajectory Optimization Problem  
 
 
-![](/assets/12-10-1.png)  
+![](./assets/12-10-1.png)  
 
 
 > &#x2705; 拉格朗日方程，对每个变量求导，并令导数为零。
@@ -151,9 +151,9 @@ P30
 ## Pontryagin’s Maximum Principle for discrete systems
 
 
-![](/assets/12-11.png)  
+![](./assets/12-11.png)  
 
-![](/assets/12-12.png)  
+![](./assets/12-12.png)  
 
 
 > &#x2705; 方程组整理得到左边，称为PMP条件。  
@@ -167,7 +167,7 @@ P32
 given a start state \\(s_0\\), compute sequence of actions {\\(a_t\\)} to reach the goal   
 
 
-![](/assets/12-13.png)  
+![](./assets/12-13.png)  
 
 ---  
 
@@ -177,13 +177,13 @@ Need to be combined with collocation method, multiple shooting, etc. for those p
 \\(<br>\\)   
 Or use derivative-free approaches.   
 
-![](/assets/12-14.png)  
+![](./assets/12-14.png)  
 
 
 P34  
 ## Dynamic Programming   
 
-![](/assets/12-15.png) 
+![](./assets/12-15.png) 
 
 Find a path {\\(s_t\\)} that minimizes    
 
@@ -258,7 +258,7 @@ $$
 P39   
 ## Bellman’s Principle of Optimality   
 
-![](/assets/12-16.png) 
+![](./assets/12-16.png) 
 
 An optimal policy has the property that whatever the initial 
 state and initial decision are, the remaining decisions must 
@@ -356,7 +356,7 @@ Q-function State-action value function
 P52   
 ## Linear Quadratic Regulator (LQR)   
 
-![](/assets/12-17.png) 
+![](./assets/12-17.png) 
 
 
  - LQR is a special class of optimal control problems with   
@@ -371,12 +371,12 @@ P52
 P53   
 ## A very simple example   
 
-![](/assets/12-18.png) 
+![](./assets/12-18.png) 
 
 Compute a target trajectory \\(\tilde{x}(t)\\) such that the simulated trajectory \\(x(t)\\) is a sine curve.   
 
 
-![](/assets/12-19.png) 
+![](./assets/12-19.png) 
 
 $$
 \min _{(x_n,v_n,\tilde{x} _n)} \sum _{n=0}^{N} (\sin (t_n)-x_n)^2+\sum _{n=0}^{N}\tilde{x}^2_n 
@@ -408,24 +408,24 @@ dynamic function
 P58   
 ## Linear Quadratic Regulator (LQR)
 
-![](/assets/12-20-1.png) 
+![](./assets/12-20-1.png) 
 
 
 P60   
-![](/assets/12-20.png) 
+![](./assets/12-20.png) 
 
 
 P61 
 
-![](/assets/12-21.png) 
+![](./assets/12-21.png) 
 
 P62   
-![](/assets/12-22.png)  
+![](./assets/12-22.png)  
 
 
 P63  
 
-![](/assets/12-23.png) 
+![](./assets/12-23.png) 
 
 P64   
 ## Linear Quadratic Regulator (LQR)
@@ -435,7 +435,7 @@ P64
     - Quadratic objective function   
  - Solution of LQR is a linear feedback policy  
 
-![](/assets/12-24.png) 
+![](./assets/12-24.png) 
 
 
 P65   
@@ -455,7 +455,7 @@ P68
 
  - Nonlinear problems   
 
-![](/assets/12-25.png) 
+![](./assets/12-25.png) 
 
 Approximate cost function as a quadratic function:   
 
@@ -561,7 +561,7 @@ P74
 
 Find open-loop control using SAMCON
 
-![](/assets/12-26.png) 
+![](./assets/12-26.png) 
 
 
 > &#x2705; 使用开环轨迹优化得到开环控制轨迹。    
@@ -571,7 +571,7 @@ Find open-loop control using SAMCON
 P76  
 ## Stage 1b: Linear Feedback Policy
 
-![](/assets/12-27.png)   
+![](./assets/12-27.png)   
 
 
 > &#x2705; 使用反馈控制更新控制信号。由于假设了线性关系，根据偏离offset可直接得到调整offset.  
@@ -582,7 +582,7 @@ P76
 P78   
 ## Stage 1b: Reduced-order Closed-loop Policy
 
-![](/assets/12-28.png)  
+![](./assets/12-28.png)  
 
 
 
@@ -598,7 +598,7 @@ P79
  - Running: 12 dimensions
 
 
-![](/assets/12-29.png) 
+![](./assets/12-29.png) 
 
 
 > &#x2705; （1）根结点旋转（2）质心位置（3）质心速度（4）支撑脚位置   
@@ -611,7 +611,7 @@ P80
  - for all skills: 9 dimensions   
 
 
-![](/assets/12-30.png)   
+![](./assets/12-30.png)   
 
 
 > &#x2705; 仅对少数关节加反馈。   
@@ -650,7 +650,7 @@ $$
 
 • But RL typically does not assume perfect knowledge of system   
 
- ![](/assets/12-30-1.png) 
+ ![](./assets/12-30-1.png) 
 
  - RL can still take advantage of a system model → model-based RL   
     - The model can be learned from data   
@@ -668,10 +668,10 @@ P87
 ## Markov Decision Process (MDP)  
 
 
-![](/assets/12-32.png)   
+![](./assets/12-32.png)   
 
 
-![](/assets/12-31.png)   
+![](./assets/12-31.png)   
 
 State  \\(\quad s_t \quad \quad \\)Action \\(\quad a_t\\)
 
@@ -705,7 +705,7 @@ $$
 
 Reward   
 
-![](/assets/12-33.png)   
+![](./assets/12-33.png)   
 
 
 
@@ -757,11 +757,11 @@ P93
 
 In optimal control:    
 
-![](/assets/12-34.png)   
+![](./assets/12-34.png)   
 
 In RL control:    
 
-![](/assets/12-35.png)   
+![](./assets/12-35.png)   
 
 
 P94   
@@ -787,7 +787,7 @@ P96
 ## Multi-skill Characters
 
 
-![](/assets/12-36.png)   
+![](./assets/12-36.png)   
 
 [Liu et al. 2017: Learning to Schedule Control Fragments ]   
 
@@ -821,7 +821,7 @@ P98
 
 ||||
 |--|--|--|
-| ![](/assets/12-37.png)   |  ![](/assets/12-38.png)   |  ![](/assets/12-39.png)   | 
+| ![](./assets/12-37.png)   |  ![](./assets/12-38.png)   |  ![](./assets/12-39.png)   | 
 | [Liu et al. 2016. ControlGraphs] | [Liu et al. 2018]   | [Peng et al. 2018. DeepMimic] |  
 
 
@@ -838,7 +838,7 @@ P101
 
  - Digital Cerebellum – Large Pretrained Model for Motion Control
 
-![](/assets/12-40.png)   
+![](./assets/12-40.png)   
 
 
 P102  

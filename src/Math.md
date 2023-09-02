@@ -28,7 +28,7 @@ P26
 ## How to find the rotation between vectors?   
 
 
-![](/assets/02-01.png)  
+![](./assets/02-01.png)  
 
 
 P27   
@@ -43,13 +43,13 @@ $$
 𝒖 =\frac{𝒂 × 𝒃}{||𝒂 × 𝒃||}  \quad \quad  \theta = \mathrm{arg} \cos \frac{a\cdot b}{||a||||b||} 
 $$
 
-![](/assets/02-02.png)  
+![](./assets/02-02.png)  
 
 
 P33   
 ## How to rotate a vectors?
 
-![](/assets/02-3.png)  
+![](./assets/02-3.png)  
 
 
 
@@ -61,13 +61,13 @@ $$
 𝒕 \gets 𝒖 \times 𝒗 = 𝒖 \times( 𝒖 \times 𝒂)
 $$
 
-![](/assets/02-04.png)  
+![](./assets/02-04.png)  
 
 
 P35   
 ## How to rotate a vectors?
 
-![](/assets/02-05.png)  
+![](./assets/02-05.png)  
 
 
 
@@ -143,7 +143,7 @@ $$
 P57   
 ## How to rotate a vectors?   
 
-![](/assets/02-06.png)  
+![](./assets/02-06.png)  
 
 
 $$
@@ -228,26 +228,26 @@ P68
 
 ## Rigid Transformation: Translation + Rotation
 
-![](/assets/02-07.png)  
+![](./assets/02-07.png)  
 
 
 P69  
 ## Scaling   
 
-![](/assets/02-08.png)  
+![](./assets/02-08.png)  
 
 P70   
 
 ## Translation   
 
-![](/assets/02-9.png)    
+![](./assets/02-9.png)    
 
 
 
 P72   
 ## Rotation   
 
-![](/assets/02-10.png)    
+![](./assets/02-10.png)    
 
 P73   
 ## Rotation Matrix    
@@ -271,13 +271,13 @@ P73
 P75   
 ## Combination of Rotations   
 
-![](/assets/02-11.png)    
+![](./assets/02-11.png)    
 
 
 P76   
 ## Rotation around Coordinate Axes
 
-![](/assets/02-12.png)    
+![](./assets/02-12.png)    
 
 $$
 R_x(\alpha )=\begin{pmatrix}
@@ -317,7 +317,7 @@ $$
 In other words, \\(R\\) can be considered as a rotation around axis \\(u\\) by some angle \\(\theta \\)   
 How to find axis 𝒖 and angle \\(\theta \\)?   
 
-![](/assets/02-13.png)    
+![](./assets/02-13.png)    
 
 
 > &#x2705; 用\\(R\\)旋转时，向量\\(u\\)不会变化。   
@@ -329,12 +329,12 @@ P80
 
 ## Rotation Axis and Angle   
 
-![](/assets/02-14.png)    
+![](./assets/02-14.png)    
 
 
 P81  
 
-![](/assets/02-015.png)   
+![](./assets/02-015.png)   
 
 
 > &#x2705; \\({u}' \\)与\\({u} \\)共线，\\({u}' \\)单位化得到\\({u} \\)．  
@@ -360,7 +360,7 @@ $$
 P83  
 ## Rotation Axis and Angle   
 
-![](/assets/02-17.png)    
+![](./assets/02-17.png)    
 
 
 > &#x2705; 从\\(R\\)的公式也能得出相同的结论    
@@ -370,14 +370,14 @@ P85
 
 ## Coordinate Transformation   
 
-![](/assets/02-18.png)    
+![](./assets/02-18.png)    
 
 
 
 P86   
 ## Coordinate Transformation
 
-![](/assets/02-19.png) 
+![](./assets/02-19.png) 
 
 
 P87   
@@ -417,7 +417,7 @@ P93
 ## Interpolation of Translations
 
 
-![](/assets/02-20-1.png) 
+![](./assets/02-20-1.png) 
 
 
 
@@ -433,7 +433,7 @@ $$
 P95   
 ##  Interpolation of Rotations    
 
-![](/assets/02-21.png) 
+![](./assets/02-21.png) 
 
 P98   
 ## Interpolation of Rotations  
@@ -457,7 +457,7 @@ P100
  - Basic rotations
 
 
-![](/assets/02-22.png) 
+![](./assets/02-22.png) 
 
 $$
 R_x(\alpha )=\begin{pmatrix}
@@ -538,7 +538,7 @@ P105
 
 ## [囘] Euler Angles   
 
-![](/assets/02-23.png) 
+![](./assets/02-23.png) 
 
 
 > &#x2705; 插值时需注意作用域为 \\([-\pi ,\pi ]\\)，否则容易出现翻转现象。   
@@ -561,7 +561,7 @@ P107
     $$
 
 
-![](/assets/02-24.png) 
+![](./assets/02-24.png) 
 
 
 
@@ -571,7 +571,7 @@ P107
 P110   
 ## [囬] Interpolating Rotation Vectors / Axis Angles   
 
-![](/assets/02-25.png) 
+![](./assets/02-25.png) 
 
 
 P111   
@@ -808,7 +808,7 @@ $$
 P125   
 ## [𡇌] Unit Quaternions   
 
-![](/assets/02-26.png)  
+![](./assets/02-26.png)  
 
 $$
 \begin{matrix}
@@ -818,7 +818,7 @@ z = \cos \theta  + i\sin \theta
 $$
 
 
-![](/assets/02-27.png)  
+![](./assets/02-27.png)  
 
 $$
 \begin{matrix}
@@ -857,7 +857,7 @@ P128
 ## [𡇌] Rotation a Vector Using Unit Quaternions   
 
 
-![](/assets/02-29.png)  
+![](./assets/02-29.png)  
 
 $$
 \begin{matrix}
@@ -889,7 +889,7 @@ P129
 
 ## [𡇌] Rotation a Vector Using Unit Quaternions  
 
-![](/assets/02-30.png)  
+![](./assets/02-30.png)  
 
 $$
 \begin{bmatrix}
@@ -977,7 +977,7 @@ P134
 ## [𡇌] Quaternion Interpolation   
 
 
-![](/assets/02-31.png)  
+![](./assets/02-31.png)  
 
 A unit hypersphere in 4D space    
 
@@ -993,7 +993,7 @@ $$
 q_t=(1-t)q_0+tq_1
 $$
 
-![](/assets/02-32.png)  
+![](./assets/02-32.png)  
 
 \\(q_t\\) is not a unit quaternion   
 
@@ -1008,7 +1008,7 @@ $$
 \end{matrix}
 $$
 
-![](/assets/02-33.png)  
+![](./assets/02-33.png)  
 
 
 $$
@@ -1032,7 +1032,7 @@ q_t=a(t)q_0+b(t)q_1
 $$
 
 
-![](/assets/02-34.png)  
+![](./assets/02-34.png)  
 
 
 > &#x2753; 如何让插值结果速度恒定？
@@ -1077,7 +1077,7 @@ a(t)=\frac{\sin [(1-t)\theta ]}{\sin \theta  } ,b(t)=\frac{\sin t \theta }{\sin 
 $$
 
 
-![](/assets/02-35.png)  
+![](./assets/02-35.png)  
 
 
 P139  
@@ -1091,7 +1091,7 @@ $$
 \cos \theta=q_0\cdot  q_1
 $$
 
-![](/assets/02-36.png)  
+![](./assets/02-36.png)  
 
 
 P140   

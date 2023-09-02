@@ -18,14 +18,14 @@ P2
 P4   
 ## Recap: Dynamics of a Point Mass
 
-![](/assets/09-01.png)
+![](./assets/09-01.png)
 
 
 
 P10  
 ## Recap: Rigid Body Dynamics   
 
-![](/assets/09-02.png)   
+![](./assets/09-02.png)   
 
 
 P11   
@@ -53,7 +53,7 @@ P12
 ## Defining a Rigid Body
 
 
-![](/assets/09-03.png)
+![](./assets/09-03.png)
 
 Masses: \\(m,I\\)    
 Kinematics:  \\(x,v,R,\omega \\)   
@@ -70,7 +70,7 @@ Geometry:
 P14   
 ## Recap: Dynamics of Articulated Rigid Bodies   
 
-![](/assets/09-04.png)  
+![](./assets/09-04.png)  
 
 
 
@@ -88,13 +88,13 @@ $$
 P16   
 ## Recap: Simulation of a Rigid Body System
 
-![](/assets/09-05.png)
+![](./assets/09-05.png)
 
 
 P17   
 ## Defining a Simulated Character  
 
-![](/assets/09-06.png)
+![](./assets/09-06.png)
 
 Rigid bodies:    
  - \\(m_i,I_i,x_i,R_i\\)     
@@ -113,7 +113,7 @@ Type决定了约束方程。
 P19   
 ## Simulating a Character   
 
-![](/assets/09-07.png)
+![](./assets/09-07.png)
 
 > &#x2705; 这个仿真流程是ragdoll效果。   
 
@@ -121,7 +121,7 @@ P19
 P22   
 ## Actuating a Rigid Body
 
-![](/assets/09-08.png)
+![](./assets/09-08.png)
 
 
 > &#x2705; 想让角色做指定动作，不能直接修改其状态，而是控制力影响状态。  
@@ -130,9 +130,9 @@ P22
 P23  
 ## Actuating a Rigid Body   
 
-![](/assets/09-09.png)
+![](./assets/09-09.png)
 
-![](/assets/09-10.png)
+![](./assets/09-10.png)
 
 
 > &#x2705; 在物体边缘旋加力，等价于在质心旋加力，并旋加一个导致旋转的力矩。  
@@ -141,7 +141,7 @@ P23
 P24   
 ## Actuating a Rigid Body
 
-![](/assets/09-11.png)
+![](./assets/09-11.png)
 
 
 > &#x2705; 施加一个力矩，等价于施加一对大小相同方向相反的力。在质心处的合力为零，不会产生位移，只会产生旋转。   
@@ -151,7 +151,7 @@ P24
 P26   
 ## Actuating Articulated Rigid Bodies
 
-![](/assets/09-12.png)
+![](./assets/09-12.png)
 
 
 > &#x2705; 为了驱动角色，可以单独对每个刚体施加力或力矩。  
@@ -160,7 +160,7 @@ P26
 P27  
 ## Actuating Articulated Rigid Bodies
 
-![](/assets/09-13.png)
+![](./assets/09-13.png)
 
 
 > &#x2705; 也可以在关节上施加力矩。  
@@ -186,7 +186,7 @@ $$
 $$
 
 
-![](/assets/09-014.png)
+![](./assets/09-014.png)
 
 $$
 \tau _1= \sum _ {i}^{} (r_1+r_i) \times f_i=r_1 \times \sum _ {i}^{}f_i + \sum _ {i}^{}r_i \times f_i
@@ -218,7 +218,7 @@ $$
 \sum _ {i}^{}  f_i=0
 $$
 
-![](/assets/09-15.png)
+![](./assets/09-15.png)
 
 $$
 \tau _1= \sum _ {i}^{} r_i \times f_i \quad \quad \quad \quad \tau _2= -\sum _ {i}^{} r_i \times f_i
@@ -232,7 +232,7 @@ $$
 P36   
 ## Joint Torques
  
-![](/assets/09-16.png)
+![](./assets/09-16.png)
 
 
 P38  
@@ -272,7 +272,7 @@ $$
 P40   
 ## Simulating + Controlling a Character
 
-![](/assets/09-17.png)
+![](./assets/09-17.png)
 
 
 > &#x2705; 控制器，根据当前角色状态，以及额外控制信号实时计算出 \\(f \\) 和 \\(\tau \\)，影响角色动作变化。   
@@ -282,7 +282,7 @@ P40
 P44   
 ## Forward Dynamics vs. Inverse Dynamics
   
-![](/assets/09-18.png)
+![](./assets/09-18.png)
 
 
 
@@ -301,7 +301,7 @@ P47
 
 |||
 |--|--|
-|![](/assets/09-20.png) | ![](/assets/09-21.png)|
+|![](./assets/09-20.png) | ![](./assets/09-21.png)|
 |If #actuators ≥ #dofs, the system is **fully-actuated** | If #actuators < #dofs, the system is **underactuated** |
 
 
@@ -335,7 +335,7 @@ $$
    Perturbations may lead to unpredicted results   
 
 
-![](/assets/09-22.png)
+![](./assets/09-22.png)
 
 
 P51  
@@ -365,7 +365,7 @@ P55
 P56   
 ## Proportional-Derivative Control
 
-![](/assets/09-23.png)
+![](./assets/09-23.png)
 
 
 > &#x2705; 改进：如果物体已有同方向速度，则力加得小一点。  
@@ -375,7 +375,7 @@ P57
 ## Proportional-Derivative Control
 
 
-![](/assets/09-24.png)
+![](./assets/09-24.png)
 
 
 P59   
@@ -387,9 +387,9 @@ P59
 P60   
 ## Proportional-Derivative Control
 
-![](/assets/09-25.png)
+![](./assets/09-25.png)
 
-![](/assets/09-26.png)
+![](./assets/09-26.png)
 
 
 P61   
@@ -407,8 +407,8 @@ Increase stiffness \\(k_p\\) reduces the steady-state error, but can make the sy
 P62   
 ## Proportional-Integral-Derivative controller 
 
-![](/assets/09-27.png)  
-![](/assets/09-28.png)  
+![](./assets/09-27.png)  
+![](./assets/09-28.png)  
 
 
 > &#x2705; 前面是PD的例子，这里是PD在物理仿真角色上的应用，计算在每个关节上施加多少力矩。   
@@ -419,9 +419,9 @@ P62
 P63   
 ## PD Control for Characters
 
-![](/assets/09-29.png)
+![](./assets/09-29.png)
 
-![](/assets/09-30.png)
+![](./assets/09-30.png)
 
 
 > &#x2705; \\(K_p\\) 太小：可能无法达到目标状态。   
@@ -434,14 +434,14 @@ P64
 ## PD Control for Characters
 
 
-![](/assets/09-31.png)
+![](./assets/09-31.png)
 
 
 P67  
 ## Tracking Controllers
 
 
-![](/assets/09-32.png)   
+![](./assets/09-32.png)   
 
 
 > &#x2705; 设计角色的目标轨迹。  
@@ -455,7 +455,7 @@ P68
 ## Full-body Tracking Controllers
 
 
-![](/assets/09-33.png)   
+![](./assets/09-33.png)   
 
 
 P71  
@@ -505,7 +505,7 @@ P75
 P76  
 ## Mixture Simulation and Mocap
 
-![](/assets/09-34.png)
+![](./assets/09-34.png)
 
 
 

@@ -24,9 +24,9 @@ P7
 ## Skinning Deformation   
 
 
-![](/assets/07-01.png)   
+![](./assets/07-01.png)   
 
-![](/assets/07-02.png)   
+![](./assets/07-02.png)   
 
 
 > &#x2705; Rigging：创建脸部控制器或身体骨骼。   
@@ -38,7 +38,7 @@ Sinning：让控制器带动皮肤运动。
 P9   
 ## Skinning Deformation
 
-![](/assets/07-2.png)  
+![](./assets/07-2.png)  
 
 
 > &#x2705; 让 Mesh 顶点跟着骨骼运动。  
@@ -47,7 +47,7 @@ P9
 P12   
 ## Skinning Deformation    
 
-![](/assets/07-03.png)   
+![](./assets/07-03.png)   
 
 
 > &#x2705; 骨骼运动的旋转和平移分别为 \\(R\\) 和 \\(t\\)，关节的位置和朝向则变成了\\({Q}'\\)和\\({o}'\\).   
@@ -57,7 +57,7 @@ P12
 P13   
 ## Skinning Deformation
 
-![](/assets/07-04.png) 
+![](./assets/07-04.png) 
 
 
 > &#x2705; \\(r\\) 为 \\(x\\) 在骨骼坐标的表达，用 \\(r\\) 计算更简洁。 
@@ -66,14 +66,14 @@ P13
 P15   
 ## Bind Pose
 
-![](/assets/07-05.png)   
+![](./assets/07-05.png)   
 
 
 P16   
 ## Bind Pose
 
 
-![](/assets/07-06.png)   
+![](./assets/07-06.png)   
 
 
 > &#x2705; 当骨骼参考姿态与 Mesh 参考姿态不一致时，需要先旋转骨骼到 Mesh姿态。  
@@ -82,13 +82,13 @@ P16
 P18   
 ## Skinning Deformation
 
-![](/assets/07-07.png)   
+![](./assets/07-07.png)   
 
 
 P20   
 ## Skinning Deformation
 
-![](/assets/07-08.png)   
+![](./assets/07-08.png)   
 
 $$
 r_2=Q^T_2(x-o_2)   \quad \quad  r_1=Q^T_1(x-o_1)
@@ -101,7 +101,7 @@ $$
 P23   
 ## Skinning Deformation   
 
-![](/assets/07-09.png)   
+![](./assets/07-09.png)   
 
 
 > &#x2705; 得到的旋转后表达分别为 \\({x}'_1\\) 和 \\({x}'_2\\)，通过权重对它们结合。   
@@ -111,7 +111,7 @@ P23
 P29   
 ## Skinning
 
-![](/assets/07-10.png)   
+![](./assets/07-10.png)   
 
 
 > &#x2705; 同时考虑所有 Mesh 顶点和所有关节。   
@@ -136,7 +136,7 @@ Bind Pose情况下 Motion 不一定为零。
 P33  
 ## Automatic Skinning?
 
-![](/assets/07-11.png)   
+![](./assets/07-11.png)   
 
 ![](/assets/07-12.png)   
 
@@ -147,7 +147,7 @@ Pinocchio [Baran et al., 2007]
 P37   
 ## Linear Blend Skinning (LBS)
 
-![](/assets/07-13.png)   
+![](./assets/07-13.png)   
 
 
 > &#x2705; 公式第一项对 \\(R_j\\) 所加权，所得到的很有可能不再是旋转矩阵。   
@@ -157,7 +157,7 @@ P37
 P39   
 ## Candy-Wrapper Artifact
 
-![](/assets/07-14.png)   
+![](./assets/07-14.png)   
 
 
 
@@ -173,7 +173,7 @@ P40
  - Nonlinear Skinning   
     - Dual-quaternion Skinning (DQS)   
 
-![](/assets/07-15.png)   
+![](./assets/07-15.png)   
 
 
 > &#x2705; DQ：对偶四元数。   
@@ -182,14 +182,14 @@ P40
 P41   
 ## Non-linear Skinning
 
-![](/assets/07-16.png)   
+![](./assets/07-16.png)   
 
 Can we use quaternions and SLERP?    
 
 P42  
 ## Non-linear Skinning
 
-![](/assets/07-16-1.png)   
+![](./assets/07-16-1.png)   
 
 
 > &#x2705; 不行。原因：第一项与第二项必须要配合好，否则会乱掉。   
@@ -220,7 +220,7 @@ $$
 P46  
 ## Interpolation in 𝑆𝑂(3)
 
-![](/assets/07-17.png)   
+![](./assets/07-17.png)   
 
 
 > &#x2705; 线性插值和SLERP插值SO(3)上。   
@@ -229,7 +229,7 @@ P46
 P49  
 ## Interpolation in 𝑆𝐸(3)
 
-![](/assets/07-18.png)   
+![](./assets/07-18.png)   
 
 
 > &#x2705; SE(3)上的线性插值，插值到一个退化的点。   
@@ -238,7 +238,7 @@ P49
 P51  
 ## Intrinsic Blending
 
-![](/assets/07-19.png)   
+![](./assets/07-19.png)   
 
 
 P52   
@@ -254,7 +254,7 @@ Ladislav Kavan, Steven Collins, Jiri Zara, Carol O‘Sullivan. **Geometric Skinn
 P54   
 ## Dual Numbers  
 
-![](/assets/07-20.png)   
+![](./assets/07-20.png)   
 
 
 P55  
@@ -430,31 +430,31 @@ $$
 P62   
 ## Double Cover Visualized
 
-![](/assets/07-21.png)   
+![](./assets/07-21.png)   
 
 
 P63   
 ## Interpolating Dual-Quaternion
 
-![](/assets/07-22.png)   
+![](./assets/07-22.png)   
 
 
 P64  
 ## Dual-Quaternion Linear Blending (DLB)
 
-![](/assets/07-022.png)   
+![](./assets/07-022.png)   
 
 
 P65   
 ## Dual-Quaternion Skinning (DQS)
 
-![](/assets/07-23.png)   
+![](./assets/07-23.png)   
 
 
 P66   
 ## Budging Artifact of DQS
 
-![](/assets/07-24.png)   
+![](./assets/07-24.png)   
 
 
 > &#x2705; 越往右蒙皮权重越光滑。   
@@ -464,7 +464,7 @@ DQBS也有比较严重的artifacts.
 P67   
 ## How to Correct LBS?
 
-![](/assets/07-25.png)   
+![](./assets/07-25.png)   
 
 
 > &#x2705; LBS的天然缺陷   
@@ -473,13 +473,13 @@ P67
 P69   
 ## How to Correct LBS?
 
-![](/assets/07-26.png)   
+![](./assets/07-26.png)   
 
 
 P74   
 ## Scattered Data Interpolation
 
-![](/assets/07-27.png)   
+![](./assets/07-27.png)   
 
 
 P76   
@@ -494,7 +494,7 @@ P76
  - Radial Basis Function   
  - ……   
 
-![](/assets/07-28.png)   
+![](./assets/07-28.png)   
 
 
 P81   
@@ -504,7 +504,7 @@ $$
 y=\sum_{i=1}^{k} w_i\varphi (||x-x_i||)
 $$
 
-![](/assets/07-29.png)   
+![](./assets/07-29.png)   
 
 
 P83   
@@ -539,7 +539,7 @@ $$
 R_{i,j}=\varphi (||x_i-x_j||)
 $$
 
-![](/assets/07-30.png)   
+![](./assets/07-30.png)   
 
 
 P84   
@@ -601,7 +601,7 @@ J. P. Lewis, Matt Cordner, and Nickson Fong. 2000. **Pose space deformation: a u
 P86   
 ## Pose Space Deformation
 
-![](/assets/07-31.png)   
+![](./assets/07-31.png)   
 
 
 P87   
@@ -656,7 +656,7 @@ P89
  - Learned on real scan data   
  - Combines SSD and EBS techniques   
 
-![](/assets/07-32.png)   
+![](./assets/07-32.png)   
 
 
 P92   
@@ -694,25 +694,25 @@ $$
  - \\(U=[u_1,u_2,\dots,u_N]\\)   
 
 
-![](/assets/07-007.png)   
+![](./assets/07-007.png)   
 
 
 P94   
 ## PCA over Body Shapes
 
-![](/assets/07-33.png)   
+![](./assets/07-33.png)   
 
 
 P95  
 ## SMPL Model: Body Shape
 
-![](/assets/07-34.png)   
+![](./assets/07-34.png)   
 
 
 P96   
 ## SMPL Model: Pose Blend Shapes
 
-![](/assets/07-35.png)   
+![](./assets/07-35.png)   
 
 
 P97   
@@ -731,7 +731,7 @@ $$
 SKIN:\text{LBS, DQS, etc}\dots 
 $$
 
-![](/assets/07-36.png)   
+![](./assets/07-36.png)   
 
 [SMPL: A Skinned Multi-Person Linear Model]   
 
@@ -739,13 +739,13 @@ $$
 P99   
 ## Facial Animation
 
-![](/assets/07-37.png)   
+![](./assets/07-37.png)   
 
 
 P101   
 ## Facial Animation
 
-![](/assets/07-38.png)   
+![](./assets/07-38.png)   
 
 
 > &#x2705; \\(B_j\\) 与 ID 无关，能做出差不多的效果。   
@@ -755,23 +755,23 @@ P101
 P102   
 ## Facial Blendshapes   
 
-![](/assets/07-39.png)   
+![](./assets/07-39.png)   
 
 
 P103   
 ## A Typical Set of Blendshapes (ARKit)
 
-![](/assets/07-40.png)   
+![](./assets/07-40.png)   
 
 
 P104   
 ## Blendshapes vs. Example-based Skinning
 
-![](/assets/07-41.png)   
+![](./assets/07-41.png)   
 
-![](/assets/07-42.png)   
+![](./assets/07-42.png)   
 
-![](/assets/07-43.png)   
+![](./assets/07-43.png)   
 
 
 > &#x2705; 几种不同的表情基混合方式。   
@@ -780,8 +780,8 @@ P104
 P105  
 ## Morphable Face Models
 
-![](/assets/07-44.png)   
-![](/assets/07-45.png)   
+![](./assets/07-44.png)   
+![](./assets/07-45.png)   
    
 
 Egger et al. 2020. **3D Morphable Face Models - Past, Present, and Future**. *ACM Trans. Graph*. 39, 5 (June 2020), 157:1-157:38.   
@@ -793,16 +793,16 @@ P107
 ## How to Animate a Face?
 
 
-![](/assets/07-47.png)
+![](./assets/07-47.png)
 
 P110   
 ## Face Tracking
 
-![](/assets/07-48.png)
+![](./assets/07-48.png)
 
 
 > &#x2705; 用一个视频人脸驱动3D人脸。    
-![](/assets/07-002.png)
+![](./assets/07-002.png)
 1、提取    \\(\quad\\)   2、IK．
 
 ---------------------------------------

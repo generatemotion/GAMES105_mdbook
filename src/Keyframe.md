@@ -17,14 +17,14 @@ P4
 
 ## Recap: Character Kinematics
 
-![](/assets/04-01.png)  
+![](./assets/04-01.png)  
 
 
 
 P11   
 ## Recap: Forward Kinematics
 
-![](/assets/04-02.png)  
+![](./assets/04-02.png)  
 
 $$
 \begin{align*}
@@ -54,18 +54,18 @@ P15
 
 ## T-Pose
 
-![](/assets/04-3.png)  
+![](./assets/04-3.png)  
 
 P16   
 ## T-Pose? A-Pose?
 
-![](/assets/04-04.png)  
+![](./assets/04-04.png)  
 
 
 P17   
 ## T-Pose? A-Pose?
 
-![](/assets/04-05.png)  
+![](./assets/04-05.png)  
 
 
 > &#x2705; 对于骨骼动画来讲，\\(A\\)或T都一样。对于骼骼绑定与蒙皮来讲，更倾向于\\(A\\). 因为\\(A\\)的肩膀是自然状态。  
@@ -74,15 +74,15 @@ P17
 P19   
 ## T-Pose? A-Pose?
 
-![](/assets/04-06.png)  
+![](./assets/04-06.png)  
 
 
 P20   
 
-![](/assets/04-07.png)  
+![](./assets/04-07.png)  
 
 P21   
-![](/assets/04-08.png)  
+![](./assets/04-08.png)  
 
 
 > &#x2705; 这个动作跟建模师建模时的动作镜像操作有关。  
@@ -91,7 +91,7 @@ P21
 P23   
 ## **Same motion** under different reference poses   
 
-![](/assets/04-09.png)  
+![](./assets/04-09.png)  
 
 > &#x2705; 相同的姿态参数放在不同的参考姿态下呈现出的姿态不同。
 
@@ -99,7 +99,7 @@ P23
 P29    
 ## **Retargeting** between reference poses
 
-![](/assets/04-10.png)  
+![](./assets/04-10.png)  
 
 
 > &#x2705; 让不同参考姿态的角色做出同样的动作，根据\\(R_A\\)求\\(R_B\\).   
@@ -109,19 +109,19 @@ P29
 P31    
 ## Retargeting for a single object
 
-![](/assets/04-11.png)  
+![](./assets/04-11.png)  
 
 
 P33   
 ## Retargeting for a single object
 
-![](/assets/04-12.png)  
+![](./assets/04-12.png)  
 
 
 P37   
 ## Retargeting for a single object
 
-![](/assets/04-13.png)  
+![](./assets/04-13.png)  
 
 
 > &#x2705; 把 B 先转到 A 的姿态，再做指定动作。
@@ -131,7 +131,7 @@ P45
 
 ## Retargeting for a chain of links
 
-![](/assets/04-14.png)  
+![](./assets/04-14.png)  
 
 
 > &#x2705; 两个关节的场景   
@@ -140,43 +140,43 @@ P45
 P49    
 ## Retargeting for a chain of links
 
-![](/assets/04-15.png)  
+![](./assets/04-15.png)  
 
 
 P51   
 ## Retargeting for a chain of links
 
-![](/assets/04-16.png)  
+![](./assets/04-16.png)  
 
 
 P52   
 ## **Retargeting** between reference poses
 
 
-![](/assets/04-17.png)  
+![](./assets/04-17.png)  
 
 
 P53   
 ## Retargeting between reference poses
 
-![](/assets/04-18.png)  
+![](./assets/04-18.png)  
 
 P54   
 ## Recap: Character Kinematics
 
-![](/assets/04-19.png)  
+![](./assets/04-19.png)  
 
 P58   
 ## Cyclic Coordinate Descent (CCD) IK
 
-![](/assets/04-20.png)  
+![](./assets/04-20.png)  
 
 Rotate joint 3 such that     
 
 P80   
 ## Cyclic Coordinate Descent (CCD) IK   
 
-![](/assets/04-21.png)  
+![](./assets/04-21.png)  
 
 Rotate joint 3 such that \\(l_{34}\\) points towards \\(\tilde{x} \\)    
 Stretch link 2 such that \\((x-\tilde{x})\perp l_{23} \\)   
@@ -195,14 +195,14 @@ $$
 \end{matrix}
 $$
 
-![](/assets/04-22.png)  
+![](./assets/04-22.png)  
 
 Jacobian for axis-angle representation has a rather complicated formulation…   
 
 P95   
 ## Full-body IK
 
-![](/assets/04-23.png)  
+![](./assets/04-23.png)  
 
 The kinematic chain passes the root joint…    
 
@@ -219,7 +219,7 @@ The kinematic chain passes the root joint…
 P97   
 ## Full-body IK
 
-![](/assets/04-24.png)  
+![](./assets/04-24.png)  
 
 Two constraints…    
 
@@ -229,7 +229,7 @@ Two constraints…
 P98   
 ## Character Rig
 
-![](/assets/04-25.png)  
+![](./assets/04-25.png)  
 
 Created Multiple IK chains   
 
@@ -250,7 +250,7 @@ P107
 
 ## Interpolation  
 
-![](/assets/04-26.png)  
+![](./assets/04-26.png)  
 
 
 P113   
@@ -260,14 +260,14 @@ $$
 f(x)=(1-t)y_1+ty_2
 $$
 
-![](/assets/04-27.png)  
+![](./assets/04-27.png)  
 
 
 
 P114   
 ## Smoothness
 
-![](/assets/04-28.png)  
+![](./assets/04-28.png)  
 
 
 P115   
@@ -316,12 +316,12 @@ P122
 P153   
 ## Interpolation of Rotations
 
-![](/assets/04-29.png)  
+![](./assets/04-29.png)  
 
 P154   
 ## Rotation Representations
 
-![](/assets/04-30.png)  
+![](./assets/04-30.png)  
 
 
 P157   
@@ -335,7 +335,7 @@ $$
 \cos \theta = q_0 \cdot q_1
 $$
 
-![](/assets/04-31.png)  
+![](./assets/04-31.png)  
 
 Constant rotational speed, but only “linear” interpolation    
 

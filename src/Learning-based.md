@@ -24,7 +24,7 @@ How to make a character respond to user command?
 P6   
 ## Motion Graphs
 
-![](/assets/06-01.png)   
+![](./assets/06-01.png)   
 
 
 > &#x2705; 基于数据：对现有数据进行连接重组。    
@@ -35,7 +35,7 @@ P6
 P9   
 ## Motion Graphs
 
-![](/assets/06-02.png)   
+![](./assets/06-02.png)   
 
 > &#x2705; 坐标系对齐后，根据用户输选择下一个片断。   
 可以结合路径规划算，实现一些智能角色。  
@@ -50,7 +50,7 @@ P14
 |||
 |---|---|
 | Motion Graphs / State Machines | Motion Fields / Motion Matching |
-| ![](/assets/06-03.png) | ![](/assets/06-04.png)   |
+| ![](./assets/06-03.png) | ![](./assets/06-04.png)   |
 
 
 > &#x2705; Motion Matching 是将 Motion Fields 简化以后加一些比较好的工程实践。   
@@ -60,7 +60,7 @@ P17
 
 ## Motion Fields
 
-![](/assets/06-05.png)   
+![](./assets/06-05.png)   
 
 
 > &#x2705; 每条链路代表一个动作，灰圈代表动作里的一帧，整体构成一个很大的Field.   
@@ -70,7 +70,7 @@ P20
 
 ## Motion Fields
 
-![](/assets/06-06.png)   
+![](./assets/06-06.png)   
 
 
 > &#x2705; 每一帧有一些最近邻，它们来自不同动作，有不同的状态。   
@@ -80,9 +80,9 @@ P20
 P23   
 ## Motion Fields
 
-![](/assets/06-07.png)   
+![](./assets/06-07.png)   
 
-![](/assets/06-08.png)   
+![](./assets/06-08.png)   
 
 
 > &#x2705; 根据用户输入设置不同权重，会得到不同结果    
@@ -95,13 +95,13 @@ P24
 ## Motion Fields
 
 
-![](/assets/06-09.png)   
+![](./assets/06-09.png)   
 
 P31   
 ## Motion Matching
 
 
-![](/assets/06-10.png)   
+![](./assets/06-10.png)   
 
 
 P32  
@@ -150,7 +150,7 @@ P36
       - e.g. KD-tree   
 
 
-![](/assets/06-11.png)   
+![](./assets/06-11.png)   
 
 
 
@@ -195,7 +195,7 @@ P65
 a pose \\(x\\) with smaller \\(\sum _k\frac{((x-\bar{x})\cdot u_k)^2 }{\sigma ^2_k}\\) is more likely to be a good pose   
 
 
-![](/assets/06-12.png)   
+![](./assets/06-12.png)   
 
 
 
@@ -245,7 +245,7 @@ P71
 P75   
 ## Gaussian Distribution
 
-![](/assets/06-19.png)   
+![](./assets/06-19.png)   
 
 
 
@@ -272,7 +272,7 @@ P77
 ## PCA and Gaussian Distribution
 
 
-![](/assets/06-13.png)   
+![](./assets/06-13.png)   
 
 
 > &#x2705; PCA可以看作一种高斯分布。  
@@ -346,13 +346,13 @@ $$
 f(x)=f(x)-w \log p(x )
 $$
 
-![](/assets/06-20.png)   
+![](./assets/06-20.png)   
 
 
 P83   
 ## Motion Synthesis with a Motion Prior
 
-![](/assets/06-14.png)   
+![](./assets/06-14.png)   
 
 
 P83   
@@ -362,7 +362,7 @@ P83
 
 P86  
 
-![](/assets/06-15.png)   
+![](./assets/06-15.png)   
 
 
 > &#x2705; 使用高斯混合模型，用于动作编辑。   
@@ -379,7 +379,7 @@ Min et al. 2009
 
 P88  
 
-![](/assets/06-16.png)   
+![](./assets/06-16.png)   
 
 
 > &#x2705; 缺点：实现麻烦，很多超参。   
@@ -391,27 +391,27 @@ P90
 
 \\(p(x)\\): motion prior   
 
-![](/assets/06-17.png)   
+![](./assets/06-17.png)   
 
 
-![](/assets/06-22.png)   
+![](./assets/06-22.png)   
 
 [Starke et al 2020, Local Motion Phases for Learning Multi￾Contact Character Movements]
 
 
-![](/assets/06-23.png)   
+![](./assets/06-23.png)   
 
 [Henter et al. 2020, MoGlow: Probabilistic and Controllable 
 Motion Synthesis Using Normalising Flows]
 
-![](/assets/06-24.png)   
+![](./assets/06-24.png)   
 
 
 [Lee et al 2019, Interactive Character Animation by 
 Learning Multi-Objective Control]
 
 
-![](/assets/06-25.png)   
+![](./assets/06-25.png)   
 
 [Holden et al 2020, Learned Motion Matching]
 

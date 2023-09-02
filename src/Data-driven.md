@@ -20,7 +20,7 @@ How to get motion data?
 
 P23   
 
-![](/assets/05-01.png)  
+![](./assets/05-01.png)  
 
 
 P29   
@@ -32,7 +32,7 @@ How to use motion data?
 P31    
 ## Using Motion Data
 
-![](/assets/05-02.png)  
+![](./assets/05-02.png)  
 
 
 P32   
@@ -60,15 +60,15 @@ P34
        - Self penetration    
      - ……
 
-![](/assets/05-03.png)  
+![](./assets/05-03.png)  
 
-![](/assets/05-04.png)  
+![](./assets/05-04.png)  
 
 
 P38
 ## Motion Transition 
 
-![](/assets/05-05.png)  
+![](./assets/05-05.png)  
 
 
 > &#x2705; 有一段走路数据和跑步数据，如何实现人由走到跑的过程。  
@@ -78,7 +78,7 @@ P38
 P39   
 ## Motion Transition    
 
-![](/assets/05-06.png)  
+![](./assets/05-06.png)  
 
 
 > &#x2705; （2）两帧在时间上对齐   
@@ -88,7 +88,7 @@ P39
 P40   
 ## Motion Transition    
 
-![](/assets/05-07.png)  
+![](./assets/05-07.png)  
 
 
 > &#x2705; （3）放到这一帧时动作切换。  
@@ -100,7 +100,7 @@ P44
 ## Motion Transition 
 
 
-![](/assets/05-08.png)  
+![](./assets/05-08.png)  
 
 
 > &#x2705; 改进：考虑前后帧，并做插值。   
@@ -110,7 +110,7 @@ P44
 P45   
 ## Motion Transition 
 
-![](/assets/05-09.png)  
+![](./assets/05-09.png)  
 
 
 P46   
@@ -133,7 +133,7 @@ P55
  - A special coordinate system that moves horizontally with the character with one axis pointing to the “facing direction” of the character    
 
 
-![](/assets/05-10.png)  
+![](./assets/05-10.png)  
 
 $$
 \begin{align*}
@@ -168,7 +168,7 @@ P58
 ## Rotation Decomposition
 
 
-![](/assets/05-11.png)  
+![](./assets/05-11.png)  
 
 
 > &#x2705; 把\\(R\\)分解为\\(R_y\\)和\\(R_{xz}\\)，求\\(R_y\\)   
@@ -180,7 +180,7 @@ P62
 
  - How to compute this transformation?    
 
-![](/assets/05-12.png)  
+![](./assets/05-12.png)  
 
 
 > &#x2705; 两个坐标系的转换。
@@ -190,7 +190,7 @@ P68
 ## Path Fitting
 
 
-![](/assets/05-13.png) 
+![](./assets/05-13.png) 
 
 
 P69   
@@ -208,14 +208,14 @@ P70
 ## Motion Graphs
 
 
-![](/assets/05-14.png)  
+![](./assets/05-14.png)  
 
 
 P71   
 ## Motion Graphs
 
 
-![](/assets/05-15.png)  
+![](./assets/05-15.png)  
 
 
 > &#x2705; 动作图的本质是状态机。  
@@ -225,7 +225,7 @@ P72
 ## Segment Motion Data 
 
 
-![](/assets/05-16.png) 
+![](./assets/05-16.png) 
 
 
 > &#x2705; 一段动捕数据，如何做分割，如何确定哪些点可以连到一起。  
@@ -237,7 +237,7 @@ P73
 ## Segment Motion Data 
 
 
-![](/assets/05-17.png)  
+![](./assets/05-17.png)  
 
  - Distance map   
     - Each pixel represents the difference between a pair of poses   
@@ -261,7 +261,7 @@ P74
     - Check immediate connections for the next clip    
       - May need deeper search   
 
-![](/assets/05-18.png) 
+![](./assets/05-18.png) 
 
 
 
@@ -269,7 +269,7 @@ P75
 ## Interactive Animation Pipeline
 
 
-![](/assets/05-19.png)   
+![](./assets/05-19.png)   
 
 
 > &#x2705; 优点：根据路线从动作库中选择最合适的动作，而不是直接使用路线，因此减少滑步。   
