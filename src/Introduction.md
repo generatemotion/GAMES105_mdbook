@@ -6,13 +6,9 @@
 P8   
 ## 3D Computer Graphics    
 
-![](/assets/01-02.png)
+![](/.assets/01-02.png)
 
-![](/assets/01-02-2.PNG)
 
-![](./assets//01-02.png)  
-
-116
 
 P10  
 > &#x2705; 仿真，用于描述客观事物，它们的运动规律可以用精确的数来描述。GAMES103    
@@ -21,7 +17,7 @@ P10
 P11   
 ## 3D Computer Animation
 
-![](/assets/01-03.png)
+![](./assets/01-03.png)
 
 
 > &#x2705; 上：主要指电影。下：主要是游戏。
@@ -35,20 +31,20 @@ P12
     - It is not super high-dimensional, so most animation can be created manually, by posing the character at keyframes    
     - **Labor-intensive, not for interactive applications**    
 
- ![](/assets/01-4.png)  
+ ![](./assets/01-4.png)  
 
  - Character animation techniques   
     - Understanding the mechanism behind motions and behaviors   
     - Smart editing of animation/ Reuse animation / Generate new animation   
     - **“Compute-intensive”**     
 
- ![](/assets/01-05.png)  
+ ![](./assets/01-05.png)  
 
 
 P14  
 ## Character Animation Pipeline   
 
-![](/assets/01-06.png)  
+![](./assets/01-06.png)  
 
 
 P15  
@@ -59,7 +55,7 @@ P15
 P16  
 ## Where does a Motion Come From   
  
-![](/assets/01-07.png)  
+![](./assets/01-07.png)  
 
 
 
@@ -71,7 +67,7 @@ P17
 ## Keyframe-based/Kinematic Approaches  
 
 
-![](/assets/01-08.png)  
+![](./assets/01-08.png)  
 
 
 P18   
@@ -83,7 +79,7 @@ P18
 P19    
 ## Physics-based/Dynamic Approaches
 
-![](/assets/01-09.png)  
+![](./assets/01-09.png)  
 
 
 
@@ -92,7 +88,7 @@ P20
 ## Character Animation Methods
 
 
-![](/assets/01-10.png)  
+![](./assets/01-10.png)  
 
 
 > &#x2705; 对每一帧每一个姿态进行精确控制每个细节。   
@@ -105,7 +101,7 @@ P21
 
 low-level control   
 
-![](/assets/01-11.png)  
+![](./assets/01-11.png)  
 
 
 > &#x2705; 控制高级目标。   
@@ -117,13 +113,13 @@ P22
 
 high-level control
 
-![](/assets/01-12.png)  
+![](./assets/01-12.png)  
 
 
 P25   
 ## Disney’s 12 Principles of Animation
 
-![](/assets/01-13.png)  
+![](./assets/01-13.png)  
 
 [<http://the12principles.tumblr.com/>]
 
@@ -132,7 +128,7 @@ P25
 P27    
 ## Forward Kinematics
 
-![](/assets/01-14.png)  
+![](./assets/01-14.png)  
 
 **Given** rotations of every joints    
 **Compute** position of end-effectors    
@@ -141,7 +137,7 @@ P27
 P28   
 ## Inverse Kinematics   
 
-![](/assets/01-15.png)  
+![](./assets/01-15.png)  
 
 **Given** position of end-effectors     
 **Compute** rotations of every joints    
@@ -150,7 +146,7 @@ P28
 P29   
 ## Interpolation
  
-![](/assets/01-16.png)  
+![](./assets/01-16.png)  
 
 
 
@@ -163,7 +159,7 @@ P34
 P35   
 ## Motion Retargeting   
 
-![](/assets/01-17.png)  
+![](./assets/01-17.png)  
 
 **Given** motions of a source character   
 **Compute** motions for target characters with   
@@ -183,7 +179,7 @@ P36
 P37   
 ## Motion Graphs / State Machines
 
-![](/assets/01-18.png)  
+![](./assets/01-18.png)  
 
 
 > &#x2705; 给一段任意的动作，寻找能够构建状态机切换的位。 
@@ -193,7 +189,7 @@ P37
 P38   
 ## Motion Graphs / State Machines
 
-![](/assets/01-19.png)  
+![](./assets/01-19.png)  
 
 > &#x2705; 对Motion Graph的改进，比如一个节点中有很多动作，对这些动作进行插值，来实现精确控制。   
 
@@ -202,7 +198,7 @@ P38
 P39  
 ## Motion Graphs / State Machines
 
-![](/assets/01-20.png)   
+![](./assets/01-20.png)   
 
 [Heck and Gleicher 2007, Parametric Motion Graphs]  
 
@@ -233,7 +229,7 @@ P43
 ## Complex Motion Graphs
 
 
-![](/assets/01-21.png)  
+![](./assets/01-21.png)  
 
 > &#x2705; 改进，Motion Graph的动作都是完整的片断，可以把动作再分细一点，切到每一帧。    
 不是完整地播放一段动作，而是每一帧结束后，通过最近邻搜索找到一个新的姿态，  
@@ -251,7 +247,7 @@ P46
 ## Learning-based Approaches
 
 
-![](/assets/01-22.png)  
+![](./assets/01-22.png)  
 
 P50   
 ## Cross-Modal Motion Synthesis
@@ -276,7 +272,7 @@ P51
     - ……   
 
 
-![](/assets/01-23.png)  
+![](./assets/01-23.png)  
 
 
 > &#x2705; 不直接生成姿态，而是控制量（例如力），通过物理仿真真正改变角色。   
@@ -287,28 +283,28 @@ P53
 ## Character Animation Methods  
 
 
-![](/assets/01-24.png)  
+![](./assets/01-24.png)  
 
 
 P56  
 ## Character Animation Methods   
 
 
-![](/assets/01-25.png)  
+![](./assets/01-25.png)  
 
 
 P58  
 ## Kinematic Approaches
 
 
-![](/assets/01-26.png)  
+![](./assets/01-26.png)  
 
 
 P59   
 ## Physics-based Character Animation
 
 
-![](/assets/01-27.png)  
+![](./assets/01-27.png)  
 
 
 > &#x2705; 用于人死掉、失去意识、突发事件来不及响应的情况。
@@ -319,20 +315,20 @@ P60
 ## Ragdoll Simulation
 
 
-![](/assets/01-28.png)  
+![](./assets/01-28.png)  
 
 
 P62  
 ## Physics-based Character Animation
 
 
-![](/assets/01-29.png)  
+![](./assets/01-29.png)  
 
 
 P64   
 ## Motion Reconstruction with Sparse Sensors
 
-![](/assets/01-30.png)  
+![](./assets/01-30.png)  
 
 P65  
 ## Motion Reconstruction with Sparse Sensors
@@ -353,7 +349,7 @@ P67
 P68   
 ## Character Animation Methods
 
-![](/assets/01-31.png)  
+![](./assets/01-31.png)  
 
 
 > &#x2705;构建完整的神经系统和肌肉系统。   
@@ -365,7 +361,7 @@ P69
 ## Physics-based/Dynamic Approaches   
 
 
-![](/assets/01-32.png)  
+![](./assets/01-32.png)  
 
 
 > &#x2705; 用关节力矩仿真肌肉的力。     
@@ -375,7 +371,7 @@ P70
 ## Physics-based/Dynamic Approaches   
 
 
-![](/assets/01-33.png)  
+![](./assets/01-33.png)  
 
 
 P71   
@@ -383,7 +379,7 @@ P71
 ## Force & Torque
 
 
-![](/assets/01-34.png)  
+![](./assets/01-34.png)  
 
 
 > &#x2705; 根据当前状态与目标状态的差距，计算出当前状态运动到目标状态所需要的力矩。  
@@ -394,7 +390,7 @@ P72
 ## Proportional-Derivative (PD) Control  
   
 
-![](/assets/01-35.png)  
+![](./assets/01-35.png)  
 
 > &#x2705; 目标状态→力矩→动作   
 
@@ -403,7 +399,7 @@ P73
 ## Tracking Controllers
 
 
-![](/assets/01-36.png)  
+![](./assets/01-36.png)  
 
 P74   
 ## Tracking Controllers
@@ -429,7 +425,7 @@ P79
 P80  
 ## Spacetime/Trajectory Optimization
 
-![](/assets/01-037.png)  
+![](./assets/01-037.png)  
 
 [Liu et al 2010. SAMCON]
 
@@ -461,7 +457,7 @@ P84
 ## Abstract Models   
 
 
-![](/assets/01-38.png)  
+![](./assets/01-38.png)  
 
 
 P86   
@@ -469,7 +465,7 @@ P86
 
 Inverted Pendulum Model
 
-![](/assets/01-039.png)  
+![](./assets/01-039.png)  
 
 [Coros et al. 2010]
 
@@ -478,7 +474,7 @@ Inverted Pendulum Model
 P88   
 ## Reinforcement Learning  
 
-![](/assets/01-40.png)  
+![](./assets/01-40.png)  
 
 
 P89   
@@ -515,7 +511,7 @@ P92
 
 ## Multi-skill Characters  
 
-![](/assets/01-41.png)  
+![](./assets/01-41.png)  
 
 [Liu et al. 2017: Learning to Schedule Control Fragments]  
 
@@ -525,7 +521,7 @@ P95
 ## Generative Control Policies
 
 
-![](/assets/01-42.png)  
+![](./assets/01-42.png)  
 
 
 
@@ -533,7 +529,7 @@ P96
 ## Generative Control Policies
 
 
-![](/assets/01-43.png)  
+![](./assets/01-43.png)  
 
 
 
@@ -541,7 +537,7 @@ P100
 ## Character Animation Methods  
 
 
-![](/assets/01-44.png)  
+![](./assets/01-44.png)  
 
 
 > &#x2705; 回顾计算机角色动化领域最近30年主要研究方向。 
@@ -551,7 +547,7 @@ P101
 
 ## Character Animation Methods   
 
-![](/assets/01-45.png)  
+![](./assets/01-45.png)  
 
 P103    
 ## About This Course    
