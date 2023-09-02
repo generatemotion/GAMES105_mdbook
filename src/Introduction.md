@@ -7,7 +7,7 @@ P8
 ## 3D Computer Graphics    
 
 ![](/assets/01-02.png)
-
+![](/assets/01-02.PNG)
 
 P10  
 > &#x2705; 仿真，用于描述客观事物，它们的运动规律可以用精确的数来描述。GAMES103    
