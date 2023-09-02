@@ -6,7 +6,7 @@
 P8   
 ## 3D Computer Graphics    
 
-![](/.assets/01-02.png)
+![](./assets/01-02.png)
 
 
 
