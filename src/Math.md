@@ -1117,10 +1117,10 @@ Representation is not unique
 
 \\(q, −q\\) represent the same rotation   
 
- _ Easy to compose?   \\(\quad \quad {\color{Green} \surd }\quad \quad \\)     Need normalization, hard to manipulate,   
- _ Easy to apply?    \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)       Quaternion multiplication   
- _ Easy to interpolate?  \\(\quad   {\color{Green} \surd }\quad \quad \\)   SLERP, need to deal with singularities   
- _ No Gimbal lock  \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)   
+ - Easy to compose?   \\(\quad \quad {\color{Green} \surd }\quad \quad \\)     Need normalization, hard to manipulate,   
+ - Easy to apply?    \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)       Quaternion multiplication   
+ - Easy to interpolate?  \\(\quad   {\color{Green} \surd }\quad \quad \\)   SLERP, need to deal with singularities   
+ - No Gimbal lock  \\(\quad \quad  \quad {\color{Green} \surd }\quad \quad \\)   
 
 
 
