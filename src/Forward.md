@@ -188,6 +188,8 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) i
 
      
 P38    
+## Kinematics of a Chain: Summary
+
 Forward kinematics:    
 
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
