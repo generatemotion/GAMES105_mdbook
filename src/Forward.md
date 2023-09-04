@@ -819,15 +819,15 @@ $$
 J^\ast =(J^TJ+\lambda I)^{-1}J^T
 $$
 
-> &#x2705; 解决方法，引入阻尼项   
+> &#x2705; 解决方法，引\\(\lambda\\)阻尼项   
 
 
 P148   
 Also called Levenberg-Marquardt algorithm    
 
 
-> &#x2705; 引入阻尼顶后，两种方式的计算结果相同   
-> &#x2705; 当入很大时，此方法等价于梯度下降法。   
+> &#x2705; 引\\(\lambda\\)阻尼顶后，两种方式的计算结果相同   
+> &#x2705; 当\\(\lambda\\)很大时，此方法等价于梯度下降法。   
 
 
 
@@ -837,7 +837,7 @@ P149
 Using the minimal rotations to reach the target    
 
 
-> &#x2705; 入的几何意义
+> &#x2705; \\(\lambda\\)的几何意义
 
 
 P150  
