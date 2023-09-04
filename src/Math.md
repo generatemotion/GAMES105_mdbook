@@ -254,18 +254,18 @@ P73
 
  - Rotation matrix is orthogonal:   
 
- $$
- R^{-1}=R^{T}  \quad R^TR=RR^T=1
- $$
+$$
+R^{-1}=R^{T}  \quad R^TR=RR^T=1
+$$
 
  - Determinant of \\(R\\)    
- $$
- \text{det } R = + 1
- $$
+$$
+\text{det } R = + 1
+$$
  - Rotation maintains length of vectors
- $$
- ||Rx|| = ||x||
- $$
+$$
+||Rx|| = ||x||
+$$
 
 
 P75   
@@ -321,7 +321,7 @@ How to find axis 𝒖 and angle \\(\theta \\)?
 
 
 > &#x2705; 用\\(R\\)旋转时，向量\\(u\\)不会变化。   
-对于任意\\(R\\)，都存在这样一个\\(u\\).     
+> &#x2705; 对于任意\\(R\\)，都存在这样一个\\(u\\).     
 
 
 
@@ -395,13 +395,13 @@ P91
 ## Parameterization of Rotation
 
  - A rotation matrix, 9 parameters: \\(𝑎_{𝑖𝑗}\\)   
- $$
- R=\begin{bmatrix}
- a_{11} & a_{12} & a_{13} \\\\
- a_{21} & a_{22} &a_{23} \\\\
- a_{31} & a_{32} &a_{33}
- \end{bmatrix}
- $$
+$$
+R=\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\\\
+a_{21} & a_{22} &a_{23} \\\\
+a_{31} & a_{32} &a_{33}
+\end{bmatrix}
+$$
 
 \\( R^TR=I   \quad \text{det }R=1 \\)  
 
@@ -1020,7 +1020,7 @@ $$
 
 
 > &#x2705; 当\\(u_0＝-u_1\\)时，可能得到某个\\(\tilde{q} _t=0\\)，无法单位化    
-解决方法:根据\\(u_0＝-u_0\\)，先找到\\(u_0\\)和\\(u_1\\)在数值上最接近的四元数表示。   
+> &#x2705; 解决方法:根据\\(u_0＝-u_0\\)，先找到\\(u_0\\)和\\(u_1\\)在数值上最接近的四元数表示。   
 
 
 P137   
