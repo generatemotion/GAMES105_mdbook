@@ -556,9 +556,9 @@ P107
  - Rotation vector: represent a rotation as
     - \\(\theta =\theta u \\)   
     - Obviously:   
-    $$
-    \theta=||\theta||  \quad u=\frac{\theta}{||\theta||} 
-    $$
+$$
+\theta=||\theta||  \quad u=\frac{\theta}{||\theta||} 
+$$
 
 
 ![](./assets/02-24.png) 
@@ -623,9 +623,9 @@ P116
 ## [𡇌] Quaternions   
 
  - Extending complex numbers    
- $$
- q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
- $$
+$$
+q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
+$$
 
  - \\(i^2=j^2=k^2=ijk=-1\\)   
  - \\(ij=k,ji=-k(^*\text{cross product})\\)   
@@ -639,7 +639,7 @@ P117
 
 $$
  q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
- $$
+$$
 
 Conjugation:   \\(\quad \quad q^*=a-bi-cj-dk\\)   
 \\(<br>\\)    
@@ -678,7 +678,7 @@ $$
 
 note:   
  - \\(i^2=j^2=k^2=ijk=-1\\)    
- - \\(ij=k,ji=-k (^*\text{cross product})\\)   
+ - \\(ij=k,ji=-k (^* \text{cross product})\\)   
  - \\(jk=i,kj=-i\\)   
  - \\(ki=j,ik=-j\\)   
 
@@ -701,6 +701,18 @@ z
  w\\\\
 v
 \end{bmatrix}
+$$
+
+$$
+q =[w,v]^T \in \mathbb{H} ,w\in \mathbb{R},v\in \mathbb{R}^3
+$$
+
+$$
+w =[w,0]^T : \text{ scalar quaternion }
+$$
+
+$$
+v =[0,v]^T : \text{ pure quaternion }
 $$
 
 
