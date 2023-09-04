@@ -90,7 +90,7 @@ $$
 =p(x_1)\prod_{t}^{} p(x_t\mid x_{t-1},\dots ,x_1;z)
 $$
 
-\\(\ast \\) The chain rule of conditional probabilities:   
+\\(^\ast \\) The chain rule of conditional probabilities:   
 
 $$
 \begin{align*}
