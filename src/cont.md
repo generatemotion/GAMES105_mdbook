@@ -101,6 +101,7 @@ $$
 
 
 P15  
+## Two Perspectives on a Motion Sequence
 
 $$
 x_t=f(x_{t-1},x_{t-2},\dots x_1;z)
@@ -108,6 +109,7 @@ $$
 
 
 P17   
+## Two Perspectives on a Motion Sequence
 
 $$
 x_t=f(x_{t-1};z)
