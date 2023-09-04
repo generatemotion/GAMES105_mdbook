@@ -332,8 +332,8 @@ f(x)=f(x)-w \log p(x )
 $$
 
 Note: \\(x\\) can represent a pose \\(\theta\\)   
-or a motion clip → a sequence of poses {\\( \theta t\\)}     
-or any features of a motion → e.g. \\(w_k\\) in PCA    
+\\(\quad\quad\\) or a motion clip → a sequence of poses {\\( \theta t\\)}     
+\\(\quad\quad\\) or any features of a motion → e.g. \\(w_k\\) in PCA    
 
 
 
