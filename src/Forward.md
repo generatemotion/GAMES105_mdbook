@@ -23,7 +23,13 @@ P4
 
 kinematics /ˌkɪnɪˈmætɪks/
 n. the study of the motion of bodies without reference to mass or force   
--- Collins English Dictionary    
+
+$$
+-- \text{ Collins English Dictionary }
+$$
+
+
+
 
 P8   
 ## Skeleton
