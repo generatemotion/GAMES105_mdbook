@@ -19,6 +19,8 @@ P3
 How to get motion data?   
 
 P23   
+## Markerless Mocap with Depth Cameras
+
 
 ![](./assets/05-01.png)  
 
@@ -284,8 +286,7 @@ P78
 
 
  - Clip → Pose   
- - Short clip →   
- “Raw” and long motion data   
+ - Short clip → “Raw” and long motion data   
 
 
 > &#x2705; 切换粒度更细：1帧 or 0.1 s．    
