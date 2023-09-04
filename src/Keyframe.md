@@ -195,7 +195,7 @@ $$
 \end{matrix}
 $$
 
-![](./assets/04-22.png)  
+         ![](./assets/04-22.png)  
 
 Jacobian for axis-angle representation has a rather complicated formulation…   
 
