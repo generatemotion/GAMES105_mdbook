@@ -373,7 +373,9 @@ P86
 > &#x2753; 单顺动作合理，动作序列就合理吗？
 
 
-P87    
+P87  
+## Motion Synthesis with a Motion Prior
+  
 Min et al. 2009   
 
 
@@ -382,6 +384,7 @@ Min et al. 2009
 
 
 P88  
+## Gaussian Distribution is not Enough!
 
 ![](./assets/06-16.png)   
 
