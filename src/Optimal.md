@@ -514,6 +514,8 @@ DDP: Differential Dynamic Programming
 
 
 P69  
+## Locomotion Using Optimal Control
+
 [Muico et al 2011 - Composite Control of Physically Simulated Characters]   
 
 
