@@ -136,9 +136,10 @@ $$
 P33  
 ## Automatic Skinning?
 
-![](./assets/07-11.png)   
-
-![](/assets/07-12.png)   
+||
+|---|
+| ![](./assets/07-11.png)   |
+| ![](./assets/07-12.png)   |
 
 Pinocchio [Baran et al., 2007]   
 
