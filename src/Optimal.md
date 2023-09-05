@@ -418,14 +418,20 @@ P60
 
 
 P61 
+## Linear Quadratic Regulator (LQR)
+
 
 ![](./assets/12-21.png) 
 
 P62   
+## Linear Quadratic Regulator (LQR)
+
 ![](./assets/12-22.png)  
 
 
 P63  
+## Linear Quadratic Regulator (LQR)
+
 
 ![](./assets/12-23.png) 
 
