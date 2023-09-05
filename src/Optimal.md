@@ -597,8 +597,8 @@ P78
 
 
 > &#x2705; 把 \\(M\\) 分解为两个矩阵，\\(M_{AXB}=M_{AXC}\cdot M_{CXB}\\) 如果 \\(C\\) 比较小，可以明显减少矩阵的参数量。    
-> &#x2705; 好处：（1）减少参数，减化优化过程。  
-> &#x2705;（2）抹掉状态里不需要的信息。  
+> &#x2705; 好处：(1) 减少参数，减化优化过程。  
+> &#x2705; (2) 抹掉状态里不需要的信息。  
 
 
 
@@ -638,7 +638,7 @@ $$
  - Optimize \\(M\\)   
     - CMA, Covariance Matrix Adaption ([Hansen 2006])
     - For the running task:
-      - #optimization variables: \\(12 \ast 9 = 108 / (12\ast 3+3 \ast 9) = 63\\)   
+      - #optimization variables: \\(12 ^\ast 9 = 108 / (12^\ast 3+3 ^\ast 9) = 63\\)   
      - 12 minutes on 24 cores   
 
 
