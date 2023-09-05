@@ -245,6 +245,8 @@ P51
 P52   
 ## Dual-Quaternion Skinning (DQS)
 
+ - Approximation of intrinsic averages in SE(3)   
+
 Ladislav Kavan, Steven Collins, Jiri Zara, Carol O‘Sullivan. **Geometric Skinning with**    
 **Approximate Dual Quaternion Blending**, ACM Transaction on Graphics, 27(4), 2008.   
 
