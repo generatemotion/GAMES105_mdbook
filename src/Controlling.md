@@ -253,17 +253,17 @@ P28
 ![](./assets/10-10.png)
 
 \\(\tau _j\\): joint torques   
-Apply \\(\tau _j\\) to “child” body   
-Apply \\(-\tau _j\\) to “parent” body    
-All forces/torques sum up to zero   
+\\(\quad\quad\\) Apply \\(\tau _j\\) to “child” body   
+\\(\quad\quad\\) Apply \\(-\tau _j\\) to “parent” body    
+\\(\quad\quad\\) All forces/torques sum up to zero   
 
 \\(f_0,\tau _0\\): root force / torque   
 
-Apply \\(f _0\\) to the root body
+\\(\quad\quad\\) Apply \\(f _0\\) to the root body
 
-Apply \\(\tau _0\\) to the root body   
+\\(\quad\quad\\) Apply \\(\tau _0\\) to the root body   
 
-Non-zero net force/torque on the character!    
+\\(\quad\quad\\) Non-zero net force/torque on the character!    
 
 
 > &#x2705; 当前系统仍存的问题。(1) 稳态误差，相位延迟 (2) 缺少对根结点的力。   
