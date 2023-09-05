@@ -77,13 +77,11 @@ P14
 P15  
 ## Recap: Dynamics of Articulated Rigid Bodies
 
-$$
-\begin{align*}
- M\dot{v} +C(x,v) & =f+J^T\lambda  \\\\
- Jv & =0
-\end{align*}
-$$
 
+
+$$
+M\dot{v} +C(x,v)  =f+J^T\lambda
+$$
 
 P16   
 ## Recap: Simulation of a Rigid Body System
