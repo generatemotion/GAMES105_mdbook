@@ -72,7 +72,7 @@ $$
 \min_{x}  f(x)+ wg(x)
 $$
 
-\\(\ast \\) The solution \\(x^\ast\\)  may not satisfy the constraint   
+\\(^\ast \\) The solution \\(x^\ast\\)  may not satisfy the constraint   
 
  
 P16   
