@@ -3,6 +3,10 @@
 
 
 P4   
+## Physics-based Character Animation  
+
+[ControlVAE – Yao et al. 2022]  
+
 
 > &#x2705; 物理方法的难点：  
 > &#x2705; (1) 仿真、在计算机中模拟出真实世界的运行方式。   
