@@ -623,7 +623,7 @@ SIGGRAPH Course 2014 — Skinning: Real-time Shape Deformation
 P88  
 ## Example-based Skinning (EBS) vs. Skeleton Subspace Deformation (SSD)    
 
-\\(\ast \\)EBS: PSD   
+\\(^\ast \\)EBS: PSD   
 \\(\quad\\)
 
  - Good: Easy to control   
@@ -638,7 +638,7 @@ P88
 
 \\(\quad\\)
 
-\\(\ast \\)SSD: LBS, DQS, etc.   
+\\(^\ast \\)SSD: LBS, DQS, etc.   
 \\(\quad\\)
 
  - Good: Easy to implement   
