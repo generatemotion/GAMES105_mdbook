@@ -265,7 +265,7 @@ state and initial decision are, the remaining decisions must
 constitute an optimal policy with regard to the state resulting 
 from the first decision.   
 
-\\(\ast \\) The problem is said to have optimal substructure    
+\\(^\ast \\) The problem is said to have optimal substructure    
 
 
 P40   
