@@ -791,7 +791,9 @@ P94
 
 
 P95   
-## DQN [Mnih et al. 2015, Human-level control through deep reinforcement learning]   
+## How to Solve MDP  
+
+DQN [Mnih et al. 2015, Human-level control through deep reinforcement learning]   
 
 P96  
 ## Multi-skill Characters
