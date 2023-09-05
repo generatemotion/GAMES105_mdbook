@@ -122,7 +122,7 @@ P100
 
 ![](./assets/08-06.png)
 
-\\(\ast \\) Constraint is passive No energy gain or loss!!!   
+\\(^\ast \\) Constraint is passive No energy gain or loss!!!   
 
 $$
 f_c\cdot v=0
