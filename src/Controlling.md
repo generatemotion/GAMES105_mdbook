@@ -253,9 +253,9 @@ P28
 ![](./assets/10-10.png)
 
 \\(\tau _j\\): joint torques   
-\\(\quad\\) Apply \\(\tau _j\\) to “child” body   
-\\(\quad\\) Apply \\(-\tau _j\\) to “parent” body    
-\\(\quad\\) All forces/torques sum up to zero   
+\\(\text{ }\\) Apply \\(\tau _j\\) to “child” body   
+\\(\text{ }\\) Apply \\(-\tau _j\\) to “parent” body    
+\\(\text{ }\\) All forces/torques sum up to zero   
 
 \\(f_0,\tau _0\\): root force / torque   
 
