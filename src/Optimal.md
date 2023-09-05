@@ -274,7 +274,7 @@ P40
 Value of a state \\(V(s)\\) :    
 
  - the minimal total cost for finishing the task starting from \\(s\\)   
- \\(\Updownarrow \\)
+\\(\Updownarrow \\)
  - the total cost for finishing the task starting from \\(s\\) using the optimal policy    
 
 
