@@ -490,9 +490,9 @@ P74
 ## Tracking Mocap with Root Forces/Torques
 
 \\(f_0,\tau _0\\): root force / torque    
-Apply \\(f_0\\) to the root body    
-Apply \\(\tau _0\\) to the root body   
-Non-zero net force/torque on the character!   
+\\(\quad\quad\\)Apply \\(f_0\\) to the root body    
+\\(\quad\quad\\)Apply \\(\tau _0\\) to the root body   
+\\(\quad\quad\\)Non-zero net force/torque on the character!   
 
 
 P75   
