@@ -280,8 +280,8 @@ Find the trajectories:
 
 $$
 \begin{align*}
- \text{Simulation trajectory }: & S_0,S_1,\dots ,S_T \\\\
- \text{Control trajectory }: & a_0,a_1,\dots ,a_{T-1}
+ \text{Simulation trajectory } & : S_0,S_1,\dots ,S_T \\\\
+ \text{Control trajectory } & : a_0,a_1,\dots ,a_{T-1}
 \end{align*}
 $$
 
