@@ -385,7 +385,7 @@ P59
 P60   
 ## Proportional-Derivative Control
 
-![](./assets/09-25.png)
+
 
 ![](./assets/09-26.png)
 
