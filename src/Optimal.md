@@ -412,6 +412,8 @@ P58
 
 
 P60   
+## Linear Quadratic Regulator (LQR)
+
 ![](./assets/12-20.png) 
 
 
