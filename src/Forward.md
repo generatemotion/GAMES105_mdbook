@@ -183,7 +183,7 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) i
 ![](./assets/03-14.png)  
 
 
-> &#x2705; \\(x_0\\)是\\(R_4\\)坐标系下的点，求它在全局坐标系下的位置。 
+> &#x2705; \\(x_0\\)是\\(R_4\\)坐标系下的点，求它在某个父坐标系下的位置。 
 
 
      
@@ -227,7 +227,7 @@ P41
 P43    
 ## Root Location
 
-![](./assets/03-19.png)  
+  
 
 P45   
 ## Types of Joints
@@ -332,10 +332,12 @@ Q2: how should we allow stretchable bones?
 
 
 P58   
-## Example: motion data in a file
+## Example: motion data in a file     
+
+BVH files   
 
  - HIERARCHY: defining **T-pose of** the character   
- - MOTION: root position and Euler angles of each joints   
+ - MOTION: root position and **Euler angles** of each joints   
 
 
 See: <https://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html>
@@ -392,12 +394,7 @@ P64
 ![](./assets/03-33.png)  
 
 P67   
-## A simple solution to a two-joint IK problem
-
-1. Rotate joint 1 such that    
-
-
-![](./assets/03-34.png)  
+  
 
 P68   
 ## A simple solution to a two-joint IK problem
@@ -801,7 +798,7 @@ P143
 ![](./assets/03-50.png)     
 
 
-> &#x2705; 左：次约束，右：过约束。  
+> &#x2705; 左：欠约束，右：过约束。  
 
 
 P145   
