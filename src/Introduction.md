@@ -3,27 +3,25 @@
 
 
 
-P8   
+P7   
 ## 3D Computer Graphics    
 
 ![](./assets/01-02.png)
 
 
 
-P10  
-> &#x2705; 仿真，用于描述客观事物，它们的运动规律可以用精确的数来描述。GAMES103    
-> &#x2705; 动画，用于描述有主观意志的事物，使用统计的方式来对它们的行为建模；利如AI建模 GAMES105  
-
-P11   
+P10    
 ## 3D Computer Animation
 
 ![](./assets/01-03.png)
 
+> &#x2705; 仿真，用于描述客观事物，它们的运动规律可以用精确的数来描述。GAMES103    
+> &#x2705; 动画，用于描述有主观意志的事物，使用统计的方式来对它们的行为建模；利如AI建模 GAMES105  
 
-> &#x2705; 上：主要指电影。下：主要是游戏。
 
 
-P12   
+P11   
+
 ## Why Do We Study Character Animation   
 
 
@@ -34,14 +32,19 @@ P12
  ![](./assets/01-4.png)  
 
  - Character animation techniques   
-    - Understanding the mechanism behind motions and behaviors   
+    - **Understanding the mechanism behind motions and behaviors**   
     - Smart editing of animation/ Reuse animation / Generate new animation   
     - **“Compute-intensive”**     
 
  ![](./assets/01-05.png)  
 
 
-P14  
+> &#x2705; 上：主要指电影。下：主要是游戏。
+
+
+
+
+P13  
 ## Character Animation Pipeline   
 
 ![](./assets/01-06.png)  
@@ -49,47 +52,51 @@ P14
 
 P15  
 
-> &#x2705; 根据是否使用物理，把角色动画分为两大类。 
 
-
-P16  
 ## Where does a Motion Come From   
  
 ![](./assets/01-07.png)  
 
+
+> &#x2705; 根据是否使用物理，把角色动画分为两大类。 
+
+
+P16  
+
+## Keyframe-based/Kinematic Approaches  
+
+
+![](./assets/01-08.png) 
 
 
 > &#x2705; 基于运动学直接更新角色状态，运动可以不符合物理规律。
 
 
 
-P17
-## Keyframe-based/Kinematic Approaches  
 
-
-![](./assets/01-08.png)  
-
-
-P18   
-
-> &#x2705; 基于物理，但实际情况会有简化，不能直接干预角色姿态。 
-
-
-
-P19    
+P18    
 ## Physics-based/Dynamic Approaches
 
 ![](./assets/01-09.png)  
 
+
+> &#x2705; 基于物理，但实际情况会有简化，不能直接干预角色姿态。 
+
+
+P19   
+## Character Animation Methods
+
+
+![](./assets/01-10.png)  
 
 
 
 P20   
 ## Character Animation Methods
 
+low-level control   
 
-![](./assets/01-10.png)  
-
+![](./assets/01-11.png)  
 
 > &#x2705; 对每一帧每一个姿态进行精确控制每个细节。   
 > &#x2705; 优点：精确控制；缺点：低效。   
@@ -99,24 +106,15 @@ P20
 P21   
 ## Character Animation Methods
 
-low-level control   
-
-![](./assets/01-11.png)  
-
-
-> &#x2705; 控制高级目标。   
-
-
-P22   
-## Character Animation Methods
-
 
 high-level control
 
 ![](./assets/01-12.png)  
 
 
-P25   
+> &#x2705; 控制高级目标。   
+
+P24   
 ## Disney’s 12 Principles of Animation
 
 ![](./assets/01-13.png)  
@@ -125,7 +123,7 @@ P25
 
 
 
-P27    
+P26    
 ## Forward Kinematics
 
 ![](./assets/01-14.png)  
@@ -134,7 +132,7 @@ P27
 **Compute** position of end-effectors    
 
 
-P28   
+P27   
 ## Inverse Kinematics   
 
 ![](./assets/01-15.png)  
@@ -143,20 +141,17 @@ P28
 **Compute** rotations of every joints    
 
 
-P29   
+P28   
 ## Interpolation
  
 ![](./assets/01-16.png)  
 
 
 
+
+
+
 P34   
-
-> &#x2705; 光学动捕、视频动捕、穿戴传感器动捕。   
-
-
-
-P35   
 ## Motion Retargeting   
 
 ![](./assets/01-17.png)  
@@ -169,17 +164,24 @@ P35
   - ……   
 
 
+> &#x2705; 光学动捕、视频动捕、穿戴传感器动捕。   
+
+
 
 P36   
+## Motion Graphs / State Machines
+
+![](./assets/01-18.png)  
+
 
 > &#x2705; 把捕出来的动作进行分解和重组，生成新的动作。  
 
 
-
 P37   
+
 ## Motion Graphs / State Machines
 
-![](./assets/01-18.png)  
+![](./assets/01-19.png)  
 
 
 > &#x2705; 给一段任意的动作，寻找能够构建状态机切换的位。 
@@ -189,25 +191,15 @@ P37
 P38   
 ## Motion Graphs / State Machines
 
-![](./assets/01-19.png)  
+![](./assets/01-20.png)   
+
+[Heck and Gleicher 2007, Parametric Motion Graphs]  
 
 > &#x2705; 对Motion Graph的改进，比如一个节点中有很多动作，对这些动作进行插值，来实现精确控制。   
 
 
 
-P39  
-## Motion Graphs / State Machines
-
-![](./assets/01-20.png)   
-
-[Heck and Gleicher 2007, Parametric Motion Graphs]  
-
-> &#x2705; Motion Graph＋AI，实现高级控制   
-> &#x2705; 例如：AI使用Motion Graph，通过选择合适的边，进行执行，完成高级语义。     
-
-
-
-P40   
+P39   
 ## Motion Graphs / State Machines
 
 **Character Animation in Two-Player Adversarial Games**   
@@ -218,7 +210,17 @@ KEVIN WAMPLER,ERIK ANDERSEN, EVAN HERBST, YONGJOON LEE, and ZORAN POPOVIC Univoe
 Adrien Treuille  \\(\quad\\)   Yongjoon Lee   \\(\quad\\)  Zoran Popovic    
 University of Washington    
 
+> &#x2705; Motion Graph＋AI，实现高级控制   
+> &#x2705; 例如：AI使用Motion Graph，通过选择合适的边，进行执行，完成高级语义。   
+
+
+
 P42  
+
+## Complex Motion Graphs
+
+
+![](./assets/01-21.png)  
 
 > &#x2705; 动作图非常复杂，容易出BUG．  
 
@@ -226,10 +228,6 @@ P42
 
 
 P43  
-## Complex Motion Graphs
-
-
-![](./assets/01-21.png)  
 
 > &#x2705; 改进，Motion Graph的动作都是完整的片断，可以把动作再分细一点，切到每一帧。    
 > &#x2705; 不是完整地播放一段动作，而是每一帧结束后，通过最近邻搜索找到一个新的姿态，  
@@ -238,25 +236,27 @@ P43
 
 
 P45  
+## Learning-based Approaches
+
+
+![](./assets/01-22.png) 
+
+
 > &#x2705; 对角色动作的内在规律去理解和建模，从数据学习统计规律。  
 > &#x2705; 生成模型：只需要采足够的动作去给模型就能生成新的动作。   
 > &#x2705; 不需要手工作切分、生成状态机   
 
 
-P46   
-## Learning-based Approaches
 
 
-![](./assets/01-22.png)  
-
-P48  
+P47  
 
 ## Motion Generative Models
 
 [Ling et al. 2021 Character Controllers Using Motion VAEs]    
 
 
-P50   
+P49   
 ## Cross-Modal Motion Synthesis
 
  - Audio-driven animation   
@@ -267,9 +267,9 @@ P50
 [Ao et al. 2022. Rhythmic Gesticulator. SIGGRAPH Asia 2022]    
 
 
-> &#x2705; 语言和动作都有内存的统计规律，把两种统计模型之间建关系，实现跨模态生成。   
 
-P51   
+
+P50   
 ## Cross-Modal Motion Synthesis   
 
 
@@ -282,42 +282,44 @@ P51
 ![](./assets/01-23.png)  
 
 
+> &#x2705; 语言和动作都有内存的统计规律，把两种统计模型之间建关系，实现跨模态生成。   
+
+
+P51   
 > &#x2705; 不直接生成姿态，而是控制量（例如力），通过物理仿真真正改变角色。   
 
 
 
-P53  
+P52  
 ## Character Animation Methods  
 
 
 ![](./assets/01-24.png)  
 
 
-P56  
+P55  
 ## Character Animation Methods   
 
 
 ![](./assets/01-25.png)  
 
 
-P58  
+P57  
 ## Kinematic Approaches
 
 
 ![](./assets/01-26.png)  
 
 
-P59   
+P58   
 ## Physics-based Character Animation
 
 
 ![](./assets/01-27.png)  
 
 
-> &#x2705; 用于人死掉、失去意识、突发事件来不及响应的情况。
 
-
-P60 
+P59
 
 ## Ragdoll Simulation
 
@@ -325,38 +327,53 @@ P60
 ![](./assets/01-28.png)  
 
 
-P62  
+
+> &#x2705; 用于人死掉、失去意识、突发事件来不及响应的情况。
+
+
+
+
+P61  
 ## Physics-based Character Animation
 
 
 ![](./assets/01-29.png)  
 
 
-P64   
+P63   
 ## Motion Reconstruction with Sparse Sensors
 
 ![](./assets/01-30.png)  
 
-P65  
+P64  
 ## Motion Reconstruction with Sparse Sensors
 
 [DeepMotion: Virtual Reality Tracking]   
 
-P66
+P65
 
 [Ye et al. 2022: Neural3Points]   
 
 
-P67   
+P66   
 [Yang et al. 2022: Learning to Use Chopsticks]
 
 
 
 
-P68   
+P67   
 ## Character Animation Methods
 
 ![](./assets/01-31.png)  
+
+
+
+
+P68  
+## Physics-based/Dynamic Approaches   
+
+
+![](./assets/01-32.png)  
 
 
 > &#x2705; 构建完整的神经系统和肌肉系统。   
@@ -364,24 +381,19 @@ P68
 > &#x2705; （2）自由度高，仿真效率低。   
 
 
-P69  
-## Physics-based/Dynamic Approaches   
+P69
 
-
-![](./assets/01-32.png)  
-
-
-> &#x2705; 用关节力矩仿真肌肉的力。     
-
-P70   
 
 ## Physics-based/Dynamic Approaches   
 
 
 ![](./assets/01-33.png)  
 
+> &#x2705; 用关节力矩仿真肌肉的力。     
 
-P71   
+
+
+P70   
 
 ## Force & Torque
 
@@ -389,47 +401,47 @@ P71
 ![](./assets/01-34.png)  
 
 
-> &#x2705; 根据当前状态与目标状态的差距，计算出当前状态运动到目标状态所需要的力矩。  
 
 
-P72   
+
+P71   
 
 ## Proportional-Derivative (PD) Control  
   
 
 ![](./assets/01-35.png)  
 
-> &#x2705; 目标状态→力矩→动作   
+> &#x2705; 根据当前状态与目标状态的差距，计算出当前状态运动到目标状态所需要的力矩。  
 
 
-P73   
+
+
+P72  
 ## Tracking Controllers
 
 
 ![](./assets/01-36.png)  
 
-P74   
+> &#x2705; 目标状态→力矩→动作   
+
+P73  
 ## Tracking Controllers
 
 [Hodgins and Wooten 1995, Animating Human Athletics]   
 
 
 
-P76  
-
-> &#x2705; 关键帧→力→仿真   
-
-P77   
+P76   
 ## Trajectory Crafting
 
 NaturalMotion - Endorphin   
 
 
-P79   
+> &#x2705; 关键帧→力→仿真   
 
-> &#x2705; 用优化方法实现，结合重定向
 
-P80  
+
+P79  
 ## Spacetime/Trajectory Optimization
 
 ![](./assets/01-037.png)  
@@ -437,37 +449,42 @@ P80
 [Liu et al 2010. SAMCON]
 
 
-P81  
+> &#x2705; 用优化方法实现，结合重定向
+
+
+P80  
 ## Spacetime/Trajectory Optimization
 
 [Wampler and Popović. 2009. Optimal gait and form for animal locomotion]    
 
 
-> &#x2705; 这是高维非线性优化问题，非常准解。    
 
 
-P82   
+
+P81   
 ## Spacetime/Trajectory Optimization
 
 [Hamalainen et al. 2020, Visualizing Movement Control Optimization Landscapes]    
 
+> &#x2705; 这是高维非线性优化问题，非常准解。    
+
+
 
 P83   
-
-> &#x2705; 用简化模型把想要的动作描述出来，来指导角色控制。   
-> &#x2705; 基于此实现稳定的多技能的控制策略。  
-> &#x2705; 控制简化、缺少细节，走路像机器人。   
-> &#x2705; 简化模型思路，可以实现对一些动作进行控制，且结果鲁棒，允许使用外力与角色交互。   
-> &#x2705; 缺点：只能走路，不能复杂动作。   
-
-P84   
 ## Abstract Models   
 
 
 ![](./assets/01-38.png)  
 
 
-P86   
+> &#x2705; 用简化模型把想要的动作描述出来，来指导角色控制。   
+> &#x2705; 基于此实现稳定的多技能的控制策略。  
+> &#x2705; 控制简化、缺少细节，走路像机器人。   
+> &#x2705; 简化模型思路，可以实现对一些动作进行控制，且结果鲁棒，允许使用外力与角色交互。   
+> &#x2705; 缺点：只能走路，不能复杂动作。 
+
+
+P85   
 ## Abstract Models   
 
 Inverted Pendulum Model
@@ -478,18 +495,15 @@ Inverted Pendulum Model
 
 
 
-P88   
+P87   
 ## Reinforcement Learning  
 
 ![](./assets/01-40.png)  
 
 
+
+
 P89   
-
-> &#x2705; 利用DRL做复杂动作，但还只是动作复现。   
-
-
-P90   
 
 ## DRL-based Tracking Controllers  
 
@@ -500,21 +514,22 @@ P90
 
 [Peng et al. 2018. DeepMimic]    
 
-
-> &#x2705; 引入状态机，完成更复杂动作。
-
+> &#x2705; 利用DRL做复杂动作，但还只是动作复现。   
 
 
-P91  
+
+
+P90  
 ## Multi-skill Characters
 
 State Machines of Tracking Controllers    
 
 
-> &#x2705; 引入Motion Maching    
+> &#x2705; 引入状态机，完成更复杂动作。
 
 
-P92   
+
+P91   
 
 ## Multi-skill Characters  
 
@@ -522,9 +537,9 @@ P92
 
 [Liu et al. 2017: Learning to Schedule Control Fragments]  
 
+> &#x2705; 引入Motion Maching    
 
-
-P95   
+P94   
 ## Generative Control Policies
 
 
@@ -532,7 +547,7 @@ P95
 
 
 
-P96   
+P95   
 ## Generative Control Policies
 
 
@@ -540,23 +555,27 @@ P96
 
 
 
-P100   
+P99   
 ## Character Animation Methods  
 
 
 ![](./assets/01-44.png)  
 
 
-> &#x2705; 回顾计算机角色动化领域最近30年主要研究方向。 
 
 
-P101  
+P100  
 
 ## Character Animation Methods   
 
 ![](./assets/01-45.png)  
 
-P103    
+
+> &#x2705; 回顾计算机角色动化领域最近30年主要研究方向。 
+
+
+
+P102    
 ## About This Course    
 
  - What will not be covered   
