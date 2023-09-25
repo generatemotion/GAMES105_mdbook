@@ -67,11 +67,6 @@ $$
 P35   
 ## How to rotate a vectors?
 
-![](./assets/02-05.png)  
-
-
-
-
 
 
 $$
@@ -91,6 +86,7 @@ $$
 
 P53   
 
+# Matrix   
 ## Matrix Form of Cross Product
 
 
@@ -143,15 +139,6 @@ $$
 P57   
 ## How to rotate a vectors?   
 
-![](./assets/02-06.png)  
-
-
-$$
-\begin{align*}
-v = &(\sin \theta )u\times a  \\\\
- t = & (1-\cos \theta)u \times (u\times a) 
-\end{align*}
-$$
 
 $$
 \begin{align*}
@@ -384,10 +371,6 @@ P87
 
 ## Representations of 3D Rotation   
 
-P90  
-
-| degrees of freedom (DoF) = 3 |
-|---|
 
 
 P91   
@@ -403,7 +386,7 @@ a_{31} & a_{32} &a_{33}
 \end{bmatrix}
 $$
 
-\\( R^TR=I   \quad \text{det }R=1 \\)  
+
 
 | degrees of freedom (DoF) = 3 |
 |---|
@@ -901,7 +884,7 @@ P129
 
 ## [𡇌] Rotation a Vector Using Unit Quaternions  
 
-![](./assets/02-30.png)  
+ 
 
 $$
 \begin{bmatrix}
