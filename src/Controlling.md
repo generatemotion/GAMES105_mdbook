@@ -36,11 +36,7 @@ This arm never reaches the target angle under gravity
 
 
 P5   
-## Problems with PD Control   
 
-PD control computes torques based on **errors**   
-
- - Steady state error   
  - Motion falls behind the reference   
 
 ![](./assets/10-04.png)
@@ -327,7 +323,7 @@ $$
 
 
 > &#x2705; 仍以方块移动到目标高度为例。   
-> &#x2705; 目标函数：目标顶＋正则项    
+> &#x2705; 目标函数：目标项＋正则项    
 > &#x2705; 约束：半隐式积分的运动方程      
 
 
@@ -343,7 +339,7 @@ P34
 
 > &#x2705; 以两种方式体现约束：   
 > &#x2705;（1）Hard：必须满足，难解，不稳定。    
-> &#x2705;（2）Suft：尽可能满足，易求解。   
+> &#x2705;（2）Soft：尽可能满足，易求解。   
 
 
 
@@ -623,18 +619,11 @@ Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) ap
 
 
 
-P70   
-## Jacobian Transpose Control  
-
-Make \\(f\\) and \\(\tau _i\\) done the same work    
-
-
-> &#x2705; 从做功的角度。  
-
-
 
 P73  
 ## Jacobian Transpose Control  
+
+> &#x2705; 从做功的角度。  
 
 Make \\(f\\) and \\(\tau _i\\) done the same power    
 
