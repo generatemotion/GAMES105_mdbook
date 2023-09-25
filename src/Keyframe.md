@@ -54,7 +54,8 @@ P15
 
 ## T-Pose
 
-![](./assets/04-3.png)  
+{ \\(𝑅_𝑖 = 𝐼\\) }
+The pose with zero / identity rotation Bind pose / Reference pose   
 
 P16   
 ## T-Pose? A-Pose?
@@ -337,7 +338,7 @@ $$
 \cos \theta = q_0 \cdot q_1
 $$
 
-![](./assets/04-31.png)  
+
 
 Constant rotational speed, but only “linear” interpolation    
 
