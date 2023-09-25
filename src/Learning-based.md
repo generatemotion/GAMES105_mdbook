@@ -135,7 +135,7 @@ A possible set of feature vectors:
  - root linear/angular velocity   
  - position of end effectors w.r.t. root joint   
  - linear/angular velocity of end effectors w.r.t. root joint   
- - future heading position/orientation (e.g. in 0.5s, 1.0s, 1.5s, etc.)   
+ - **future** heading position/orientation (e.g. in 0.5s, 1.0s, 1.5s, etc.)   
  - foot contacts   
  - ……   
 
@@ -153,8 +153,12 @@ P36
     - An efficient data structure for searching   
       - e.g. KD-tree   
 
+ - A efficient dataset   
+     - “Dance card”
 
-![](./assets/06-11.png)   
+
+
+![](./assets/06-11-1.png)   
 
 
 
@@ -249,8 +253,16 @@ P71
 P75   
 ## Gaussian Distribution
 
-![](./assets/06-19.png)   
+![](./assets/06-19-1.png)   
 
+Maximum Likelihood Estimators (MLE):    
+
+$$
+\begin{align*}
+\bar{x}  &= \frac{1}{N} \sum_{i}^{} x_i \\\\
+\Sigma  &  =\frac{1}{N} X^TX
+\end{align*}
+$$
 
 
 
@@ -342,15 +354,18 @@ Note: \\(x\\) can represent a pose \\(\theta\\)
 
 
 P82   
-## Motion Synthesis with a Motion Prior
 
-Given a motion prior \\(p(x)\\) learned from a set of data points \\(D \\)= {\\(x_i\\)}, Synthesize a motion \\(x\\) that minimize the objective   
 
-$$
-f(x)=f(x)-w \log p(x )
-$$
+\\(f(x)\\)    
+IK   
+Keyframes   
+User control   
+Environment constraints    
+……   
 
-![](./assets/06-20.png)   
+
+
+
 
 
 P83   
@@ -407,7 +422,7 @@ P90
 
 ![](./assets/06-22.png)   
 
-[Starke et al 2020, Local Motion Phases for Learning Multi￾Contact Character Movements]
+[Starke et al 2020, Local Motion Phases for Learning Multi-Contact Character Movements]
 
 
 ![](./assets/06-23.png)   
