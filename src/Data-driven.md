@@ -22,7 +22,7 @@ P23
 ## Markerless Mocap with Depth Cameras
 
 
-![](./assets/05-01.png)  
+  
 
 
 P29   
