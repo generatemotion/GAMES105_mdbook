@@ -286,6 +286,14 @@ P44
 
 P46   
 
+## Fully-Actuated vs. Underactuated
+
+|||
+|--|--|
+|![](./assets/09-20.png) | ![](./assets/09-21.png)|
+|If #actuators ≥ #dofs, the system is **fully-actuated** | If #actuators < #dofs, the system is **underactuated** |
+
+
 > &#x2705; ＃actuators：\\(f \\) 和 \\(\tau \\) 的自由度。  
 > &#x2705; #dofs：角色状态的自由度。   
 > &#x2705; 左图：可以精确控制机械臂到达目标状态。   
@@ -295,16 +303,7 @@ P46
 
 
 P47   
-## Fully-Actuated vs. Underactuated
-
-|||
-|--|--|
-|![](./assets/09-20.png) | ![](./assets/09-21.png)|
-|If #actuators ≥ #dofs, the system is **fully-actuated** | If #actuators < #dofs, the system is **underactuated** |
-
-
-
-P48   
+ 
 ## Fully-Actuated vs. Underactuated
 
 For any \\([x,v,\dot{v} ]\\), there exists an \\(f\\) that produces the motion
@@ -315,11 +314,6 @@ For many \\([x,v,\dot{v} ]\\) , there is no such \\(f\\) that produces the motio
 
 P49   
 
-> &#x2705; 如果角色受到挠动而偏离了原计划，无法修正回来。   
-
-
-
-P50  
 ## Feedforward vs. Feedback   
 
 Feedforward control:   
@@ -336,7 +330,12 @@ $$
 ![](./assets/09-22.png)
 
 
-P51  
+> &#x2705; 如果角色受到挠动而偏离了原计划，无法修正回来。   
+
+
+
+P50  
+ 
 ## Feedforward vs. Feedback   
 
 Feedforward control:   
@@ -351,6 +350,9 @@ $$
 
 
 P55   
+## Proportional-Derivative Control
+
+![](./assets/09-23.png)
 
 
 > &#x2705; 有反馈，但还是算是前向控制，因为反馈的部分和想控制的部分不完全一致。   
@@ -363,58 +365,50 @@ P55
 P56   
 ## Proportional-Derivative Control
 
-![](./assets/09-23.png)
+![](./assets/09-24.png)
 
 
 > &#x2705; 改进：如果物体已有同方向速度，则力加得小一点。  
 
 
 P57   
-## Proportional-Derivative Control
-
-
-![](./assets/09-24.png)
 
 
 P59   
+## Proportional-Derivative Control
+
+![](./assets/09-26.png)
+
+
 
 > &#x2705; 存在的问题：为了抵抗重力，一定会存在这样的误差。   
 
 
 
 P60   
-## Proportional-Derivative Control
 
-
-
-![](./assets/09-26.png)
-
-
-P61   
 ## Proportional-Derivative Control
 
 Increase stiffness \\(k_p\\) reduces the steady-state error, but can make the system too stiff and numerically unstable    
 
-
-> &#x2705; 解决误差方法：积分项。   
-> &#x2705; 但角色动画通常不用积分项。   
-> &#x2705; 积分项会带来实现的麻烦和控制的不稳定。   
+ 
 
 
 
-P62   
+P61   
 ## Proportional-Integral-Derivative controller 
 
 ![](./assets/09-27.png)  
 ![](./assets/09-28.png)  
 
 
-> &#x2705; 前面是PD的例子，这里是PD在物理仿真角色上的应用，计算在每个关节上施加多少力矩。   
-> &#x2705; 通常目标的速度 \\(\bar{q} = 0\\).   
+> &#x2705; 解决误差方法：积分项。   
+> &#x2705; 但角色动画通常不用积分项。   
+> &#x2705; 积分项会带来实现的麻烦和控制的不稳定。  
 
 
 
-P63   
+P62   
 ## PD Control for Characters
 
 ![](./assets/09-29.png)
@@ -422,25 +416,38 @@ P63
 ![](./assets/09-30.png)
 
 
-> &#x2705; \\(K_p\\) 太小：可能无法达到目标状态。   
-> &#x2705; \\(K_p\\) 太大：人体很僵硬。  
-> &#x2705; \\(k_d\\) 太小：动作有明显振荡。    
-> &#x2705; \\(k_d\\) 太大，要花更多时间到达目标资态。    
+> &#x2705; 前面是PD的例子，这里是PD在物理仿真角色上的应用，计算在每个关节上施加多少力矩。   
+> &#x2705; 通常目标的速度 \\(\bar{q} = 0\\).   
 
 
-P64  
+
+P63  
 ## PD Control for Characters
 
 
 ![](./assets/09-31.png)
 
 
-P67  
+
+> &#x2705; \\(K_p\\) 太小：可能无法达到目标状态。   
+> &#x2705; \\(K_p\\) 太大：人体很僵硬。  
+> &#x2705; \\(k_d\\) 太小：动作有明显振荡。    
+> &#x2705; \\(k_d\\) 太大，要花更多时间到达目标资态。   
+
+
+P66  
 ## Tracking Controllers
 
 
 ![](./assets/09-32.png)   
 
+
+
+P67  
+## Full-body Tracking Controllers
+
+
+![](./assets/09-33.png)   
 
 > &#x2705; 设计角色的目标轨迹。  
 > &#x2705; 直接用PD控制跟踪动捕数据会有很大的问题，原因：   
@@ -449,14 +456,12 @@ P67
 
 
 
-P68  
+P71  
 ## Full-body Tracking Controllers
 
+Is PD control a **feedforward** control?   
+a **feedback** control?   
 
-![](./assets/09-33.png)   
-
-
-P71  
 
 > &#x2705; 是反馈控制，因为计算 \\(\tau \\) 时使用了当前状态 \\(q\\)．  
 > &#x2705; 是前馈控制，因为在PD系统里，状态是位置不是 \\(q\\).   
@@ -464,17 +469,6 @@ P71
 
 
 P72   
-## Full-body Tracking Controllers
-
-Is PD control a **feedforward** control?   
-a **feedback** control?   
-
-
-> &#x2705; 合力为零，无法控制整体的位置和朝向。   
-
-
-
-P73  
 ## Tracking Mocap with Joint Torques   
 
 \\(\tau _j\\): joint torques   
@@ -483,27 +477,31 @@ Apply \\(-\tau _j\\) to “parent” body
 **All forces/torques sum up to zero**   
 
 
-> &#x2705; 净外力，无施力者，用于帮助角色保持平衡。 
+> &#x2705; 合力为零，无法控制整体的位置和朝向。   
 
 
-P74   
+
+P73  
 ## Tracking Mocap with Root Forces/Torques
 
 \\(f_0,\tau _0\\): root force / torque    
 \\(\quad\quad\\)Apply \\(f_0\\) to the root body    
 \\(\quad\quad\\)Apply \\(\tau _0\\) to the root body   
-\\(\quad\quad\\)Non-zero net force/torque on the character!   
+\\(\quad\quad\\)Non-zero net force/torque on the character!  
+
+
+> &#x2705; 净外力，无施力者，用于帮助角色保持平衡。 
+
+
 
 
 P75   
-
-> &#x2705; 关键帧与仿真的混合。  
-
-
-P76  
 ## Mixture Simulation and Mocap
 
 ![](./assets/09-34.png)
+
+
+> &#x2705; 关键帧与仿真的混合。  
 
 
 
