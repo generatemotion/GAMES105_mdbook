@@ -54,7 +54,7 @@ P15
 
 ## T-Pose
 
-{ \\(𝑅_𝑖 = 𝐼\\) }
+{ \\(𝑅_𝑖 = 𝐼\\) }    
 The pose with zero / identity rotation Bind pose / Reference pose   
 
 P16   
