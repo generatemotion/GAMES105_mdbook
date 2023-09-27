@@ -18,9 +18,6 @@ P3
 
 How to get motion data?   
 
-P23   
-## Markerless Mocap with Depth Cameras
-
 
   
 
