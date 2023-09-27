@@ -374,9 +374,6 @@ P83
 ![](./assets/06-14.png)   
 
 
-P83   
-
-## Gaussian Distribution is not Enough!   
 
 P84  
 ## Gaussian Distribution is not Enough!
