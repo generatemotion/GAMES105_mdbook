@@ -624,7 +624,6 @@ P73
 ## Jacobian Transpose Control  
 
 
-
 Make \\(f\\) and \\(\tau _i\\) done the same power    
 
 $$
@@ -641,6 +640,11 @@ $$
 J=\frac{\partial g}{\partial \theta } 
 $$
 
+
+> &#x2705; 从做功的角度。  
+
+
+
 P76  
 ## Jacobian Transpose Control
 
@@ -655,8 +659,6 @@ $$
 $$
 \tau _i=(x-p_i)\times f
 $$
-
-> &#x2705; 从做功的角度。  
 
 
 P77  
