@@ -247,6 +247,12 @@ P45
 > &#x2705; 不需要手工作切分、生成状态机   
 
 
+P46  
+## Learning-based Approaches    
+
+[Starke et al 2020, Local Motion Phases for Learning Multi-Contact Character Movements]    
+
+
 
 
 P47  
