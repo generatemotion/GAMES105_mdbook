@@ -623,7 +623,7 @@ Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) ap
 P73  
 ## Jacobian Transpose Control  
 
-> &#x2705; 从做功的角度。  
+
 
 Make \\(f\\) and \\(\tau _i\\) done the same power    
 
@@ -655,6 +655,8 @@ $$
 $$
 \tau _i=(x-p_i)\times f
 $$
+
+> &#x2705; 从做功的角度。  
 
 
 P77  
