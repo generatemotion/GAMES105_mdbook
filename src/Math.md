@@ -23,12 +23,21 @@ P3
 * a few slides were modified from GAMES-101 and GAMES-103   
 
 
+P24   
+
+> &#x2705; 两个单位向量的叉乘不一定是单位向量。   
+> &#x2705; 要得到方向，应先又乘再单位化   
+> &#x2705; \\(n=\frac{a\times b}{||a\times b||} \quad\quad\quad n=\frac{a}{||a||} \times \frac{b}{||b||}\\)
+
+
 P26   
 
 ## How to find the rotation between vectors?   
 
 
 ![](./assets/02-01.png)  
+
+> &#x2705; 已知\\(a，b\\)求旋转。   
 
 
 P27   
@@ -44,6 +53,8 @@ $$
 $$
 
 ![](./assets/02-02.png)  
+
+> &#x2705; \\(u\\)为旋转轴，\\(Q\\)为旋转角。   
 
 
 P33   
@@ -62,6 +73,11 @@ $$
 $$
 
 ![](./assets/02-04.png)  
+
+
+> &#x2705; 已知\\(a\\)和旋转\\((𝒖,\theta )\\)求终点\\(b\\)   
+> &#x2705; \\(a\\)移动到\\(b\\)看作是先移动\\(𝒗\\)再移动\\(t\\)，分别计算\\(𝒗\\)和\\(t\\)的方向和长度。   
+> &#x2705; 单独把平面拿出来看。 
 
 
 P35   
@@ -124,8 +140,6 @@ P56
 ## Matrix Form of Cross Product
 
 
-
-
 $$
 \begin{align*}
 a \times b = &[a] _ \times b  \\\\
@@ -135,6 +149,9 @@ a \times b = &[a] _ \times b  \\\\
  (a \times b) \times c = & [a\times b] _ \times  c \\\\
 \end{align*}
 $$
+
+> &#x2705; 最后一个公式注意一下，叉乘不满足结合律。
+
 
 P57   
 ## How to rotate a vectors?   
@@ -148,6 +165,7 @@ b = & a+(\sin \theta )u \times a +(1-\cos \theta)u \times(u \times a) \\\\
 \end{align*}
 $$
 
+> &#x2705; 把前面的叉乘公式转化为点乘形式   
 
 
 P58
@@ -158,6 +176,17 @@ Rodrigues' rotation formula
 $$
 R = I+(\sin \theta )[u]_ \times + (1-\cos \theta )[u]^2_ \times
 $$
+
+
+> &#x2705; \\(R\\)是旋转\\((u,\theta )\\)对应的旋转矩阵。  
+
+
+P62
+> &#x2705; 行列式的计算：红色相乘减蓝色相乘。
+［＠］加图   
+![](./assets/02-62-01.png)  
+
+
 
 P63   
 ## Determinant of a Matrix   
@@ -188,6 +217,9 @@ a_xb_y-a_yb_x
 \end{align*}
 $$
 
+> &#x2705; 用行列式运算规则来计算叉乘结果。   
+
+
 P66   
 ## Eigenvalues and Eigenvectors  
 
@@ -216,6 +248,8 @@ P68
 ## Rigid Transformation: Translation + Rotation
 
 ![](./assets/02-07.png)  
+
+> &#x2705; 刚体变换不能改变形状和大小，因此没有scaling   
 
 
 P69  
@@ -255,6 +289,11 @@ $$
 $$
 
 
+> &#x2705; 公式2：\\(R\\)不会改变左、右手系    
+> &#x2705; 公式3：\\(R\\)是刚性变换,不改变大小    
+
+
+
 P75   
 ## Combination of Rotations   
 
@@ -291,6 +330,10 @@ R_z(\gamma  )=\begin{pmatrix}
 $$
 
 
+> &#x2705; 沿着哪个轴转,那个轴上的坐标不会改变。   
+> &#x2705; 三个基本旋转可以组合出复杂旋转。    
+
+
 P79   
 
 ## Rotation Axis and Angle   
@@ -309,7 +352,7 @@ How to find axis 𝒖 and angle \\(\theta \\)?
 
 > &#x2705; 用\\(R\\)旋转时，向量\\(u\\)不会变化。   
 > &#x2705; 对于任意\\(R\\)，都存在这样一个\\(u\\).     
-
+> &#x2705; \\(u\\)是\\(R\\)的旋转轴。   
 
 
 P80   
@@ -325,7 +368,7 @@ P81
 
 
 > &#x2705; \\({u}' \\)与\\({u} \\)共线，\\({u}' \\)单位化得到\\({u} \\)．  
-
+> &#x2705; \\(q\\)和\\(-q\\)两种表示方法会入插值问题,需要注意。
 
 P82  
 
@@ -351,6 +394,8 @@ P83
 
 
 > &#x2705; 从\\(R\\)的公式也能得出相同的结论    
+> &#x2705; \\(U \longrightarrow {U}' \longrightarrow \\)旋转角度   
+
 
 
 P85   
@@ -410,6 +455,7 @@ $$
 
 
 > &#x2705; 平移使用线性插值    
+> &#x2705; 对于任意\\(t\\),\\(x_t\\)一定是合法的。运动的速度是常数,因此速度可控。    
 
 
 
@@ -424,6 +470,8 @@ P98
  - What is good interpolation?   
     - Rotation is valid at any time \\(t\\)   
     - Constant rotational speed is preferred   
+
+> &#x2705; 旋转不适合线性插值。
 
 
 P99   
@@ -503,6 +551,9 @@ $$
 
 > &#x2705; 使用欧拉角时应先明确所使用的convetion 和顺序。  
 > &#x2705; 不同的商业软件可能有不同的内置参数。   
+> &#x2705; maya 和 unity都是extrinsic.   
+> &#x2705; maya可选顺序,Unity固定Zxy   
+
 
 
 P104   
@@ -547,7 +598,10 @@ $$
 ![](./assets/02-24.png) 
 
 
-
+> &#x2705; [@]这里都粗体和细体两种0,和果打幽不出来就截图
+> &#x2705; 粗体\\( \theta\\)：轴角表示法描述的旋转
+> &#x2705; 细体 \\(\mathbf{\theta }\\)：以\\(U\\)为轴的依专角度   
+> &#x2705; 应用时要先转为旋转矩阵,做旋转组合时也要借助旋转矩阵    
 
 
 
@@ -573,6 +627,11 @@ $$
 
  - \\(\theta _t\\) is valid \\(\quad {\color{Green} \surd } \\)   
  - Constant speed \\({\quad \color{Green} \surd } \\) 
+
+
+> &#x2705; 这个方法没听懂,可以实现允许插值。   
+
+
 
 P112  
 
@@ -666,7 +725,7 @@ note:
  - \\(ki=j,ik=-j\\)   
 
 
-> &#x2705; \\(q^1\cdot q^2\\)和\\(q^1q^2\\)是两种不同的运算。
+> &#x2705; \\(q_1\cdot q_2\\)和\\(q_1q_2\\)是两种不同的运算。
 
 
 
@@ -822,6 +881,10 @@ q = [\cos \frac{\theta}{2} ,  + u\sin \frac{\theta}{2} ]&||u||=1
 \end{matrix}
 $$
 
+
+> &#x2705; 所有单位四元数构成4D空间上的单位球核。  
+
+
 P126   
 ## [𡇌] Unit Quaternions  
 
@@ -878,7 +941,11 @@ $$
 
 
 > &#x2705; 纯方向\\(P\\)可用四元数表示为 \\([0 \quad p ]\\)    
+> &#x2705;  [@]字母0改成数字0    
 
+$$
+{P}' =R(q)\cdot p
+$$
 
 P129   
 
