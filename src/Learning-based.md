@@ -101,6 +101,11 @@ P24
 
 ![](./assets/06-09.png)   
 
+> &#x2705; 根据用户输入设计邻局的仅重，这一步难以工业化。   
+> &#x2705; 论文使用强化学习来解决，这样增加了训练的难度。   
+
+
+
 P31   
 ## Motion Matching
 
@@ -139,6 +144,8 @@ A possible set of feature vectors:
  - foot contacts   
  - ……   
 
+> &#x2705; Motion Matching 中距离函数的设计很重要，很大程度上影响算法的效果。   
+> &#x2705; 这个距离定义可以是特征相关的。  
 
 
 P36   
@@ -171,8 +178,8 @@ P39
 ## Statistical Models of Human Motion   
 
 
-> &#x2705; 根据已有数据，对“动作自然“建模。   
-
+> &#x2705; 根据已有数据，对“动作自然”建模。   
+> &#x2705; 或找到一个模型，告诉我们什么是自然姿态。   
 
 P43   
 ## The Low-dimensionality of Human Motions   
@@ -208,6 +215,8 @@ a pose \\(x\\) with smaller \\(\sum _k\frac{((x-\bar{x})\cdot u_k)^2 }{\sigma ^2
 
 
 > &#x2705; 可作为动作生成的先验，告诉我一个动作是否合理。   
+> &#x2705; \\(M_k\\)和\\(\sigma_k\\)分别是\\(k\\)维上的均值和方差。   
+
 
 
 P66  
@@ -221,6 +230,8 @@ $$
 \theta=(t_0,R_0,R_1,R_2\dots  \dots )
 $$
 
+
+> &#x2705; 正则项代表主观先验:\\(\theta \\)小更有可能是合理动作。   
 
 
 P68  
@@ -236,7 +247,7 @@ $$
 
 
 > &#x2705; 把P65方法应用到IK来判断动作好坏的实例。   
-
+> &#x2705; 改进为基于统计的先验。   
 
 
 P71  
@@ -282,6 +293,7 @@ $$
 x-\bar{x} =\sum_{k=1}^{n} w_ku_k
 $$
 
+> &#x2705; PCA分解可以看作是坐标转换或变量代换。   
 
 
 P77   
@@ -351,6 +363,7 @@ Note: \\(x\\) can represent a pose \\(\theta\\)
 \\(\quad\quad\\) or a motion clip → a sequence of poses {\\( \theta t\\)}     
 \\(\quad\quad\\) or any features of a motion → e.g. \\(w_k\\) in PCA    
 
+> &#x2705; \\(x\\)可以不自限于\\(\theta \\)、而是任何一个可以描述motion的量。   
 
 
 P82   
@@ -363,7 +376,7 @@ User control
 Environment constraints    
 ……   
 
-
+> &#x2705; \\(f(x)\\)代表目标，目标也不局限于IK   
 
 
 
@@ -387,7 +400,7 @@ P86
 
 > &#x2705; 使用高斯混合模型，用于动作编辑。   
 > &#x2753; 单顺动作合理，动作序列就合理吗？
-
+> &#x2705; \\(x\\)不局限于单帧动作,也可以是一个序列。    
 
 P87  
 ## Motion Synthesis with a Motion Prior

@@ -41,6 +41,11 @@ P9
 
 ![](./assets/03-02.png)  
 
+> &#x2705; 关注关节的位置和旋转    
+
+
+P13  
+> &#x2705; FK:要使手臂摆成指定的动作,每个关节在各自坐标系下的旋转是多少
 
 
 P14    
@@ -59,6 +64,9 @@ Q_4=I
 $$
 
 
+> &#x2705; 这一个定义了5个关节的手臂。在每个关节上绑上一个坐标系。 
+
+
 P15    
 ## Kinematics of a Chain
 
@@ -74,6 +82,10 @@ $$
 Q_4={\color{Red}{R_4}}
 \end{matrix}
 $$
+
+
+> &#x2705; \\(Q\\)：在世界坐标系下的朝向   
+> &#x2705; \\(R\\)：在局部坐标系下的旋转  
 
 
 P16   
@@ -162,6 +174,10 @@ P23
 ![](./assets/03-11.png)  
 
 
+> &#x2705; \\(\iota \\)：子关节位置在父坐标系下的坐标。   
+
+
+
 P31   
 ## Kinematics of a Chain   
 
@@ -184,7 +200,9 @@ Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) i
 
 
 > &#x2705; \\(x_0\\)是\\(R_4\\)坐标系下的点，求它在某个父坐标系下的位置。 
-
+> &#x2705; \\(p\\)：关节在全局坐标系下的位置   
+> &#x2705; 第1步：根据\\(R_i\\)和\\(\iota _i\\)求出\\(Q_i\\)和\\(P_i\\)    
+> &#x2705; 第2步：\\(E\\)可以是任意父结点,公式都适用    
 
      
 P38    
@@ -195,6 +213,9 @@ Forward kinematics:
 Given the rotations of all joints \\(R_i\\), find the coordinates of \\(x_0\\) in the global frame \\(x\\):    
 
 ![](./assets/03-15.png)  
+
+> &#x2705; 是上一页的另一种写法,不需提前算出中间变量。    
+
 
 P39   
 ## Kinematics of a Chain: Summary
@@ -215,6 +236,9 @@ P40
 ![](./assets/03-17.png)  
 
 
+> &#x2705; 对应上一页的另一种写法   
+
+
 P41   
 ## Kinematics of a Character
 
@@ -227,7 +251,11 @@ P41
 P43    
 ## Root Location
 
-  
+
+P44 [@]P43图换成P44图
+
+> &#x2705; 以不同关节为root,同样旋转会得到不同效果。   
+
 
 P45   
 ## Types of Joints
@@ -331,6 +359,9 @@ P57
 Q2: how should we allow stretchable bones?    
 
 
+> &#x2705; 答:增加参数,3 Dof增加为 6 Dof.   
+
+
 P58   
 ## Example: motion data in a file     
 
@@ -428,6 +459,11 @@ $$
 $$
 l_{ox}=l_{02}
 $$
+
+
+> &#x2705; 叉乘得到旋轴,点乘得到旋转角。   
+
+
 
 P71   
 ## A simple solution to a two-joint IK problem
@@ -592,7 +628,7 @@ The “first” joint moves more than the others May take **many iterations** to
 > &#x2705; 一个动作序列做CCD，可能结果不稳定，有跳变。   
 > &#x2705; 前面例子是3210的调整顺序，也可以是0123的顺序。   
 > &#x2705; 关于梯度下降法跳过。   
-
+> &#x2705; 先移到的关节调整幅度会大一点,所以一般从末端开始。   
 
 P105   
 
@@ -604,6 +640,11 @@ $$
  = & J^T \Delta   
 \end{align*}
 $$
+
+
+> &#x2705; J是Jacobia矩阵,\\(\bigtriangleup \\)是位置差    
+
+
 
 P106   
 ## Jacobian Transpose   
@@ -617,6 +658,19 @@ J= \frac{\partial f}{\partial \theta }=(\frac{\partial f}{\partial \theta_0 }\fr
 $$
 
 
+P114     [⑩]加一页   
+> &#x2705; 关节1旋转轴\\(a_1\\),对\\(x\\)位移是怎么影响的?   
+
+P115     [⑩]加一页   
+
+
+P117     [⑩]加一页   
+
+
+P119     [⑩]加一页   
+
+
+
 P121   
 ## Jacobian Transpose / Gradient Descent   
 
@@ -624,6 +678,10 @@ First-order approach, convergence can be slow Need to re-compute Jacobian at eac
 
 > &#x2705; 怎么求\\(J\\)，这里讲了3种方法（1）backward框架（2）差分（3）几何计算。实际上直接用1可以解决，不需要自己去算，因此跳过。   
 > &#x2705; 特点：（1）迭代次数比CCD少（2）计算量比CCD大。   
+
+
+P122
+> &#x2705; 数值插值算法见GAMES102.   
 
 
 P124    
@@ -884,8 +942,18 @@ Andreas Aristidou and Joan Lasenby. 2011.
 **FABRIK: A fast, iterative solver for the Inverse Kinematics problem.**   
 *Graphical Models*   
 
-
+> &#x2705; 不同优化方法对应不同IK长方法   
+> &#x2705; CCD → CCDIK   
+> &#x2705; GD → Jacobian GD     
+> &#x2705; Gaussian → jacobian Inverse  
  
+P158   
+[⑩]加一页   
+> &#x2705; slerp结合sbline.   
+> &#x2705; 50 fps → 60 fps:先插值,再采样   
+> &#x2705; 惯性插值：UE基于SPD求约束来做IK   
+> &#x2705; 参考 Darel Holden博客    
+
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

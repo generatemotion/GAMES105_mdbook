@@ -18,6 +18,7 @@ Many images are from: <https://skinning.org/>
 **Skinning: real-time shape deformation**.     
 *In ACM SIGGRAPH 2014 Courses (SIGGRAPH '14)*    
 
+> &#x2705; SIGGRAPH 经典的蒙皮课程。   
 
 
 P7  
@@ -46,6 +47,8 @@ P12
 > &#x2705; 让 Mesh 顶点跟着骨骼运动。  
 > &#x2705; 骨骼运动的旋转和平移分别为 \\(R\\) 和 \\(t\\)，关节的位置和朝向则变成了\\({Q}'\\)和\\({o}'\\).   
 > &#x2705; 求\\(x\\)的新位置\\({x}'\\).   
+> &#x2705; 本质上就是坐标变换   
+> &#x2705; 世界坐标系 → \\({o}\\)坐标系→\\({o}'\\) 坐标系 → 世界坐标系    
 
 
 P13   
@@ -772,6 +775,8 @@ P104
 
 
 > &#x2705; 几种不同的表情基混合方式。   
+> &#x2705; 第二种，直接在几个脸之间做混合，适用于数据少的情况。   
+
 
 
 P105  
@@ -784,6 +789,8 @@ P105
 Egger et al. 2020. **3D Morphable Face Models - Past, Present, and Future**. *ACM Trans. Graph*. 39, 5 (June 2020), 157:1-157:38.   
 
 > &#x2705; 第一项：平均脸。第二项：PCA. 第三项：表情基。   
+> &#x2705; BI ID 通常由PCA得到。   
+> &#x2705; 基于脸部肌肉的物理仿真。   
 
 
 P107   
