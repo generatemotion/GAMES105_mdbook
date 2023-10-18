@@ -101,7 +101,7 @@ P24
 
 ![](./assets/06-09.png)   
 
-> &#x2705; 根据用户输入设计邻局的仅重，这一步难以工业化。   
+> &#x2705; 根据用户输入设计邻局的权重，这一步难以工业化。   
 > &#x2705; 论文使用强化学习来解决，这样增加了训练的难度。   
 
 
@@ -363,7 +363,7 @@ Note: \\(x\\) can represent a pose \\(\theta\\)
 \\(\quad\quad\\) or a motion clip → a sequence of poses {\\( \theta t\\)}     
 \\(\quad\quad\\) or any features of a motion → e.g. \\(w_k\\) in PCA    
 
-> &#x2705; \\(x\\)可以不自限于\\(\theta \\)、而是任何一个可以描述motion的量。   
+> &#x2705; \\(x\\)可以不局限于\\(\theta \\)、而是任何一个可以描述motion的量。   
 
 
 P82   
@@ -400,7 +400,7 @@ P86
 
 > &#x2705; 使用高斯混合模型，用于动作编辑。   
 > &#x2753; 单顺动作合理，动作序列就合理吗？
-> &#x2705; \\(x\\)不局限于单帧动作,也可以是一个序列。    
+> &#x2705; \\(x\\)不局限于单帧动作，也可以是一个序列。    
 
 P87  
 ## Motion Synthesis with a Motion Prior
