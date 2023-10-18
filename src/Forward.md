@@ -642,7 +642,7 @@ $$
 $$
 
 
-> &#x2705; J 是 Jacobia矩阵， \\( \Delta \\) 是位置差    
+> &#x2705; \\(J\\) 是 Jacobia矩阵， \\( \Delta \\) 是位置差    
 
 
 
@@ -659,7 +659,7 @@ $$
 
 
 P114     [⑩]加一页   
-> &#x2705; 关节1旋转轴\\(a_1\\),对\\(x\\)位移是怎么影响的?   
+> &#x2705; 关节 1 旋转轴 \\(a_1\\)，对 \\(x\\) 位移是怎么影响的？   
 
 P115     [⑩]加一页   
 
@@ -676,12 +676,12 @@ P121
 
 First-order approach, convergence can be slow Need to re-compute Jacobian at each iteration   
 
-> &#x2705; 怎么求\\(J\\)，这里讲了3种方法（1）backward框架（2）差分（3）几何计算。实际上直接用1可以解决，不需要自己去算，因此跳过。   
-> &#x2705; 特点：（1）迭代次数比CCD少（2）计算量比CCD大。   
+> &#x2705; 怎么求 \\(J\\)，这里讲了 3 种方法：（1）backward 框架（2）差分（3）几何计算。实际上直接用 1 可以解决，不需要自己去算，因此跳过。   
+> &#x2705; 特点：（1）迭代次数比 CCD 少（2）计算量比 CCD 大。   
 
 
 P122
-> &#x2705; 数值插值算法见GAMES102.   
+> &#x2705; 数值插值算法见 GAMES102.   
 
 
 P124    
@@ -771,7 +771,7 @@ first-order optimality condition
 
 P132   
 
-> &#x2705; J 的维度是 \\(3\times N\\)，因此 \\(J^TJ\\) 不可逆。   
+> &#x2705; \\(J\\) 的维度是 \\(3\times N\\)，因此 \\(J^TJ\\) 不可逆。   
 
 
 
@@ -846,7 +846,7 @@ P141
 ![](./assets/03-49.png)  
 
 
-> &#x2705; 改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变\\(J\\)的形状为方阵或高瘦阵，此时\\(J^TJ\\)可逆，则换一种方式求逆。   
+> &#x2705; 改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变 \\(J\\) 的形状为方阵或高瘦阵，此时 \\(J^TJ\\) 可逆，则换一种方式求逆。   
 
 
 
@@ -866,7 +866,7 @@ Usually faster than gradient descent/Jacobian transpose method.
 Any problem? \\(JJ^T/J^TJ\\) can be (near) singular!    
 
 
-> &#x2705; 快一点是因为\\(J^＋\\)是近似的\\(J\\)，计算量较小，问题是可能得到一个错很远的\\(J^＋\\)，导致结果不稳定。   
+> &#x2705; 快一点是因为 \\(J^＋\\) 是近似的 \\(J\\)，计算量较小，问题是可能得到一个错很远的 \\(J^＋\\)，导致结果不稳定。   
 
 
 
@@ -882,15 +882,15 @@ $$
 J^\ast =(J^TJ+\lambda I)^{-1}J^T
 $$
 
-> &#x2705; 解决方法，引\\(\lambda\\)阻尼项   
+> &#x2705; 解决方法，引 \\(\lambda\\) 阻尼项   
 
 
 P148   
 Also called Levenberg-Marquardt algorithm    
 
 
-> &#x2705; 引\\(\lambda\\)阻尼顶后，两种方式的计算结果相同   
-> &#x2705; 当\\(\lambda\\)很大时，此方法等价于梯度下降法。   
+> &#x2705; 引 \\(\lambda\\) 阻尼顶后，两种方式的计算结果相同。   
+> &#x2705; 当 \\(\lambda\\) 很大时，此方法等价于梯度下降法。   
 
 
 
@@ -900,7 +900,7 @@ P149
 Using the minimal rotations to reach the target    
 
 
-> &#x2705; \\(\lambda\\)的几何意义
+> &#x2705; \\(\lambda\\) 的几何意义
 
 
 P150  
@@ -920,9 +920,9 @@ P152
 ![](./assets/03-052.png)  
 
 
-> &#x2705; 全身IK，不同链条上都有目标点。   
+> &#x2705; 全身 IK，不同链条上都有目标点。   
 > &#x2705; 可以同时优化所有链，或选一个或选一些。   
-> &#x2705; IK要更新哪关节也可以自由设定。   
+> &#x2705; IK 要更新哪关节也可以自由设定。   
 
 
 P156   
@@ -942,17 +942,17 @@ Andreas Aristidou and Joan Lasenby. 2011.
 **FABRIK: A fast, iterative solver for the Inverse Kinematics problem.**   
 *Graphical Models*   
 
-> &#x2705; 不同优化方法对应不同IK长方法   
+> &#x2705; 不同优化方法对应不同 IK 长方法   
 > &#x2705; CCD → CCDIK   
 > &#x2705; GD → Jacobian GD     
-> &#x2705; Gaussian → jacobian Inverse  
+> &#x2705; Gaussian → Jacobian Inverse  
  
 P158   
 [⑩]加一页   
-> &#x2705; slerp结合sbline.   
-> &#x2705; 50 fps → 60 fps:先插值,再采样   
-> &#x2705; 惯性插值：UE基于SPD求约束来做IK   
-> &#x2705; 参考 Darel Holden博客    
+> &#x2705; Slerp 结合 Sbline.   
+> &#x2705; 50 fps → 60 fps：先插值，再采样   
+> &#x2705; 惯性插值：UE 基于 SPD 求约束来做 IK   
+> &#x2705; 参考 Darel Holden 博客    
 
 
 ---------------------------------------
