@@ -32,15 +32,16 @@ P4
 
 ![](./assets/11-04.png)
 
-Walking: move without loss of contact, or flight phases   
+Walking: move without *loss of contact*, or flight phases   
 
 P5  
 ## Walking   
 
 ![](./assets/11-05.png)
 
-Running   
-
+$$
+\text{Running  } 
+$$
 
 P7  
 ## Walking with Static Balance  
@@ -214,7 +215,7 @@ $$
    
 
 > &#x2705; 在所有力作用下处于静平衡状态。  
-> &#x2705; \\(0\\) 是一个参考点。  
+> &#x2705; \\(o\\) 是一个参考点。  
 
 
 
@@ -327,18 +328,22 @@ P36
  - Simplify humanoid / biped robot into an abstract model   
     - Often consists of a CoM and a massless mechanism   
     - Need to map the state of the robot to the abstract model   
+
+![](./assets/11-24.png) 
+
+
  - Plan the control and movement of the model   
     - Optimization   
     - Dynamic programming   
     - Optimal control   
     - MPC   
+
+![](./assets/11-22.png)   
+
  - Track the planned motion of the abstract model   
     - Inverse Kinematics   
     - Inverse Dynamics   
 
-![](./assets/11-24.png) 
-
-![](./assets/11-22.png)   
 
 ![](./assets/11-23.png)   
 
@@ -375,6 +380,8 @@ P38
 
 
 P39   
+## ASIMO
+
 
 > &#x2705; 人的特点是重心偏离再拉回来，这样比始终保持平更省。   
 
@@ -439,6 +446,9 @@ P46
 
 
 P47   
+
+## Generalized walking control
+
 > &#x2705; 可以适用于不同角色，不同动作，不同环境交互。   
 
 
