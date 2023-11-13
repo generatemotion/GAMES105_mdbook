@@ -155,9 +155,9 @@ P56
  - A special coordinate system that moves horizontally with the character with one axis pointing to the “facing direction” of the character   
 
  - Possible definitions of \\(R\\)    
- - \\(R\\) is the **y-rotation** that aligns the z-axis of the global frame to the heading direction    
- - \\(R\\) is the **y-rotation** that aligns x-axis of the global frame to the average direction of the vectors between shoulders and hips    
- - Decomposition root rotation as \\(R_0=R_yR_{xz}\\)     
+    - \\(R\\) is the **y-rotation** that aligns the z-axis of the global frame to the heading direction    
+    - \\(R\\) is the **y-rotation** that aligns x-axis of the global frame to the average direction of the vectors between shoulders and hips    
+    - Decomposition root rotation as \\(R_0=R_yR_{xz}\\)     
 
 
 > &#x2705; 不同的 \\(R\\) 的定义适配不同的场景，例如上下半身的 \\(y\\) 轴旋转方向不同。   
