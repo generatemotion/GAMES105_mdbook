@@ -677,7 +677,10 @@ Assuming all joints are hinge joint
 ![](./assets/03-46-1.png)  
 
 $$
-{x}' -x=(\sin \delta \theta _i)a_i\times r_i+(1-\cos \delta \theta _i)a_i\times(a_i\times r_i)\\\\
+{x}' -x=(\sin \delta \theta _i)a_i\times r_i+(1-\cos \delta \theta _i)a_i\times(a_i\times r_i)
+$$
+
+$$
 \frac{\partial f }{\partial \theta _i} =\lim_{\delta \theta _i \to 0} \frac{{x}'-x }{\delta \theta _i}=a_i\times r_i 
 $$
 
