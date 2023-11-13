@@ -681,7 +681,7 @@ $$
 $$
 
 $$
-\frac{\partial f }{\partial \theta _i} =\lim_{\delta \theta _i \to 0} \frac{{x}'-x }{\delta \theta _i}=a_i\times r_i 
+\frac{ \partial f }{\partial \theta _ i} = \lim _ {\delta \theta _ i \to 0} \frac{{x}'-x }{\delta \theta _ i}= a _ i\times r _i 
 $$
 
 
