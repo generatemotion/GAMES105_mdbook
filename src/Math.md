@@ -418,12 +418,7 @@ P86
 P87   
 
 ## Representations of 3D Rotation   
-
-
-P90   
-##　Parameterization of Rotation
-
-degrees of freedom (DoF) = 3　　　
+　
 
 
 P91   
