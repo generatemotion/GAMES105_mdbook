@@ -518,13 +518,9 @@ $$
 P74   
 ## IK as an Optimization Problem
 
-![](./assets/03-39.png)  
+![](./assets/03-39-1.png)  
 
-Find \\(\theta \\) such that      
 
-$$
-\tilde{x} -f(\theta )=0
-$$
 
 P75  
 ## IK as an Optimization Problem  
