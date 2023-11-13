@@ -725,7 +725,7 @@ $$
 $$
 
 $$
-\frac{\partial f}{\partial \theta _{i\ast } }=a_{i\ast }\times r_i
+\frac{ \partial f }{\partial \theta _ {i\ast } } = a _ {i\ast } \times r _ i
 $$
 
 P121   
