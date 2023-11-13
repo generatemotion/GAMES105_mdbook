@@ -1005,7 +1005,7 @@ Andreas Aristidou and Joan Lasenby. 2011.
 > &#x2705; Gaussian → Jacobian Inverse  
  
 P158   
-[⑩]加一页   
+ 
 > &#x2705; Slerp 结合 Sbline.   
 > &#x2705; 50 fps → 60 fps：先插值，再采样   
 > &#x2705; 惯性插值：UE 基于 SPD 求约束来做 IK   
