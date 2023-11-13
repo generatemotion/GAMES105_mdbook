@@ -82,6 +82,7 @@ P19
 
 P20   
 
+
 ![](./assets/04-07.png)  
 
 P21   
@@ -183,7 +184,7 @@ P80
 
 Rotate joint 3 such that \\(l_{34}\\) points towards \\(\tilde{x} \\)    
 Stretch link 2 such that \\((x-\tilde{x})\perp l_{23} \\)   
-Rotate joint 1 such that 𝒍14 points towards \\(\tilde{x} \\)   
+Rotate joint 1 such that \\(𝒍_{14}\\) points towards \\(\tilde{x} \\)   
 ……    
 
 
@@ -342,6 +343,11 @@ $$
 
 Constant rotational speed, but only “linear” interpolation    
 
+
+P158   
+Ken Shoemake. 1985    
+Animating rotation with quaternion curves.    
+*SIGGRAPH Computer Graphics,*    
 
 
 ---------------------------------------
