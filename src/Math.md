@@ -625,13 +625,7 @@ P112
 
 ![](./assets/02-25-2.png) 
 
-Representation is not unique    
 
-$$
-\begin{matrix}
- (u,\theta ), & (-u,-\theta ),  & (u,\theta+2n\pi), 
-\end{matrix}
-$$
 
 
  - Easy to compose?   \\(\quad \quad {\color{Green} \surd } \quad \quad \\)   But hard to manipulate    
