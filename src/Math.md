@@ -610,18 +610,9 @@ P111
 
 ## [囬] Interpolating Rotation Vectors / Axis Angles   
 
-Compute offset rotation   
 
-$$
-\begin{align*}
- R(\delta \theta )= & R^T(\theta _0)R(\theta _1)\\\\
- \delta \theta _t= & (1-t)0+t\delta \theta \\\\
- R( \theta_t)= & R( \theta _0)R(\delta \theta _t)
-\end{align*}
-$$
+![](./assets/02-25-1.png) 
 
- - \\(\theta _t\\) is valid \\(\quad {\color{Green} \surd } \\)   
- - Constant speed \\({\quad \color{Green} \surd } \\) 
 
 
 > &#x2705; 这个方法没听懂，可以实现允许插值。   
