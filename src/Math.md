@@ -623,9 +623,7 @@ P112
 
 ## [囬] Rotation Vectors / Axis Angles   
 
-$$
-(u,\theta) \text{ or } \theta =\theta u
-$$
+![](./assets/02-25-2.png) 
 
 Representation is not unique    
 
