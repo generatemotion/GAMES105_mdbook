@@ -669,18 +669,61 @@ J= \frac{\partial f}{\partial \theta }=(\frac{\partial f}{\partial \theta_0 }\fr
 $$
 
 
-P114     [⑩]加一页   
+P114    
+## Geometric Approach
+
+Assuming all joints are hinge joint   
+
+![](./assets/03-46-1.png)  
+
+$$
+{x}' -x=(\sin \delta \theta _i)a_i\times r_i+(1-\cos \delta \theta _i)a_i\times(a_i\times r_i)\\\\
+\frac{\partial f }{\partial \theta _i} =\lim_{\delta \theta _i \to 0} \frac{{x}'-x }{\delta \theta _i}=a_i\times r_i 
+$$
+
+
 > &#x2705; 关节 1 旋转轴 \\(a_1\\)，对 \\(x\\) 位移是怎么影响的？   
 
-P115     [⑩]加一页   
+P115    
+## Geometric Approach
 
 
-P117     [⑩]加一页   
+![](./assets/03-46-2.png)  
 
 
-P119     [⑩]加一页   
+P117    
+## Geometric Approach
+
+How to deal with ball joints?    
+A ball joint parameterized as Euler angles:  
+
+$$ 
+𝑅_𝑖 = 𝑅_{𝑖𝑥}𝑅_{𝑖𝑦}𝑅_{𝑖𝑧}
+$$   
+
+can be considered as a compound joint with 
+three hinge joints   
 
 
+![](./assets/03-46-4.png)   
+
+
+P119     
+## Geometric Approach
+
+Note: rotation axes are    
+
+$$
+\begin{align*}
+ 𝒂_{𝑖𝑥} & =𝑄_{𝑖−1}𝒆_𝑥  \\\\
+  𝒂_{𝑖𝑦}& = 𝑄_{𝑖−1}𝑅_{𝑖𝑥}𝒆_𝑦\\\\
+  𝒂_{𝑖𝑧} &= 𝑄_{𝑖−1}𝑅_{𝑖𝑥}𝑅_{𝑖𝑦}𝒆_𝑧
+\end{align*}
+$$
+
+$$
+\frac{\partial f}{\partial \theta _{i\ast } }=a_{i\ast }\times r_i
+$$
 
 P121   
 ## Jacobian Transpose / Gradient Descent   
