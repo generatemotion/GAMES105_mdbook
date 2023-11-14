@@ -360,6 +360,11 @@ $$
 P55   
 ## Proportional-Derivative Control
 
+Compute force \\(f\\) to move the object to the target height    
+
+![](./assets/09-23-1.png)
+
+![](./assets/09-23-2.png)
 ![](./assets/09-23.png)
 
 
@@ -367,7 +372,7 @@ P55
 > &#x2705; 例子：物体只能沿竿上下移动，且受到重力。  
 > &#x2705; 控制目的：控制力是物体达到目标高度。   
 > &#x2705; 实际上：会产生上下振荡，不会停在目标位置。   
-> &#x2705; ［＠］增加内容    
+    
 
 
 P56   
@@ -503,7 +508,7 @@ P73
 \\(\quad\quad\\)Non-zero net force/torque on the character!  
 
 
-> &#x2705; 净外力，无施力者，用于帮助角色保持平衡。 
+> &#x2705; 净外力，无施力者，用于帮助角色保持平衡。   
 > &#x2705; 缺点：让角色看起来像提线木偶。   
 
 
