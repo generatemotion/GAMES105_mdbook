@@ -385,8 +385,13 @@ P56
 
 
 P57   
+
+## Proportional-Derivative Control
+
+![](./assets/09-24-1.png)
+
 > &#x2705; 第一项：比例控制；第二项：微分控制   
-［＠加一页   
+
 
 
 
