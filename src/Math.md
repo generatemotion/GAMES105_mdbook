@@ -1,8 +1,5 @@
-# Lecture 02
-
-
 P2  
-## Outline   
+# Outline   
 
  - Review of Linear Algebra    
     - Vector and Matrix   
@@ -14,42 +11,52 @@ P2
     - Rotation vectors/Axis angles   
     - Quaternions   
 
+> &#x2705; 这节课大部分内容会跳过，因为前面课程讲过好多遍了
+
 P3
 
-## Review of Linear Algebra    
+# Review of Linear Algebra    
 
-#### Vectors and Matrices   
+## Vectors and Matrices   
 
-* a few slides were modified from GAMES-101 and GAMES-103   
+*a few slides were modified from GAMES-101 and GAMES-103*   
 
 
 P24   
 
 > &#x2705; 两个单位向量的叉乘不一定是单位向量。   
 > &#x2705; 要得到方向，应先叉乘再单位化   
-> &#x2705; \\(n=\frac{a\times b}{||a\times b||} \quad\quad\quad n=\frac{a}{||a||} \times \frac{b}{||b||}\\)
+> &#x2705; \\(n=\frac{a\times b}{||a\times b||}\\)（正确）、\\(n=\frac{a}{||a||} \times \frac{b}{||b||}\\)（错误）
 
 
 P26   
 
-## How to find the rotation between vectors?   
+### How to find the rotation between vectors?   
 
 
-![](./assets/02-01.png)  
+#### 问题描述
 
 > &#x2705; 已知\\(a,b\\) , 求旋转。   
 
+![](./assets/02-01.png)  
+
+#### 求旋转轴
 
 P27   
 
 Any vector in the bisecting plane can be the axis
 
+$$
+𝒖 =\frac{𝒂 × 𝒃}{||𝒂 × 𝒃||} 
+$$
+
+#### 求旋转角
 
 P28   
 
 The minimum rotation:    
 $$
-𝒖 =\frac{𝒂 × 𝒃}{||𝒂 × 𝒃||}  \quad \quad  \theta = \mathrm{arg} \cos \frac{a\cdot b}{||a||||b||} 
+\theta = \mathrm{arg} \cos \frac{a\cdot b}{||a||||b||} 
 $$
 
 ![](./assets/02-02.png)  
@@ -58,11 +65,17 @@ $$
 
 
 P33   
-## How to rotate a vectors?
+### How to rotate a vectors?
+
+#### 问题描述
+
+已知 \\(a\\) 和旋转 \\((𝒖, \theta )\\) 求终点 \\(b\\)   
 
 ![](./assets/02-3.png)  
 
+#### 解题方法
 
+\\(a\\) 移动到 \\(b\\) 看作是先移动 \\(𝒗\\) 再移动 \\(t\\)，分别计算 \\(𝒗\\) 和 \\(t\\) 的方向和长度。   
 
 $$
 𝒗 \gets  𝒖 \times  𝒂
@@ -74,27 +87,16 @@ $$
 
 ![](./assets/02-04.png)  
 
-
-> &#x2705; 已知 \\(a\\) 和旋转 \\((𝒖, \theta )\\) 求终点 \\(b\\)   
-> &#x2705; \\(a\\) 移动到 \\(b\\) 看作是先移动 \\(𝒗\\) 再移动 \\(t\\)，分别计算 \\(𝒗\\) 和 \\(t\\) 的方向和长度。   
-> &#x2705; 单独把平面拿出来看。 
-
-
+#### 计算过程
 P35   
-## How to rotate a vectors?
-
-
 
 $$
 𝒗 = (\sin \theta) 𝒖 \times  𝒂
-$$
-
-$$
 𝒕 =(1-\cos \theta ) 𝒖 \times( 𝒖 \times 𝒂)
 $$
 
 
-Rodrigues' rotation formula    
+#### Rodrigues' rotation formula    
 
 $$
 𝒃 = 𝒂 + (\sin \theta) 𝒖 × 𝒂 + (1-\cos \theta ) 𝒖 \times( 𝒖 \times 𝒂)
@@ -102,8 +104,9 @@ $$
 
 P53   
 
-# Matrix   
-## Matrix Form of Cross Product
+## Matrix   
+
+### Matrix Form of Cross Product
 
 
 
@@ -126,9 +129,6 @@ b_z
 \end{align*}
 $$
 
-$$
-\quad 
-$$
 
 
 $$ 
@@ -137,8 +137,6 @@ $$
 
 
 P56  
-## Matrix Form of Cross Product
-
 
 $$
 \begin{align*}
@@ -154,8 +152,13 @@ $$
 
 
 P57   
-## How to rotate a vectors?   
+### How to rotate a vectors?   
 
+#### 问题描述
+
+已知 \\(a\\) 和旋转 \\((𝒖, \theta )\\) 求终点 \\(b\\)  
+
+#### 把前面的结论转化为矩阵形式
 
 $$
 \begin{align*}
@@ -167,9 +170,7 @@ $$
 
 > &#x2705; 把前面的叉乘公式转化为点乘形式   
 
-
-P58
-## How to rotate a vectors?
+#### 结论
 
 Rodrigues' rotation formula
 
@@ -182,18 +183,17 @@ $$
 
 
 P62
+### Determinant of a Matrix   
+
+#### 定义
 
 ![](./assets/02-07-1.png)  
 
 > &#x2705; 行列式的计算：红色相乘减蓝色相乘。
 
 
-
-
-
 P63   
-## Determinant of a Matrix   
-
+#### 公式
 
  - det \\(I = 1\\)     
  - det \\(AB = \text{ det } A ∗ \text{det } B\\)    
@@ -203,7 +203,7 @@ P63
 
 
 P64   
-## Cross Product as a Determinant
+#### Cross Product as a Determinant
 
 $$
 \begin{align*}
@@ -224,7 +224,7 @@ $$
 
 
 P66   
-## Eigenvalues and Eigenvectors  
+### Eigenvalues and Eigenvectors  
 
 For a matrix \\(A\\), if a **nonzero** vector \\(x\\) satisfies    
 $$
@@ -241,14 +241,9 @@ has at least one real eigenvalue: \\(\lambda=\text{det } U = ±1\\)
 
 P67   
 
-## Rigid Transformation   
+### Rigid Transformation   
 
 Translation, rotation, and coordinate transformation 
-
-
-P68   
-
-## Rigid Transformation: Translation + Rotation
 
 ![](./assets/02-07.png)  
 
@@ -256,25 +251,27 @@ P68
 
 
 P69  
-## Scaling   
+#### Scaling   
 
 ![](./assets/02-08.png)  
 
 P70   
 
-## Translation   
+#### Translation   
 
 ![](./assets/02-9.png)    
 
 
 
 P72   
-## Rotation   
+#### Rotation   
 
 ![](./assets/02-10.png)    
 
 P73   
 ## Rotation Matrix    
+
+### 定义
 
  - Rotation matrix is orthogonal:   
 
@@ -298,13 +295,13 @@ $$
 
 
 P75   
-## Combination of Rotations   
+### Combination of Rotations   
 
 ![](./assets/02-11.png)    
 
 
 P76   
-## Rotation around Coordinate Axes
+### Rotation around Coordinate Axes
 
 ![](./assets/02-12.png)    
 
@@ -360,7 +357,7 @@ How to find axis 𝒖 and angle \\(\theta \\)?
 
 P80   
 
-## Rotation Axis and Angle   
+### 根据旋转矩阵求轴角  
 
 ![](./assets/02-14.png)    
 
@@ -391,7 +388,7 @@ $$
 
 
 P83  
-## Rotation Axis and Angle   
+### 基于罗德里格公式求轴角   
 
 ![](./assets/02-17.png)    
 
@@ -403,83 +400,58 @@ P83
 
 P85   
 
-## Coordinate Transformation   
+### 旋转矩阵的意义
+
+### 旋转  
 
 ![](./assets/02-18.png)    
 
 
 
 P86   
-## Coordinate Transformation
+### 旋转 + 平移
 
 ![](./assets/02-19.png) 
 
 
 P87   
 
-## Representations of 3D Rotation   
+# Representations of 3D Rotation   
 　
 
 
 P91   
+## 旋转矩阵
 
-## Parameterization of Rotation
+### Parameterization of Rotation
 
- - A rotation matrix, 9 parameters: \\(𝑎_{𝑖𝑗}\\)   
-$$
-R=\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\\\
-a_{21} & a_{22} &a_{23} \\\\
-a_{31} & a_{32} &a_{33}
-\end{bmatrix}
-$$
-
-
-
-| degrees of freedom (DoF) = 3 |
-|---|
-
+旋转矩阵有9个参数，但实际上degrees of freedom (DoF) = 3
 
 > &#x2705; det 只是把空间减少一半，没有降低自由度
 
-
-
 P93  
-## Interpolation of Translations
+### Interpolation
+
+What is good interpolation?   
+  - result is valid at any time \\(t\\)   
+  - Constant speed is preferred   
 
 
-![](./assets/02-20-1.png) 
-
-
-
-$$
-x_t=(1-t)x_0+tx_1
-$$
-
-
-> &#x2705; 平移使用线性插值    
-> &#x2705; 对于任意 \\(t\\), \\(x_t\\) 一定是合法的。运动的速度是常数，因此速度可控。    
-
-
-
-P95   
-##  Interpolation of Rotations    
-
-![](./assets/02-21.png) 
-
-P98   
-## Interpolation of Rotations  
-
- - What is good interpolation?   
-    - Rotation is valid at any time \\(t\\)   
-    - Constant rotational speed is preferred   
-
-> &#x2705; 旋转不适合线性插值。
+||平移|旋转|
+|---|---|---|
+||![](./assets/02-20-1.png)|![](./assets/02-21.png)| 
+||\\(x_t=(1-t)x_0+tx_1\\)<br> &#x2705; 平移使用线性插值|&#x2705; 旋转不适合线性插值。|    
+|合法|&#x2705; 对于任意 \\(t\\), \\(x_t\\) 一定是合法的。
+|速度可控|&#x2705; 运动的速度是常数，因此速度可控。|
 
 
 P99   
 
+### 结论
+
  - Easy to compose?   \\(\quad \quad \quad {\color{Red} \times } \\)
+> &#x2705; 9个参数没有直接的意义，且为了满足正交阵，参数之间是耦合的。  
+
  - Easy to apply?   \\(\quad \quad \quad \quad {\color{Green}  \surd }\\)
  - Easy to interpolate?  \\(\quad  \quad {\color{Red} \times } \\)
 
@@ -487,8 +459,7 @@ P99
 P100  
 ## Euler angles
 
-
- - Basic rotations
+### Basic rotations
 
 
 ![](./assets/02-22.png) 
@@ -517,26 +488,21 @@ R_z(\gamma  )=\begin{pmatrix}
 \end{pmatrix}
 $$
 
+### combination of three basic rotations
 
-P101  
-## [囘] Euler Angles   
-
- - Any rotation can be represented as a combination of three basic rotations
+**Any rotation can be represented as a combination of three basic rotations**
 
 
 P102   
 
-## [囘] Euler Axes   
-
-
- - Any combination of three basic rotations are allowed   
+Any combination of three basic rotations are allowed   
     - Excluding those rotate twice around the same axis   
     - XYZ, XZY, YZX, YXZ, ZYX, ZXY, XYX, XZX, YXY, YZY, ZXZ, ZYZ    
 
 
 P103  
 
-## [囘] Conventions of Euler Angles   
+### Conventions of Euler Angles   
 
 intrinsic rotations: axes attached to the **object**
 
@@ -561,9 +527,9 @@ $$
 
 P104   
 
-## [囘] Gimbal Lock    
+### Gimbal Lock    
 
- - When two local axes are driven into a parallel configuration, 
+When two local axes are driven into a parallel configuration, 
 one degree of freedom is “locked”   
 
 
@@ -573,7 +539,7 @@ one degree of freedom is “locked”
 
 P105  
 
-## [囘] Euler Angles   
+### 结论   
 
 ![](./assets/02-23.png) 
 
@@ -583,32 +549,33 @@ P105
 
 P107  
 
-## [囬] Rotation Vectors / Axis Angles   
+## Rotation Vectors / Axis Angles   
 
 
 ![](./assets/02-24-1.png) 
 
+> &#x2705; 粗体 \\(\theta \\)：轴角表示法描述的旋转    
+> &#x2705; 细体 \\(\theta \\)：以 \\(u\\) 为轴的旋转角度
 
 ![](./assets/02-24.png) 
 
-
-   
-> &#x2705; 粗体 \\(\theta \\)：轴角表示法描述的旋转    
-> &#x2705; 细体 \\(\theta \\)：以 \\(u\\) 为轴的旋转角度      
 > &#x2705; 应用时要先转为旋转矩阵，做旋转组合时也要借助旋转矩阵       
 
-
-
-
 P110   
-## [囬] Interpolating Rotation Vectors / Axis Angles   
+### Interpolating Rotation Vectors / Axis Angles   
+
+#### 线性插值
+
+可以保证插值结果合法，但不能保证旋转速度恒定
 
 ![](./assets/02-25.png) 
 
 
 P111   
 
-## [囬] Interpolating Rotation Vectors / Axis Angles   
+#### 匀速插值
+
+可以保证插值结果合法且匀速，但旋转较复杂
 
 
 ![](./assets/02-25-1.png) 
@@ -621,7 +588,7 @@ P111
 
 P112  
 
-## [囬] Rotation Vectors / Axis Angles   
+### 结论   
 
 ![](./assets/02-25-2.png) 
 
@@ -640,7 +607,7 @@ P113
 
 
 P116   
-## [𡇌] Quaternions   
+### 定义   
 
  - Extending complex numbers    
 $$
@@ -652,10 +619,34 @@ $$
  - \\(jk=i,kj=-i\\)   
  - \\(ki=j,ik=-j\\)   
 
+$$
+q=w+xi+yj+zk \quad \Rightarrow  \quad  q=\begin{bmatrix}
+ w\\\\
+ x\\\\
+ y\\\\
+z
+\end{bmatrix}=\begin{bmatrix}
+ w\\\\
+v
+\end{bmatrix}
+$$
+
+$$
+q =[w,v]^T \in \mathbb{H} ,w\in \mathbb{R},v\in \mathbb{R}^3
+$$
+
+$$
+w =[w,0]^T : \text{ scalar quaternion }
+$$
+
+$$
+v =[0,v]^T : \text{ pure quaternion }
+$$
+
 
 P117  
 
-## [𡇌] Quaternion Arithmetic
+### Quaternion Arithmetic
 
 $$
  q =a+bi +cj +dk \in \mathbb{H} ,a,b,c,d\in \mathbb{R}
@@ -673,7 +664,7 @@ Norm:  \\(\quad \quad ||q||=\sqrt{a^2+b^2+c^2+d^2} =\sqrt{q\cdot q}\\)
 
 P118   
 
-## [𡇌] Quaternion Multiplication   
+### Quaternion Multiplication   
 
 $$
 q_1q_2=(a_1+b_1i+c_1j+d_1k)*(a_2+b_2i+c_2j+d_2k)
@@ -705,39 +696,7 @@ note:
 
 > &#x2705; \\(q_1 \cdot q_2\\) 和 \\(q_1q_2\\) 是两种不同的运算。
 
-
-
-P119   
-
-## [𡇌] Quaternions   
-
-$$
-q=w+xi+yj+zk \quad \Rightarrow  \quad  q=\begin{bmatrix}
- w\\\\
- x\\\\
- y\\\\
-z
-\end{bmatrix}=\begin{bmatrix}
- w\\\\
-v
-\end{bmatrix}
-$$
-
-$$
-q =[w,v]^T \in \mathbb{H} ,w\in \mathbb{R},v\in \mathbb{R}^3
-$$
-
-$$
-w =[w,0]^T : \text{ scalar quaternion }
-$$
-
-$$
-v =[0,v]^T : \text{ pure quaternion }
-$$
-
-
 P120  
-## [𡇌] Quaternion Arithmetic
 
 Conjugation:   \\(\quad \quad q^*=[w,-v]^T\\)   
 \\(<br>\\)    
@@ -751,7 +710,6 @@ Norm:  \\(\quad \quad ||q||=\sqrt{w_1w_2+v_1 \cdot v_2} =\sqrt{q\cdot q}\\)
 
 
 P122   
-## [𡇌] Quaternion Multiplication   
 
 $$
 q_1q_2=\begin{bmatrix}
@@ -781,7 +739,6 @@ $$
 
 
 P123   
-## [𡇌] Quaternion Multiplication   
 
 Conjugation:   
 
@@ -808,7 +765,7 @@ $$
 
 P124   
 
-## [𡇌] Unit Quaternions   
+### Unit Quaternions   
 
 $$
 \begin{matrix}
@@ -838,47 +795,17 @@ $$
 
 
 P125   
-## [𡇌] Unit Quaternions   
 
-![](./assets/02-26.png)  
-
-$$
-\begin{matrix}
-\text{unit complex number} \\\\
-z = \cos \theta  + i\sin \theta 
-\end{matrix}
-$$
-
-
-![](./assets/02-27.png)  
-
-$$
-\begin{matrix}
-\text{unit quaternion} \\\\
-q = [\cos \frac{\theta}{2} ,  + u\sin \frac{\theta}{2} ]&||u||=1 
-\end{matrix}
-$$
-
-
-> &#x2705; 所有单位四元数构成 4D 空间上的单位球核。  
-
-
-P126   
-## [𡇌] Unit Quaternions  
-
-$$
-\begin{matrix}
-q =  \begin{bmatrix}
- w\\\\
-v
-\end{bmatrix}= [\cos \frac{\theta}{2} ,   u\sin \frac{\theta}{2} ]&||u||=1 
-\end{matrix}
-$$
+|2D|3D|
+|---|---|
+![](./assets/02-26.png) |![](./assets/02-27.png)|  
+|unit complex number|unit quaternion<br> &#x2705; 所有单位四元数构成 4D 空间上的单位球核。|
+|\\(z = \cos \theta  + i\sin \theta\\)|\\(q =  \begin{bmatrix} w\\\\v\end{bmatrix}= [\cos \frac{\theta}{2} ,   u\sin \frac{\theta}{2}] \quad \mid\mid u \mid\mid = 1\\)|
 
 same information as axis angles \\((u,\theta)\\) But in a different form   
 
 P127   
-## [𡇌] Unit Quaternions as 3D Rotations   
+### 轴角表示 -> 四元数表示   
 
 Any 3D rotation \\((v,\theta)\\) can be represented as a **unit quaternion**   
 
@@ -890,8 +817,9 @@ $$
 $$
 
 P128   
-## [𡇌] Rotation a Vector Using Unit Quaternions   
+### Rotation a Vector Using Unit Quaternions   
 
+已经向量p和单位四元数q，求p经过q旋转后的向量。
 
 ![](./assets/02-29.png)  
 
@@ -907,26 +835,11 @@ $$
 
 Then the rotation can be applied by **quaternion multiplication**:  
 
-$$
-\begin{bmatrix}
-0 \\\\
-{p}' 
-\end{bmatrix}=q\begin{bmatrix}
- 0\\\\
-p
-\end{bmatrix}q^\ast 
-$$
-
-
-> &#x2705; 纯方向 \\(P\\) 可用四元数表示为 \\([0 \quad p ]\\)    
-> &#x2705;  \\({P}' = R (q) \cdot p\\)     
+> &#x2705; 纯方向 \\(p\\) 可用四元数表示为 \\([0 \quad p ]\\)    
+> &#x2705;  \\({p}' = R (q) \cdot p\\)     
 
 
 P129   
-
-## [𡇌] Rotation a Vector Using Unit Quaternions  
-
- 
 
 $$
 \begin{bmatrix}
@@ -945,47 +858,9 @@ $$
 
 
 P131   
-## [𡇌] Combination of Rotations   
+### Combination of Rotations   
 
-$$
-\begin{matrix}
- \text{Unit quaternion}&: & q_1,q_2\\\\
- \text{3D vector}&: & p\\\\
-\end{matrix}
-$$
-
-
-
-
-$$
-\begin{align*}
- \begin{bmatrix}
- 0\\\\
-{p}' 
-\end{bmatrix} = & q _ 1 \begin{bmatrix}
- 0 \\\\
- p
-\end{bmatrix} q ^ \ast _ 1  \\\\
-  \begin{bmatrix}
- 0 \\\\
-{p}''
-\end{bmatrix} =& q _ 2 \begin{bmatrix}
- 0 \\\\
-{p}' 
-\end{bmatrix}q ^ \ast _ 2 = q_ 2 (q_1\begin{bmatrix}
- 0 \\\\
-p
-\end{bmatrix} q ^ \ast _1)q ^ \ast _ 2=(q _ 2 q _ 1)\begin{bmatrix}
- 0 \\\\
-{p} 
-\end{bmatrix}(q_2q_1) ^ \ast \\\\
-  = & q \begin{bmatrix}
- 0 \\\\
-p 
-\end{bmatrix}q^\ast 
-\end{align*}
-$$
-
+证明过程跳过，结论：
 
 $$
 \begin{matrix}
@@ -995,25 +870,8 @@ $$
 
 
 P133  
-## [𡇌] Quaternion Interpolation    
+###  Quaternion Interpolation    
  
-$$
-\begin{matrix}
-  q=\begin{bmatrix}
- w\\\\
-v
-\end{bmatrix} & ||q||=1
-\end{matrix}
-$$
-
-A unit hypersphere in 4D space   
-
-
-P134   
-
-## [𡇌] Quaternion Interpolation   
-
-
 ![](./assets/02-31.png)  
 
 A unit hypersphere in 4D space    
@@ -1024,7 +882,7 @@ A unit hypersphere in 4D space
 
 
 P135   
-## [𡇌] Linear Interpolation   
+#### Linear Interpolation   
 
 $$
 q_t=(1-t)q_0+tq_1
@@ -1036,7 +894,7 @@ $$
 
 P136  
 
-## [𡇌] Linear Interpolation + Projection
+#### Linear Interpolation + Projection
 
 
 $$
@@ -1062,25 +920,23 @@ $$
 
 P137   
 
-## [𡇌] SLERP: Spherical Linear Interpolation   
+#### SLERP: Spherical Linear Interpolation   
+
+##### 思考
 
 $$
 q_t=a(t)q_0+b(t)q_1
 $$
 
+如何设计a和b，让插值结果速度恒定？
 
 ![](./assets/02-34.png)  
-
-
-> &#x2753; 如何让插值结果速度恒定？
-
-P138   
-
-## [𡇌] SLERP: Spherical Linear Interpolation   
 
 $$
 r=a(t)p+b(t)q
 $$
+
+##### 计算
 
 Consider the angle \\(\theta\\) between \\(p,q\\):    
 
@@ -1107,6 +963,7 @@ $$
 \end{matrix}
 $$
 
+##### 结论
 then we have：   
 
 $$
@@ -1118,7 +975,6 @@ $$
 
 
 P139  
-## [𡇌] SLERP: Spherical Linear Interpolation   
 
 $$
 q_t=\frac{\sin [(1-t)\theta ]}{\sin \theta  }q_0+\frac{\sin t \theta }{\sin \theta }q_1 
@@ -1128,11 +984,8 @@ $$
 \cos \theta=q_0\cdot  q_1
 $$
 
-![](./assets/02-36.png)  
-
-
 P140   
-## [𡇌] Quaternions  
+### 结论  
 
 Rotations can be represented by **unit quaternions**    
 
