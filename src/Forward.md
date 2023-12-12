@@ -504,6 +504,7 @@ three hinge joints
 
 ![](./assets/03-46-4.png)   
 
+&#x2753; 一个ball joint可以看作是3个hint joint。因此占J矩阵的3列。  
 
 P119     
 ## Geometric Approach
