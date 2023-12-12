@@ -504,12 +504,17 @@ three hinge joints
 
 ![](./assets/03-46-4.png)   
 
-&#x2753; 一个ball joint可以看作是3个hint joint。因此占J矩阵的3列。  
+> &#x2705; 一个ball joint可以看作是3个hint joint。因此占J矩阵的3列。  
 
-P119     
-## Geometric Approach
+也可以写成这种形式：
 
-Note: rotation axes are    
+$$
+\frac{ \partial f }{\partial \theta _ {i\ast } } = a _ {i\ast } \times r _ i
+$$
+
+f对某一个欧拉角的导数，等于这个欧拉角的轴叉乘上末端点到关节点的距离。  
+
+需要注意的是，这个的旋转轴a是在世界坐标系下的表示，因此要有一个坐标系的转换。    
 
 $$
 \begin{align*}
@@ -519,12 +524,10 @@ $$
 \end{align*}
 $$
 
-$$
-\frac{ \partial f }{\partial \theta _ {i\ast } } = a _ {i\ast } \times r _ i
-$$
+
 
 P121   
-## Jacobian Transpose / Gradient Descent   
+#### Jacobian Transpose / Gradient Descent   
 
 First-order approach, convergence can be slow Need to re-compute Jacobian at each iteration   
 
@@ -538,7 +541,9 @@ P122
 
 P124    
 
-## Example: Quadratic Programming   
+## Quadratic Programming 二次规划问题   
+
+> &#x2705; 这几页介绍二次函数求极值的问题。   
 
 $$
 \min_{\theta } F(\theta )=\frac{1}{2} \theta ^TA\theta +b^T\theta 
@@ -551,12 +556,11 @@ A=A^T,\theta ^TA\theta \ge 0 \text{ for any } \theta
 $$
 
 
-> &#x2705; 这几页介绍二次函数求极值的问题。   
-
 
 
 P126   
 
+### 公式直接求解
 
 
 $$
@@ -568,9 +572,13 @@ $$
 \end{matrix}
 $$
 
+> &#x2705; 二次函数的极值点可以直接从公式求出来  
+
 
 P127    
-## Gauss-Newton Method   
+### Gauss-Newton Method   
+
+> &#x2705; IK问题也可以转化为二次函数求极值的问题
 
 $$
 F(\theta )=\frac{1}{2} ||f(\theta )-\tilde{x} ||^2_2
@@ -580,6 +588,7 @@ $$
 
 Consider the first-order approximation of \\(f(\theta)\\) at \\(\theta^0\\)    
 
+> &#x2705; 把 \\(f(\theta )\\) 在 \\(\theta ^{\circ} \\) 处一阶泰勒展开。   
 
 $$
 \begin{align*}
@@ -587,12 +596,12 @@ $$
  = & f(\theta^0)+J(\theta-\theta^0)
 \end{align*}
 $$
-
-> &#x2705; IK问题可以转化为二次函数求极值问题。   
-> &#x2705; 把 \\(f(\theta )\\) 在 \\(\theta ^{\circ} \\) 处一阶泰勒展开。   
+ 
 
 
 P128    
+
+> &#x2705; 把它代入目标函数。  
 
 \begin{align*}
   f(\theta)\approx  & \frac{1}{2}||f(\theta^0)+J(\theta -\theta ^0)-\tilde{x}||^2_2    \\\\
@@ -600,11 +609,14 @@ P128
  & +(\theta -\theta ^0)^TJ^T(f(\theta ^0)-\tilde{x})+c 
 \end{align*}
 
-> &#x2705; 把它代入目标函数。  
 
 
 P129   
-## Gauss-Newton Method   
+
+first-order optimality condition    
+
+
+> &#x2705; 令 \\((\nabla F (\theta ))^T=0\\)   
 
 $$
 \begin{matrix}
@@ -614,32 +626,20 @@ $$
 \end{matrix}
 $$
 
-first-order optimality condition    
-
-
-> &#x2705; 令 \\((\nabla F (\theta ))^T=0\\)   
-
-
-
-P132   
-
-> &#x2705; \\(J\\) 的维度是 \\(3\times N\\)，因此 \\(J^TJ\\) 不可逆。   
-
-
-
 P133   
-## Gauss-Newton Method
-
 $$
 J^TJ(\theta-\theta^0)=-J^T\Delta 
 $$
 
+#### if \\(J^TJ\\) 不可逆
+
+> &#x2705; \\(J\\) 的维度是 \\(3\times N\\)，因此 \\(J^TJ\\) 不可逆。   
 
 \\(J^TJ\\) is \\({\color{Red} {\text{NOT}}}\\) invertible, but \\(JJ^T\\) can be invertible      
 
 
 P134   
-## Jacobian Inverse Method
+因此做以下转化：
  
 ![](./assets/03-042.png)  
 
@@ -649,10 +649,6 @@ P134
 
 
 P135   
-## Jacobian Inverse Method
-
-
-![](./assets/03-047.png)  
 
 $$
 J(\theta-\theta^0)=\tilde{x} -f(\theta^0)
@@ -667,18 +663,12 @@ $$
 \end{align*}
 $$
 
-(Moore-Penrose) Pseudoinverse   
+\\(J^+\\)表示J的(Moore-Penrose) Pseudoinverse   
 
 
 P138   
 
-## Gauss-Newton Method
-
-$$
-F(\theta )=\frac{1}{2} ||f(\theta )-\tilde{x} ||^2_2
-$$
-
-![](./assets/03-47.png)  
+#### if \\(J^TJ\\) 可逆
 
 $$
 J^TJ(\theta-\theta^0)=-J^T\Delta 
@@ -693,17 +683,13 @@ $$
 but when can \\(J^TJ\\) be invertible?   
 
 P141   
-## Gauss-Newton Method
 
-![](./assets/03-49.png)  
-
-
-> &#x2705; 改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变 \\(J\\) 的形状为方阵或高瘦阵，此时 \\(J^TJ\\) 可逆，则换一种方式求逆。   
+> &#x2705; 答：改变IK的约束条件（例如增加中间关节的位置要求）和自由度（例如限制关节的自由度），可改变 \\(J\\) 的形状为方阵或高瘦阵，此时 \\(J^TJ\\) 可逆，则换一种方式求逆。   
 
 
 
 P143   
-## Jacobian Inverse Method
+#### 对比
 
 ![](./assets/03-50.png)     
 
