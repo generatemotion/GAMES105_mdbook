@@ -1,13 +1,10 @@
-# Lecture 06
-
-
 P1  
 
 > &#x2705; 基于数据：对现有数据进行连接重组。    
 > &#x2705; 基于学习：对数据处理，放入模型，再生成数据。   
 
 P2   
-## Outline   
+# Outline   
 
  - Recap: interactive character animation   
      - Motion Graphs   
@@ -18,37 +15,30 @@ P2
  - Learning-based Models   
      - ……   
 
-
-
-
-
 P3   
-## Recap: Interactive Animation    
+# Recap: Interactive Animation    
 
 How to make a character respond to user command?
 
-P6   
-## Motion Graphs
-
 ![](./assets/06-01.png)   
-
-
-
-
 
 P9   
 ## Motion Graphs
 
 ![](./assets/06-02.png)   
 
-> &#x2705; 坐标系对齐后，根据用户输选择下一个片断。   
-> &#x2705; 可以结合路径规划算，实现一些智能角色。  
-> &#x2705; Motion Graph 只是一个底层数据结构。   
+> &#x2705; 检测到用户输入后：
+> 1. 把当前片段播完（响应慢）
+> 2. 所有下一片断与当前状态进行坐标系对齐
+> 3. 根据当前状态和预期轨迹，选择下一个片断
+> 4. 播放对齐后的下一片断
+>    
+> &#x2705; 可以结合路径规划算，实现一些智能角色。Motion Graph 只是一个底层数据结构。   
 
 
 
 P14   
-## Need a Faster Response?
+## Motion Fields
 
 
 |||
@@ -62,7 +52,7 @@ P14
 
 P17  
 
-## Motion Fields
+### 构建 Motion Fields
 
 ![](./assets/06-05.png)   
 
@@ -72,7 +62,7 @@ P17
 
 P20   
 
-## Motion Fields
+### 在Motion Fields中选择pose
 
 ![](./assets/06-06.png)   
 
@@ -82,7 +72,7 @@ P20
 
 
 P23   
-## Motion Fields
+### 对pose的混合
 
 ![](./assets/06-07.png)   
 
@@ -96,7 +86,7 @@ P23
 
 
 P24  
-## Motion Fields
+### Pipeline
 
 
 ![](./assets/06-09.png)   
@@ -115,15 +105,14 @@ P31
 
 P32  
 
-
 > &#x2705; 简化一：只找一个最近邻，不需要 blend. 然后用平滑解决跳变问题。
 
 
 
 P34   
-## Motion Matching   
+### 距离衡量函数   
 
- - We need a distance function / metric to define the nearest neighbor  
+We need a distance function / metric to define the nearest neighbor  
 
 
 $$
@@ -135,6 +124,9 @@ $$
 x: \text{feature vector}
 $$
 
+> &#x2705; Motion Matching 中距离函数的设计很重要，很大程度上影响算法的效果。   
+> &#x2705; 这个距离定义可以是特征相关的。  
+
 A possible set of feature vectors:  
 
  - root linear/angular velocity   
@@ -144,24 +136,25 @@ A possible set of feature vectors:
  - foot contacts   
  - ……   
 
-> &#x2705; Motion Matching 中距离函数的设计很重要，很大程度上影响算法的效果。   
-> &#x2705; 这个距离定义可以是特征相关的。  
+
 
 
 P36   
-## Motion Matching   
+### 动作平滑  
 
- - We need a smooth motion   
-    - Only do the search every few frames   
-    - Smoothly blend current pose to the target pose   
-      - Inertialized blending (ref. <https://www.theorangeduck.com/page/spring-roll-call> by Daniel Holden)   
+We need a smooth motion   
+  - Only do the search every few frames   
+  - Smoothly blend current pose to the target pose   
+    - Inertialized blending (ref. <https://www.theorangeduck.com/page/spring-roll-call> by Daniel Holden)   
 
- - We need a good performance   
-    - An efficient data structure for searching   
-      - e.g. KD-tree   
+### 搜索效率
 
- - A efficient dataset   
-     - “Dance card”
+We need a good performance   
+  - An efficient data structure for searching，例如 e.g. KD-tree   
+
+### 数据集
+
+A efficient dataset，例如“Dance card”
 
 
 
@@ -175,24 +168,19 @@ P36
 
 
 P39   
-## Statistical Models of Human Motion   
+# Statistical Models of Human Motion   
 
 
 > &#x2705; 根据已有数据，对“动作自然”建模。   
 > &#x2705; 或找到一个模型，告诉我们什么是自然姿态。   
 
 P43   
-## The Low-dimensionality of Human Motions   
-
+因为由于以下原因， “自然的动作”实际上是够成高维的动作参数空间的流形曲面。   
 
  - Coordinated arm/leg movement   
  - Musculoskeletal structure   
  - Laws of physics    
  - ……   
-
-
-> &#x2705; “自然的动作”参数集够成高维的动作参数空间的流形曲面。   
-
 
 P45   
 ## Principal Component Analysis (PCA)   
@@ -220,8 +208,9 @@ a pose \\(x\\) with smaller \\(\sum _k\frac{((x-\bar{x})\cdot u_k)^2 }{\sigma ^2
 
 
 P66  
-## Character IK   
+## Character IK with a Motion Prior
 
+### 正则化先验
 $$
 F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2+\frac{\lambda }{2}||\theta ||^2_2 
 $$
@@ -235,7 +224,7 @@ $$
 
 
 P68  
-## Character IK with a Motion Prior
+### PCA先验
 
 $$
 F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2
@@ -264,9 +253,11 @@ P71
 P75   
 ## Gaussian Distribution
 
+> &#x2705; 假设分布就是高斯分布
+
 ![](./assets/06-19-1.png)   
 
-Maximum Likelihood Estimators (MLE):    
+通过Maximum Likelihood Estimators (MLE，最大似然估计)得到:    
 
 $$
 \begin{align*}
@@ -278,7 +269,7 @@ $$
 
 
 P76   
-## PCA and Gaussian Distribution   
+### PCA 可以看作一种高斯分布。   
 
 $$
 \sum =X^TX=U\begin{bmatrix}
@@ -297,48 +288,30 @@ $$
 
 
 P77   
-## PCA and Gaussian Distribution
 
 
 ![](./assets/06-13.png)   
-
-
-> &#x2705; PCA 可以看作一种高斯分布。  
-
-
 
 P78   
 ## Character IK with a Motion Prior   
 
 $$
-F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2
+F(\theta )=\frac{1}{2} \sum_{i} ||f_i(\theta )-\tilde{x} _i||^2_2+\frac{w}{2}\sum_k(\frac{(\theta -\bar{\theta })\cdot u_k }{\sigma _k} )^2 
 $$
 
-$$
-+\frac{w }{2}\sum_{k}^{}(\frac{(\theta -\bar{\theta })\cdot u_k }{\sigma _k} )^2
-$$
+
 
 
 P79  
 
 $$
-F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2
+F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2-w \log \prod_k e^{-\frac{1}{2}(\frac{(\theta -\bar{\theta })\cdot u_k }{\sigma _k} )^2 }
 $$
-
-$$
--w \log \prod_{k}^{}e^{-\frac{1}{2}(\frac{(\theta -\bar{\theta })\cdot u_k }{\sigma _k} )^2 }  
-$$
-
-
 
 P80  
 
 $$
-F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2
-$$
-
-$$
--w \log p(\theta )  
+F(\theta )=\frac{1}{2} \sum_{i}^{} ||f_i(\theta )-\tilde{x} _i||^2_2-w \log p(\theta )  
 $$
 
 $$
@@ -350,7 +323,7 @@ $$
 
 
 P81   
-## Motion Synthesis with a Motion Prior  
+### Motion Synthesis with a Motion Prior  
 
 
 Given a motion prior \\(p(x)\\) learned from a set of data points \\(D \\)= {\\(x_i\\)}, Synthesize a motion \\(x\\) that minimize the objective   
@@ -364,95 +337,25 @@ Note: \\(x\\) can represent a pose \\(\theta\\)
 \\(\quad\quad\\) or any features of a motion → e.g. \\(w_k\\) in PCA    
 
 > &#x2705; \\(x\\) 可以不局限于 \\(\theta \\)、而是任何一个可以描述 motion 的量。   
-
-
-P82   
-
-
-\\(f(x)\\)    
-IK   
-Keyframes   
-User control   
-Environment constraints    
-……   
-
-> &#x2705; \\(f(x)\\) 代表目标，目标也不局限于 IK   
-
-
-
+> &#x2705; \\(f(x)\\) 代表目标，目标也不局限于 IK，也可以是Keyframes、User control、Environment constraints等    
+> &#x2705; 但“认为动作符合高斯分布”仍然是一个非常受限约束，难以用于复杂的动作
 
 P83   
-## Motion Synthesis with a Motion Prior
+### 相关工作
 
-![](./assets/06-14.png)   
-
-
-
-P84  
-## Gaussian Distribution is not Enough!
-
-
-
-P86  
-
-![](./assets/06-15.png)   
+|||
+|---|---|
+|![](./assets/06-14.png)   ||
+|![](./assets/06-15.png) | &#x2705; 使用高斯混合模型，用于动作编辑。<br> &#x2705; \\(x\\) 不局限于单帧动作，也可以是一个序列。   |
+|Min et al. 2009| &#x2705; 视频动捕是欠约束问题，但可以通过分布过滤掉不合理的结果。|  
+|![](./assets/06-16.png)   | &#x2705; 缺点：实现麻烦，很多超参。   |
+|![](./assets/06-22.png) |[Starke et al 2020, Local Motion Phases for Learning Multi-Contact Character Movements]|
+|![](./assets/06-23.png)|[Henter et al. 2020, MoGlow: Probabilistic and Controllable Motion Synthesis Using Normalising Flows]|
+|![](./assets/06-24.png)   |[Lee et al 2019, Interactive Character Animation by Learning Multi-Objective Control]|
+|![](./assets/06-25.png)|[Holden et al 2020, Learned Motion Matching]<br> &#x2705; 用 DL 代替复杂的模型，来估计动作先验。 |
 
 
-> &#x2705; 使用高斯混合模型，用于动作编辑。   
-> &#x2753; 单顺动作合理，动作序列就合理吗？   
-> &#x2705; \\(x\\) 不局限于单帧动作，也可以是一个序列。    
-
-P87  
-## Motion Synthesis with a Motion Prior
-  
-Min et al. 2009   
-
-
-> &#x2705; 视频动捕是欠约束问题，但可以通过分布过滤掉不合理的结果。  
-
-
-
-P88  
-## Gaussian Distribution is not Enough!
-
-![](./assets/06-16.png)   
-
-
-> &#x2705; 缺点：实现麻烦，很多超参。   
-
-
-P90   
-
-## Gaussian Distribution is not Enough!   
-
-\\(p(x)\\): motion prior   
-
-![](./assets/06-17.png)   
-
-
-![](./assets/06-22.png)   
-
-[Starke et al 2020, Local Motion Phases for Learning Multi-Contact Character Movements]
-
-
-![](./assets/06-23.png)   
-
-[Henter et al. 2020, MoGlow: Probabilistic and Controllable 
-Motion Synthesis Using Normalising Flows]
-
-![](./assets/06-24.png)   
-
-
-[Lee et al 2019, Interactive Character Animation by 
-Learning Multi-Objective Control]
-
-
-![](./assets/06-25.png)   
-
-[Holden et al 2020, Learned Motion Matching]
-
-
-> &#x2705; 用 DL 代替复杂的模型，来估计动作先验。  
+ 
 
 
 ---------------------------------------
