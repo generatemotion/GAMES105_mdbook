@@ -524,7 +524,15 @@ $$
 \end{align*}
 $$
 
+> &#x2753; 问：Can we parameterize a ball joint using axis-angle \\(\theta u\\) and compute Jacobian as   
 
+$$
+\begin{matrix}
+ \frac{\partial f}{\partial \theta _i} =\theta u\times r_i & ???
+\end{matrix}
+$$
+
+> &#x2705; 答：不可以。Jacobian for axis-angle representation has a rather complicated formulation…   
 
 P121   
 #### Jacobian Transpose / Gradient Descent   
@@ -695,7 +703,7 @@ P143
 
 
 > &#x2705; 左：欠约束，右：过约束。  
-
+> &#x2705; 由于这个方法的本质是把高度非线性的函数做了线性化，所以只是在当前位置附近才有效，远了误差就会非常大。因此增加learning rate。
 
 P145   
 
@@ -710,7 +718,10 @@ Any problem? \\(JJ^T/J^TJ\\) can be (near) singular!
 
 P147   
 
-## Damped Jacobian Inverse Method
+### Damped Jacobian Inverse Method
+
+> &#x2705; 上一页的问题是伪逆\\(J^＋\\) 引入的不稳定。  
+> &#x2705; 解决方法：引 \\(\lambda\\) 阻尼项   
 
 $$
 J^\ast =J^T(JJ^T+\lambda I)^{-1}
@@ -720,7 +731,6 @@ $$
 J^\ast =(J^TJ+\lambda I)^{-1}J^T
 $$
 
-> &#x2705; 解决方法，引 \\(\lambda\\) 阻尼项   
 
 
 P148   
@@ -733,27 +743,17 @@ Also called Levenberg-Marquardt algorithm
 
 
 P149   
-## Damped Jacobian Inverse Method
+#### \\(\lambda\\) 的几何意义
 
-Using the minimal rotations to reach the target    
-
-
-> &#x2705; \\(\lambda\\) 的几何意义
-
-
-P150  
-## Damped Jacobian Inverse Method  
-
-![](./assets/03-51.png)  
-
+> &#x2705; 相当于正则项
 > &#x2705; 进一步地，分别给每个关节移动权重。  
 > &#x2705; 权重越大，移动越小。   
 
+![](./assets/03-51.png)  
 
 
 P152   
-## Character IK
-
+## Character 全身IK
 
 ![](./assets/03-052.png)  
 
@@ -764,27 +764,18 @@ P152
 
 
 P156   
-## Outline   
+# 总结
 
- - Character Kinematics   
-    - Skeleton and forward Kinematics   
-
- - Inverse Kinematics   
-    - IK as a optimization problem   
-    - Optimization approaches   
-      - Cyclic Coordinate Descent (CCD)   
-      - Jacobian and gradient descent method   
-      - Jacobian inverse method   
-
-Andreas Aristidou and Joan Lasenby. 2011.   
-**FABRIK: A fast, iterative solver for the Inverse Kinematics problem.**   
-*Graphical Models*   
-
-> &#x2705; 不同优化方法对应不同 IK 长方法   
-> &#x2705; CCD → CCDIK   
-> &#x2705; GD → Jacobian GD     
-> &#x2705; Gaussian → Jacobian Inverse  
  
+> &#x2705; IK问题可以使用优化方法，不同优化方法对应不同 IK 方法，例如：   
+> CCD → CCDIK   
+> 梯度下降法 → Jacobian transpose     
+> Gaussian → Jacobian Inverse  
+> &#x2705; IK问题可以使用启发式方法，例如FABRIK
+Andreas Aristidou and Joan Lasenby. 2011.   
+> &#x1F50E; **FABRIK: A fast, iterative solver for the Inverse Kinematics problem.**   
+*Graphical Models*  
+
 P158   
  
 > &#x2705; Slerp 结合 Sbline.   

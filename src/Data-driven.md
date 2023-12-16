@@ -1,7 +1,5 @@
-# Lecture 05
-
 P2   
-## Outline   
+# Outline   
 
  - Motion Capture     
     - History and modern mocap systems   
@@ -13,7 +11,7 @@ P2
 
 
 P3  
-## Motion Capture   
+# Motion Capture   
 
 
 How to get motion data?   
@@ -23,13 +21,11 @@ How to get motion data?
 
 
 P29   
-## Motion Synthesis   
+# Motion Synthesis   
 
 How to use motion data?   
 
-
 P31    
-## Using Motion Data
 
 ![](./assets/05-02.png)  
 
@@ -37,6 +33,8 @@ P31
 P32   
 
 ## Motion Retargeting   
+
+### Retargeting要解决的问题
 
  - Retarget a motion to drive a character with    
     - Different number of bones    
@@ -47,17 +45,14 @@ P32
     - ……    
 
 P34   
-## Motion Retargeting   
-
-
- - A possible retargeting pipeline   
-     - Map bone names   
-     - Scale translations   
-     - Copy or retarget joint rotations to fix reference pose   
-     - Postprocessing with IK   
-       - Foot-skating   
-       - Self penetration    
-     - ……
+### A possible retargeting pipeline   
+   - Map bone names   
+   - Scale translations   
+   - Copy or retarget joint rotations to fix reference pose   
+   - Postprocessing with IK   
+     - Foot-skating   
+     - Self penetration    
+   - ……
 
 ![](./assets/05-03.png)  
 
@@ -67,53 +62,27 @@ P34
 P38
 ## Motion Transition 
 
-![](./assets/05-05.png)  
-
-
 > &#x2705; 有一段走路数据和跑步数据，如何实现人由走到跑的过程。  
-> &#x2705;（1）找到两个 motion 中相似的一帧。  
 
+### 方法一
 
-P39   
-## Motion Transition    
+|||
+|---|---|
+|![](./assets/05-05.png)  |&#x2705;（1）找到两个 motion 中相似的一帧。  |
+|![](./assets/05-06.png)  |&#x2705;（2）两帧在时间上对齐   |
+|![](./assets/05-07.png) | &#x2705;（3）放到这一帧时动作切换。  |
 
-![](./assets/05-06.png)  
-
-
-> &#x2705;（2）两帧在时间上对齐   
-
-
-
-P40   
-## Motion Transition    
-
-![](./assets/05-07.png)  
-
-
-> &#x2705;（3）放到这一帧时动作切换。  
 > &#x2705; 缺点：会有明显间断。  
 
+### 方法二
 
-
-P44  
-## Motion Transition 
-
-
-![](./assets/05-08.png)  
-
-
-> &#x2705; 改进：考虑前后帧，并做插值。   
-
-
-
-P45   
-## Motion Transition 
-
-![](./assets/05-09.png)  
+|||
+|---|---|
+|![](./assets/05-08.png)  | &#x2705; 改进：考虑前后帧，并做插值。   |
+|![](./assets/05-09.png) || 
 
 
 P46   
-## Motion Transition
 
 $$
 p(t)=(1-\phi (t))p_0(i)+\phi (t)p_1(i)
@@ -127,10 +96,15 @@ $$
 
 
 P55  
-## “Facing Frame”    
-    
- - A special coordinate system that moves horizontally with the character with one axis pointing to the “facing direction” of the character    
+### “Facing Frame”    
 
+#### 定义坐标系
+
+每个角色有自己的角色坐标系，定义为：  
+A special coordinate system that moves horizontally with the character with one axis pointing to the “facing direction” of the character    
+
+> &#x2705; 原点：Hip 在地面上的投影   
+> &#x2705; 坐标轴：参考姿态下 \\(y\\) up \\(z\\) forward.且旋转和平移都受到限制。       
 
 ![](./assets/05-10.png)  
 
@@ -141,31 +115,16 @@ $$
 \end{align*}
 $$
 
-
-> &#x2705; 每个角色有自己的角色坐标系。  
-> &#x2705; 原点：Hip 在地面上的投影   
-> &#x2705; 坐标轴：参考姿态下 \\(y\\) up \\(z\\) forward.    
-> &#x2705; 且旋转和平移都受到限制。   
-
-
-P56   
-## “Facing Frame”  
-
-
- - A special coordinate system that moves horizontally with the character with one axis pointing to the “facing direction” of the character   
+> &#x2705; 也可以为不同的的场景定义不同的 \\(R\\) ，例如上下半身的 \\(y\\) 轴旋转方向不同。   
 
  - Possible definitions of \\(R\\)    
     - \\(R\\) is the **y-rotation** that aligns the z-axis of the global frame to the heading direction    
     - \\(R\\) is the **y-rotation** that aligns x-axis of the global frame to the average direction of the vectors between shoulders and hips    
     - Decomposition root rotation as \\(R_0=R_yR_{xz}\\)     
 
-
-> &#x2705; 不同的 \\(R\\) 的定义适配不同的场景，例如上下半身的 \\(y\\) 轴旋转方向不同。   
-
-
 P58   
-## Rotation Decomposition
 
+#### 动作分解
 
 ![](./assets/05-11-1.png)  
 
@@ -175,7 +134,7 @@ P58
 
 
 P62   
-## Motion Transition 
+#### 动作合成
 
  - How to compute this transformation?    
 
@@ -191,14 +150,14 @@ P68
 
 ![](./assets/05-13.png) 
 
-> &#x2705; 让角色跟着轨迹移动。    
+> &#x1F446; 让角色跟着轨迹移动。    
 
 
 P69   
 ## Motion Composition  
 
 
- - Computationally generating motions according to   
+Computationally generating motions according to   
     - User control   
     - Objects in the same environment   
     - Movements of other characters   
@@ -206,24 +165,18 @@ P69
 
 
 P70  
-## Motion Graphs
+### Motion Graphs
 
 
 ![](./assets/05-14.png)  
-
-
-P71   
-## Motion Graphs
-
-
 ![](./assets/05-15.png)  
 
 
-> &#x2705; 动作图的本质是状态机。  
+> &#x1F446; 动作图的本质是状态机。  
 
 
 P72  
-## Segment Motion Data 
+#### Segment Motion Data 
 
 
 ![](./assets/05-16.png) 
@@ -235,7 +188,7 @@ P72
 
 
 P73  
-## Segment Motion Data 
+#### 建立动作转移关系 
 
 
 ![](./assets/05-17.png)  
@@ -245,13 +198,13 @@ P73
     - Local minima are potential transition point   
 
 
-Lucas Kovar, Michael Gleicher, and Frédéric Pighin. 2002. **Motion graphs**.    
+> &#x1F50E; **Motion graphs**
+> Lucas Kovar, Michael Gleicher, and Frédéric Pighin. 2002.  
 *ACM Trans. Graph*. 21, 3 (July 2002),  
 
 
 P74   
-## Motion Synthesis   
-
+#### Motion Synthesis   
 
  - State-machines   
     - Nodes represent motion clips   
@@ -267,7 +220,7 @@ P74
 
 
 P75   
-## Interactive Animation Pipeline
+#### Interactive Animation Pipeline
 
 
 ![](./assets/05-19.png)   
@@ -275,12 +228,12 @@ P75
 
 > &#x2705; 优点：根据路线从动作库中选择最合适的动作，而不是直接使用路线，因此减少滑步。   
 > &#x2705; 缺点：(1) 动作多时动作复杂。  
-> &#x2705; (2) 一个片断播完再切动作，响应较慢。  
-> &#x2705; (3) 需要提前规划好动捕动作。  
+(2) 一个片断播完再切动作，响应较慢。  
+(3) 需要提前规划好动捕动作。  
 > &#x2705; 如果数据集里没有想要的姿态，可以结合 IK.    
 
 P78  
-## Motion Matching?   
+### Motion Matching?   
 
 
  - Clip → Pose   
