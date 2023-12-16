@@ -1,7 +1,5 @@
-# Lecture 06+
-
 P2   
-## Outline  
+# Outline  
 
  - Learning-based Character Animation (cont.)   
     - Motion Models   
@@ -10,7 +8,7 @@ P2
 
 
 P4   
-## Learning Motion Models  
+# Learning Motion Models  
 
 \\(p(x)\\): probability that 𝒙 is a natural motion     
 
