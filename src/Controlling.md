@@ -1,36 +1,32 @@
-# Lecture 10
-
 P2  
 
-## Outline   
+# Outline   
 
  - More about PD (Proportional-Derivative) control   
     - Stable PD control   
 
  - Feedforward Motion Control   
     - Trajectory optimization   
+> &#x2705; 不通过施加净外力，构建物理准确的动画。   
 
  - Feedback Motion Control   
     - Static balance   
 
 P3  
-## PD Control for Characters   
+# PD Control for Characters   
+
+## 基本方法
 
 ![](./assets/10-01.png)
 
 ![](./assets/10-02.png)
 
-
-> &#x2705; 不通过施加净外力，构建物理准确的动画。   
-
-
-
 P4  
-## Problems with PD Control   
+### 存在的问题   
 
 PD control computes torques based on **errors**   
 
- - Steady state error   
+#### Steady state error   
 
 This arm never reaches the target angle under gravity   
 
@@ -38,35 +34,29 @@ This arm never reaches the target angle under gravity
 
 
 
-
 P5   
 
- - Motion falls behind the reference   
+#### Motion falls behind the reference   
 
 ![](./assets/10-04.png)
 
 
 P7   
-## Problems with PD Control
+#### 稳定性
+
+> &#x2705; 前面两个问题的根本原因是相同的，因为需要有误差才能计算force，有了force才能控制。  
 
 High-gain \\((k_p)\\) control is more precise but less stable…   
 
 
-> &#x2705; 大的 \\(k_p\\) 会带来肢体僵硬和计算不稳定。   
+> &#x2705; 增大 \\(k_p\\)能缓解以上问题，但大的 \\(k_p\\) 会带来肢体僵硬和计算不稳定。   
 
 
 
 P8   
 ## Stability of PD Control
 
-Semi-implicit Euler Integration   
-
-$$
-\begin{align*}
-v_{n+1}  & =v_n+h\frac{f}{m} \\\\
- x_{n+1} &=x_n+hv_{n+1}
-\end{align*}
-$$
+### 以弹簧系统为例子
 
 ![](./assets/10-05.png)
 
@@ -77,16 +67,27 @@ h: \text{ simulation time step}
 \end{matrix}
 $$
 
-
-
 > &#x2705; PD control 的过程类似于一个弹簧系统。  
-> &#x2705; 利用弹簧系统中的半隐式欧拉来提升 PD 的稳定性。   
+> &#x2705; 因此利用弹簧系统中的半隐式欧拉来提升 PD 的稳定性。   
+
+### 半隐式欧拉的弹簧系统
+
+Semi-implicit Euler Integration   
+
+$$
+\begin{align*}
+v_{n+1}  & =v_n+h\frac{f}{m} \\\\
+ x_{n+1} &=x_n+hv_{n+1}
+\end{align*}
+$$
+
+### 半隐式欧拉的PD控制
+
+> &#x2705; \\(h\\) 为时间步长。  
+> &#x2705; (1) 假设 \\(m＝1\\) (2) 代入 \\(f\\) 到方程组 (3) 方程组写成矩阵形式，得：   
 
 
 P11   
-## Stability of PD Control
-
-Semi-implicit Euler Integration   
 
 $$
 \begin{bmatrix}
@@ -101,16 +102,8 @@ x_n
 \end{bmatrix}
 $$
 
-
-> &#x2705; (1) 假设 \\(m＝1\\)    
-> &#x2705; (2) 代入 \\(f\\) 到方程组   
-> &#x2705; (3) 方程组写成矩阵形式   
-> &#x2705; \\(h\\) 为时间步长。  
-
-
-
 P14  
-## Stability of PD Control   
+提取常数方程A，得：
 
 $$
 A=\begin{bmatrix}
@@ -123,14 +116,14 @@ $$
 ![](./assets/10-06.png)
 
 
-> &#x2705; 矩阵 \\(A\\) 是常数方降。   
-
-
 
 P19   
-## Stability of PD Control
+### PD控制的稳定性
 
 \\(\lambda _1,\lambda _2 \in  \mathbb{C}  \\) are eigenvalues of \\(A\\)   
+
+> &#x2705; 基于中间变是 \\(z_n\\) 推导的过程跳过。  
+> &#x2705; 根据矩阵特征值的性质可直接得出结论。  
 
 if \\(|\lambda _1|> 1\\)   
 
@@ -138,13 +131,8 @@ The system is unstable!
 
 Condition of stability: \\(|\lambda _i|\le  1 \text{ for all } \lambda _i\\)   
 
-
-> &#x2705; 根据矩阵特征值的性质可直接得出结论。  
-> &#x2705; 基于中间变是 \\(z_n\\) 推导的过程跳过。   
-
-
 P20
-## Stability of PD Control
+### 通过h控制PD控制的稳定性
 
 ![](./assets/10-07.png)
 
@@ -152,6 +140,7 @@ P20
 > &#x2705; 如果 \\(k_p\\) 和 \\(k_d\\) 变大，就必须以一个较小的时间步长进行仿真。   
 
 
+### PD Control for Characters
 
 P21  
  - Determining gain and damping coefficients can be difficult…   
@@ -170,7 +159,11 @@ P21
 P22   
 ## A More Stable PD Control
 
-Semi-implicit Euler Integration   
+### 半隐式欧拉 → 隐式欧拉
+
+> &#x2705; 解决方法：半隐式欧拉 → 隐式欧拉，即用下一时刻的力计算下一时刻的速度。   
+
+- 半隐式欧拉
 
 $$
 \begin{align*}
@@ -183,6 +176,7 @@ $$
 \Downarrow 
 $$
 
+- 隐式欧拉
 
 $$
 \begin{align*}
@@ -192,14 +186,12 @@ $$
 $$
 
 
-> &#x2705; 解决方法：半隐式欧拉 → 隐式欧拉，即用下一时刻的力计算下一时刻的速度。  
+
 > &#x2705; 实际上，计算 \\(f_{n＋1}\\) 只使用 \\(V_{n＋1}\\) , 不使用 \\(x_{n＋1}\\) , 因为 \\(x_{n＋1}\\) 会引入非常复杂的计算。   
 > &#x2705; 由于 \\(v_{n＋1}\\) 未知，需通过解方程组来求解。   
 
-
-
 P23  
-## A More Stable PD Control
+得到的方程组为：  
 
 $$
 \begin{bmatrix}
@@ -216,7 +208,7 @@ $$
 
 
 P24  
-## A More Stable PD Control
+### 稳定性分析
 
 ![](./assets/10-08.png)
 
@@ -226,22 +218,19 @@ P24
 
 
 P25  
-## Stable PD Control   
+### 相关工作   
+
+> &#x1F50E; ![](./assets/10-09.png)
 
 $$
 \tau _{\mathrm{int} }=-K_p(q^n+\dot{q}^n \Delta t-\bar{q} ^{n+1})-K_d(\dot{q} ^n+\ddot{q} ^n \Delta t)
 $$
 
 
-![](./assets/10-09.png)
-
-
-> &#x2705; 把隐式方法应用到角色控制上。  
-
 
 
 P26  
-## PD Control for Characters
+### PD Control for Characters
 
 
  - Determining gain and damping coefficients can be difficult…   
@@ -256,7 +245,9 @@ P26
 
 
 P28  
-## Tracking Mocap with Root Forces/Torques   
+# Tracking Mocap with Root Forces/Torques   
+
+> &#x2705; 当前系统仍存的问题。(1) 稳态误差，相位延迟 (2) 缺少对根结点的力。   
 
 ![](./assets/10-10.png)
 
@@ -274,15 +265,17 @@ P28
 \\(\quad\quad\\) Non-zero net force/torque on the character!    
 
 
-> &#x2705; 当前系统仍存的问题。(1) 稳态误差，相位延迟 (2) 缺少对根结点的力。   
-> &#x2705; 净外力能解决问题 2，但会有“提线木偶”的 artifacts.   
 
+> &#x2705; 净外力能解决问题 2，但会有“提线木偶”的 artifacts.   
+> &#x2705; 解决方法：不直接学习目标轨迹，而是先对目标轨迹增加一个修正。即轨迹优化。    
 
 
 P30   
 ## Trajectory Optimization
 
-[Witkin and Kass 1988 – Spacetime constraints]   
+> &#x1F50E; [Witkin and Kass 1988 – Spacetime constraints]   
+
+> &#x2705; 轨迹优化的问题描述：   
 
 Find the trajectories:   
 
@@ -293,13 +286,18 @@ $$
 \end{align*}
 $$
 
-
+> &#x2705; \\(S\\)：每一个时刻，角色的状态，包括位置、速度、朝向等。   
+> &#x2705; \\(a\\)：目标轨迹。   
+> &#x2705; 优化出 \\(S\\) 和 \\(a\\)，根据 \\(S\\) 和 \\(a\\) 得到关节力矩，关节力矩再控制角色。   
 
 that minimize the objective function   
 
 $$
 \min_{(S_t,a_t)} f(S_T)+\sum_{t=0}^{T-1} f(S_t,a_t)
 $$
+
+> &#x2705; 目标函数第一项：关于轨迹结束时刻的状态。   
+> &#x2705; 第二项：关于每一时刻的状态。    
 
 and satisfy the constraints:   
 
@@ -310,26 +308,30 @@ M\dot{v}+C(x,v)   & =f+J^T\lambda & \text{Equations of motion} \\\\
 \end{align*}
 $$
 
-
-> &#x2705; 解决方法：不直接学习目标轨迹，而是先对目标轨迹增加一个修正。  
-> &#x2705; 轨迹优化的问题描述。   
-> &#x2705; \\(S\\)：每一个时刻，角色的状态，包括位置、速度、朝向等。   
-> &#x2705; \\(a\\)：目标轨迹。   
-> &#x2705; 优化出 \\(S\\) 和 \\(a\\)，根据 \\(S\\) 和 \\(a\\) 得到关节力矩，关节力矩再控制角色。    
-> &#x2705; 目标函数第一项：关于轨迹结束时刻的状态。   
-> &#x2705; 第二项：关于每一时刻的状态。    
 > &#x2705; 约束第一项：运动学方程。   
 > &#x2705; 第二项：根据场景特殊定义的约束。  
 
-
+ 
 P33 
-## A very simple example   
+## 简化问题分析   
+
+> &#x2705; 仍以方块移动到目标高度为例。   
+
+### 问题描述
+
+![](./assets/10-11.png)
 
 Compute a target trajectory \\(\tilde{x} (t)\\) such that the simulated trajectory \\(x(t)\\) is a sine curve.    
+
+### 目标函数
 
 $$
 \min_ {(x_n,v_n,\tilde {x} _n)} \sum _ {n=0}^{N} (\sin (t_n)-x_n)^2+\sum _ {n=0}^{N} \tilde {x}^2_n 
 $$
+
+> &#x2705; 目标函数：目标项＋正则项    
+
+### 约束
 
 $$
 \begin{align*}
@@ -338,17 +340,9 @@ $$
 \end{align*}
 $$
 
-![](./assets/10-11.png)
-
-
-> &#x2705; 仍以方块移动到目标高度为例。   
-> &#x2705; 目标函数：目标项＋正则项    
 > &#x2705; 约束：半隐式积分的运动方程      
 
-
 P34   
-## A very simple example
- 
 
 |||
 |--|--|
@@ -363,7 +357,7 @@ P34
 
 
 P35   
-## A very simple example
+### 参数简化
 
 Collocation methods:   
 
@@ -375,13 +369,13 @@ Optimize the parameters of the curves \\(\theta\\) instead
  - with smaller number of variables than the original problem    
 
 
-> &#x2705; 参数量太大，难以优化。  
+> &#x2705; 要优化的参数量太大，难以优化。  
 > &#x2705; 解决方法：假设参数符合特定的曲线，只学习曲线的参数，再生成完整的参数。   
 
 
 
 P37  
-## A very simple example   
+### 优化方法   
 
 How to solve this optimization problem?    
 Gradient-based approaches:    
@@ -400,19 +394,15 @@ find a target trajectory
 
 ![](./assets/10-15.png)
 
+> &#x2705; 把动捕结果当成初始解，然后以优化的方式找到合理轨迹。  
 
 P40  
-## Problem with Gradient-Based Methods
+### Problem with Gradient-Based Methods
 
  - The optimization problem is usually **highly nonlinear**, gradients are unreliable    
  - The system is a black box with unknow dynamics, gradients are not available   
 
-
-![](./assets/10-16.png)
-
-
-P42   
-## Derivative-Free Optimization   
+解决方法： Derivative-Free Optimization   
 
  - Iterative methods
     - Goal: find the variables 𝒙 that optimize \\(f(x)\\)   
@@ -431,7 +421,7 @@ P42
 
 
 P43  
-## CMA-ES   
+### CMA-ES   
 
  - Covariance matrix adaptation evolution strategy (CMA-ES)   
     - A widely adopted derivative-free method in character animation   
@@ -452,100 +442,47 @@ Goal: find the variables 𝒙 that optimize \\(f(x)\\)
 
 > &#x2705; 优点：稳定，无梯度，可用于黑盒系统。  
 
-
-
 P44  
-## CMA-ES   
 
-[Wampler and Popović 2009 - Optimal Gait and Form for Animal Locomotion]    
-
-
-> &#x2705; 因为仿真轨迹可以通仿真得到。  
-
-
+> &#x1F50E; [Wampler and Popović 2009 - Optimal Gait and Form for Animal Locomotion]    
 
 P45    
 
-[Al Borno et al. 2013 - Trajectory Optimization for Full-Body Movements with Complex Contacts]   
+> &#x2705; [Al Borno et al. 2013 - Trajectory Optimization for Full-Body Movements with Complex Contacts]   
 
 
-> &#x2705; 只优化目标轨迹，不优化仿真轨迹。  
+> &#x2705; 只优化目标轨迹，不优化仿真轨迹。因为仿真轨迹可以通仿真得到。    
 
 
 P46  
-## SAMCON   
+### SAMCON   
 
- - **SA**mpling-based **M**otion **CON**trol [Liu et al. 2010, 2015]   
+> &#x2705; CMA-ES 的缺点：   
+> （1）每次都从头到尾做仿真，计算量大。   
+> （2）如果仿真轨迹长，则难收敛。   
+> &#x2705; 改进方法：每次采样，只考虑下面一帧。   
+
+> &#x1F50E; **SA**mpling-based **M**otion **CON**trol [Liu et al. 2010, 2015]   
     - Motion Clip → Open-loop control trajectory   
     - A sequential Monte-Carlo method   
 
 ![](./assets/10-18.png)
 
 
-> &#x2705; CMA-ES 的缺点：   
-> &#x2705;（1）每次都从头到尾做仿真，计算量大。   
-> &#x2705;（2）如果仿真轨迹长，则难收敛。   
-> &#x2705; 改进方法：每次采样，只考虑下面一帧。   
+|||
+|---|---|
+|![](./assets/10-19.png) |&#x2705; 把轨迹分割开，每次优化一小段。  |
+|![](./assets/10-20.png)|&#x2705; 在目标轨迹上增加偏移，跟踪偏移之后的轨迹。<br> &#x2705; 偏移量未知，因此以高斯分布对偏移量采样。  <br> &#x2705; 高斯分布可由其它分布代替。  |
+|![](./assets/10-21.png)| &#x2705; 对每个偏移量做一次仿真，生成新的状态，保留其中与当目标接近的 N 个。   |
+|![](./assets/10-22.png)| &#x2705; 从上一步 N 个中随机选择出发点，以及随机的偏移量，再做仿真与筛选。|  
+|![](./assets/10-23.png)| &#x2705; 最终找到一组最接近的。   <br> &#x2705; 原理：只选一个容易掉入局部最优，因此保留多个。 <br>  &#x2705; 蒙特卡罗＋动态规划 |
 
-
-
-P47  
-## SAMCON   
-
-![](./assets/10-19.png)
-
-
-> &#x2705; 把轨迹分割开，每次优化一小段。  
-
-
-
-P48  
-## Sampling & Simulation
-
-![](./assets/10-20.png)
-
-
-> &#x2705; 在目标轨迹上增加偏移，跟踪偏移之后的轨迹。  
-> &#x2705; 偏移量未知，因此以高斯分布对偏移量采样。  
-> &#x2705; 高斯分布可由其它分布代替。  
-
-
-
-P49  
-## Sample Selection
-
-
-![](./assets/10-21.png)
-
-
-> &#x2705; 对每个偏移量做一次仿真，生成新的状态，保留其中与当目标接近的 N 个。   
-
-
-
-P50  
-## SAMCON Iterations
-
-![](./assets/10-22.png)
-
-
-> &#x2705; 从上一步 N 个中随机选择出发点，以及随机的偏移量，再做仿真与筛选。  
-
-
-
-P51  
-## Constructed Open-loop Control Trajectory
-
-![](./assets/10-23.png)
-
-> &#x2705; 最终找到一组最接近的。   
-> &#x2705; 原理：只选一个容易掉入局部最优，因此保留多个。   
-> &#x2705; 蒙特卡罗＋动态规划    
 > &#x2705; 优点：穿膜问题也能被修正掉，可还原动捕数据，可根据环境影响而自动调整。  
 
 
 P54  
+# Feedforward & Feedback Control
 ## Feedforward Control
-
 
 ![](./assets/10-24.png)
 
@@ -557,43 +494,26 @@ P54
 P56  
 ## Feedback Control
 
-
-![](./assets/10-025.png)
-
-
 > &#x2705; 解决方法：引入反馈策略。根据当前偏差，自动计算出更正，把更正叠加到控制轨迹上。   
 
-
-
-P57  
-## Feedback Control
-
-![](./assets/10-026.png)   
-
-
-P58  
-## Feedback Control
-
-![](./assets/10-027.png)   
+||
+|---|
+|![](./assets/10-025.png)|
+|![](./assets/10-026.png)|   
+|![](./assets/10-027.png)|   
 
 
 P62  
-## Static Balance   
+# Static Balance   
 
+## 定义
 What is balance?   
-
-![](./assets/10-28.png)   
-
 
 > &#x2705; Static Balance：在不发生移动的情况下，通过简单的控制策略，保证角色不摔倒。  
 > &#x2705; 平衡：质心在支撑面内。  
 
 
 P64  
-## Static Balance   
-
-What is balance?   
-
 ![](./assets/10-29.png)   
 
 
@@ -602,10 +522,12 @@ What is balance?
 
 
 P66 
-## Static Balance   
+## A simple strategy： PD Control   
 
 
 A simple strategy to maintain balance:   
+
+### 根据条件计算力矩
 
  - Keep projected CoM close to the center of support polygon **while tracking a standing pose**   
 
@@ -621,13 +543,17 @@ A simple strategy to maintain balance:
 
 
 P68  
-## Static Balance
+### 施加力矩
 
  - Apply the feedback torque at **ankles** (ankle strategy) or **hips** (hip strategy)   
 
 
 P69   
 ## Jacobian Transpose Control
+
+> &#x2705; 实现 static balance，除了 PD 控制还有其它方法。  
+
+### 计算要施加的力
 
 ![](./assets/10-32.png)   
 
@@ -637,14 +563,14 @@ Can we use joint torques \\(\tau _i\\) to mimic the effect of a force \\(f\\) ap
  - Also called **“virtual force”**   
 
 
-> &#x2705; 实现 static balance，除了 PD 控制还有其它方法。  
-> &#x2705; 通过施下 \\(\tau _1 ，\tau _2，\tau _3\\) 来达到给 \\(x\\) 施加 \\(f\\) 的效果！  
+
+> &#x2705; 通过施加 \\(\tau _1 ，\tau _2，\tau _3\\) 来达到给 \\(x\\) 施加 \\(f\\) 的效果！  
 
 
 
 
 P73  
-## Jacobian Transpose Control  
+### 把力转化为力矩  
 
 
 Make \\(f\\) and \\(\tau _i\\) done the same power    
@@ -653,28 +579,31 @@ $$
 P=f^T\dot{x}=\tau  ^T\dot{\theta } 
 $$
 
+> &#x2705; 从做功的角度。功率 = fv
+  
 Forward kinematics \\(x=g(\dot{\theta } )\Rightarrow \dot{x}=J \dot{\theta } \\)   
+
+> &#x2705; \\(g（* ）\\) 是一个FK函数。其中：  
+$$
+J=\frac{\partial g}{\partial \theta } 
+$$    
+> &#x2705; 把 \\( \dot{x } \\) 代入上面公式得   
 
 $$
 f^T J\dot{\theta } = \tau  ^T\dot{\theta } 
 $$
 
 $$
-J=\frac{\partial g}{\partial \theta } 
+\Downarrow 
 $$
 
-
-> &#x2705; 从做功的角度。  
-> &#x2705; \\(g（\quad ）t\\) 是一个FK函数。    
-> &#x2705; 把 \\( \dot{x } \\) 代入上面公式得   
-
-
 P76  
-## Jacobian Transpose Control
 
 $$
 \tau =J^Tf
 $$
+
+> &#x2705; 把 \\( \tau\\) 分解为每一个关节每一个旋转的 \\( \tau\\)．通过 Jacobian 矩阵的含义推出：     
 
 $$
 \Downarrow 
@@ -685,54 +614,43 @@ $$
 $$
 
 
-> &#x2705; 把 \\( \tau\\) 分解为每一个关节的 \\( \tau\\)．  
-> &#x2705; 通过 Jacobian 矩阵的含义推出。   
-
-
-
 P77  
-## Static Balance
+### 用于Static Balance
 
 A simple strategy to maintain balance:   
  - Keep projected CoM close to the center of support polygon **while tracking a standing pose**    
 
  - Use PD control to compute feedback **virtual force**    
 
+> &#x2705; P66 中在 Hips 上加力矩的方式只能进行简单的控制。    
+> &#x2705; 可以通过虚力实现相似的效果。  
+
 $$
 f=k_p(\bar{c} -c)-k_d\dot{c}
 $$
 
-
-> &#x2705; P66 中在 Hips 上加力矩的方式只能进行简单的控制。    
-> &#x2705; 可以通过虚力实现相似的效果。  
-
-
+> &#x2705; \\(c\\) 不一定是投影距离，还可以描述高度距离，实现站起蹲下的效果。    
 
 P78   
-## Static Balance   
 
  - Assuming \\(f\\) **is applied to the CoM**, compute necessary joint torques using Jacobian transpose control to achieve it   
 
- - Usually using the joints in the legs   
-
-
-> &#x2705; \\(C\\) 不一定是投影距离，还可以描述高度距离，实现站起蹲下的效果。    
 > &#x2705; 但也不是真的加力，而是通过前面讲的 Jacobian transpose control 方法转为特定关节的力矩。   
 
+ - Usually using the joints in the legs   
+
+> &#x2705; 最后达到在Hips上加力的效果  
+> &#x2705; 但这种方式能施加的力非常弱，只能实现比较微弱的平衡
 
 
 P79   
-## Static Balance
-A fancier strategy:   
+## A fancier strategy:   
 
  - Mocap tracking as an objective function   
  - Controlling both the CoM position/**momentum** and the **angular** momentum   
  - Solve a **one-step** optimization problem to compute joint torques   
  
-![](./assets/10-34.png)   
-
-
-
+> &#x1F50E; ![](./assets/10-34.png)   
 
 
 ---------------------------------------
