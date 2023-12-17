@@ -1,7 +1,5 @@
-# Lecture 11
-
 P2  
-## Outline   
+# Outline   
 
  - Walking and Dynamic Balance   
 
