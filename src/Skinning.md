@@ -1,8 +1,5 @@
-# Lecture 07
-
-
 P2   
-## Outline   
+# Outline   
 
  - Skinning   
     - Linear Blend Skinning (LBS)   
@@ -13,58 +10,45 @@ P2
     - The SMPL model  
     - Facial Animation  
 
+> &#x1F50E; SIGGRAPH 经典的蒙皮课程。  
 Many images are from: <https://skinning.org/>   
 *Alec Jacobson, Zhigang Deng, Ladislav Kavan, and J. P. Lewis. 2014*.   
 **Skinning: real-time shape deformation**.     
 *In ACM SIGGRAPH 2014 Courses (SIGGRAPH '14)*    
 
-> &#x2705; SIGGRAPH 经典的蒙皮课程。   
+ 
 
 
 P7  
-## Skinning Deformation   
+# Skinning Deformation   
 
+## 绑定与蒙皮概念
+
+> &#x2705; Rigging：创建脸部控制器或身体骨骼。黄色为在 Mesh 顶点内放置的骨骼。      
+> &#x2705; Sinning：让控制器带动皮肤运动。或让 Mesh 顶点跟着骨骼运动。    
 
 ![](./assets/07-01.png)   
 
 ![](./assets/07-02.png)   
 
-
-> &#x2705; Rigging：创建脸部控制器或身体骨骼。   
-> &#x2705; Sinning：让控制器带动皮肤运动。  
-> &#x2705; 黄色为在 Mesh 顶点内放置的骨骼。   
-
-
-
-
-
 P12   
 ## Skinning Deformation    
 
+### 计算方式一
+
 ![](./assets/07-03.png)   
 
-
-> &#x2705; 让 Mesh 顶点跟着骨骼运动。  
 > &#x2705; 骨骼运动的旋转和平移分别为 \\(R\\) 和 \\(t\\)，关节的位置和朝向则变成了 \\({Q}'\\) 和 \\({o}'\\).   
-> &#x2705; 求 \\(x\\) 的新位置 \\({x}'\\).   
-> &#x2705; 本质上就是坐标变换   
-> &#x2705; 世界坐标系 → \\({o}\\) 坐标系 → \\({o}'\\) 坐标系 → 世界坐标系    
+> &#x2705; 求 \\(x\\) 的新位置 \\({x}'\\). 本质上就是坐标系变换：世界坐标系 → \\({o}\\) 坐标系 → \\({o}'\\) 坐标系 → 世界坐标系    
 
 
 P13   
-## Skinning Deformation
+### 计算方式二
 
 ![](./assets/07-04.png) 
 
 
 > &#x2705; \\(r\\) 为 \\(x\\) 在骨骼坐标的表达，用 \\(r\\) 计算更简洁。 
-
-
-P15   
-## Bind Pose
-
-![](./assets/07-05.png)   
-
 
 P16   
 ## Bind Pose
@@ -75,15 +59,8 @@ P16
 
 > &#x2705; 当骨骼参考姿态与 Mesh 参考姿态不一致时，需要先旋转骨骼到 Mesh 姿态。  
 
-
-P18   
-## Skinning Deformation
-
-![](./assets/07-07.png)   
-
-
 P20   
-## Skinning Deformation
+## Skinning Deformation - 2 joints
 
 ![](./assets/07-08.png)   
 
@@ -96,8 +73,6 @@ $$
 
 
 P23   
-## Skinning Deformation   
-
 ![](./assets/07-09.png)   
 
 
@@ -106,8 +81,6 @@ P23
 
 
 P29   
-## Skinning
-
 ![](./assets/07-10.png)   
 
 
@@ -150,10 +123,7 @@ P37
 
 > &#x2705; 公式第一项对 \\(R_j\\) 所加权，所得到的很有可能不再是旋转矩阵。   
 
-
-
-P39   
-## Candy-Wrapper Artifact
+存在的问题： Candy-Wrapper Artifact
 
 ![](./assets/07-14.png)   
 
@@ -182,10 +152,11 @@ P41
 
 ![](./assets/07-16.png)   
 
+### quaternions and SLERP
+
 Can we use quaternions and SLERP?    
 
 P42  
-## Non-linear Skinning
 
 ![](./assets/07-16-1.png)   
 
@@ -194,7 +165,7 @@ P42
 
 
 P43  
-## Non-linear Skinning   
+### 从公式角度来解释不行的原因   
 
 $$
 {x}' _ i = ( \sum _ {j=1}^{m} w _ {ij} R _ j) x _ i+ \sum _ {j=1}^{m}w _ {ij}t_ j
@@ -216,7 +187,7 @@ $$
 
 
 P46  
-## Interpolation in 𝑆𝑂(3)
+### Interpolation in 𝑆𝑂(3)
 
 ![](./assets/07-17.png)   
 
@@ -225,7 +196,7 @@ P46
 
 
 P49  
-## Interpolation in 𝑆𝐸(3)
+### Interpolation in 𝑆𝐸(3)
 
 ![](./assets/07-18.png)   
 
@@ -234,7 +205,7 @@ P49
 
 
 P51  
-## Intrinsic Blending
+### Intrinsic Blending
 
 ![](./assets/07-19.png)   
 
@@ -252,13 +223,13 @@ Ladislav Kavan, Steven Collins, Jiri Zara, Carol O‘Sullivan. **Geometric Skinn
 
 
 P54   
-## Dual Numbers  
+### Dual Numbers  
 
 ![](./assets/07-20.png)   
 
 
 P55  
-## Dual Quaternion   
+### Dual Quaternion   
 
  - Dual quaternion   
 
@@ -275,7 +246,7 @@ A good note of dual-quaternion:
 
 
 P56   
-## Dual Quaternion   
+### Dual Quaternion   
 
  - Scalar Multiplication   
 
@@ -297,7 +268,7 @@ $$
 
 
 P57   
-## Dual Quaternion  
+### Dual Quaternion  
 
  - Dual quaternion   
 
@@ -337,7 +308,7 @@ $$
 $$
 
 P58  
-## Dual Quaternion
+### Dual Quaternion
 
  - Unit dual quaternion: \\(||\hat{q}||=1\\), which requires:   
 
@@ -351,7 +322,7 @@ $$
 
 
 P59  
-## Dual Quaternion ⇔ Rigid Transformation   
+### Dual Quaternion ⇔ Rigid Transformation   
 
  - Like quaternion, any rigid transformation \\(T \in SE(3)\\) can be converted **into a unit dual quaternion**    
 
@@ -376,7 +347,7 @@ $$
 
 
 P60   
-## Dual Quaternion ⇔ Rigid Transformation   
+### Dual Quaternion ⇔ Rigid Transformation   
 
 
  - Transform a vector \\(v\\) using unit dual quaternion   
@@ -408,7 +379,7 @@ $$
 
 
 P61   
-## Dual Quaternion ⇔ Rigid Transformation
+### Dual Quaternion ⇔ Rigid Transformation
 
  - Like quaternion, any rigid transformation \\(T \in SE(3)\\) can be converted **into a unit dual quaternion**    
 
