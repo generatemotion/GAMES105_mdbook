@@ -1,7 +1,5 @@
-# Lecture 09
-
 P2   
-## Outline   
+# Outline   
 
  - Simulating & Actuating Characters   
     - Joint torques   
@@ -16,21 +14,18 @@ P2
 
 
 P4   
-## Recap: Dynamics of a Point Mass
+# Recap
+
+## Dynamics of a Point Mass
 
 ![](./assets/09-01.png)
 
 
 
 P10  
-## Recap: Rigid Body Dynamics   
+## Rigid Body Dynamics   
 
 ![](./assets/09-02.png)   
-
-
-P11   
-## Recap: Rigid Body Dynamics
-
 
 $$
 \begin{bmatrix}
@@ -50,10 +45,6 @@ $$
 
 
 P12   
-## Defining a Rigid Body
-
-
-![](./assets/09-03.png)
 
 Masses: \\(m,I\\)    
 Kinematics:  \\(x,v,R,\omega \\)   
@@ -68,33 +59,27 @@ Geometry:
 
 
 P14   
-## Recap: Dynamics of Articulated Rigid Bodies   
+## Dynamics of Articulated Rigid Bodies   
 
 ![](./assets/09-04.png)  
 
 > &#x2705; 两个独立刚体，和一个不让它们断开的约束。    
 
-
-
 P15  
-## Recap: Dynamics of Articulated Rigid Bodies
-
-
 
 $$
 M\dot{v} +C(x,v)  =f+J^T\lambda
 $$
 
 P16   
-## Recap: Simulation of a Rigid Body System
+## Simulation of a Rigid Body System
 
 ![](./assets/09-05.png)
 
+# Simulating & Actuating Characters
 
 P17   
 ## Defining a Simulated Character  
-
-![](./assets/09-06.png)
 
 Rigid bodies:    
  - \\(m_i,I_i,x_i,R_i\\)     
@@ -103,15 +88,17 @@ Rigid bodies:
 Joints:   
  - Position   
  - Type   
+> &#x2705; Type指关节的类型，例如 Hint、Universal等。它决定了约束方程。   
  - Bodies   
 
+> &#x2705; 关节的数量比刚体的数量少1  
+
+![](./assets/09-06.png)
 
 > &#x2705; 仿真过程中通常使用简单几何体代替 Mesh. 为了便于碰撞检测的计算，以及辨别里外。   
-> &#x2705; Type 决定了约束方程。   
-> &#x2705; Type 指关节的类型，例如 Hint、Universal 等。    
 
 P19   
-## Simulating a Character   
+## Simulating a Character Pipeline  
 
 ![](./assets/09-07.png)
 
@@ -121,51 +108,21 @@ P19
 P22   
 ## Actuating a Rigid Body
 
-![](./assets/09-08.png)
-
-
 > &#x2705; 想让角色做指定动作，不能直接修改其状态，而是控制力影响状态。  
 
-
-P23  
-## Actuating a Rigid Body   
-
-![](./assets/09-09.png)
-
-![](./assets/09-10.png)
-
-
-> &#x2705; 在物体边缘旋加力，等价于在质心旋加力，并旋加一个导致旋转的力矩。  
-
-
-P24   
-## Actuating a Rigid Body
-
-![](./assets/09-11.png)
-
-
-> &#x2705; 施加一个力矩，等价于施加一对大小相同方向相反的力。在质心处的合力为零，不会产生位移，只会产生旋转。   
-> &#x2705; 力矩只是数学上的概念。
-
+|||
+|---|---|
+|力加在质心上|![](./assets/09-08.png)|
+|&#x2705; 在物体边缘旋加力，等价于在质心旋加力，并旋加一个导致旋转的力矩。  |![](./assets/09-09.png)<br>![](./assets/09-10.png)|
+|&#x2705; 在质心上施加一个力矩，等价于施加一对大小相同方向相反的力。在质心处的合力为零，不会产生位移，只会产生旋转。<br> &#x2705; 力矩只是数学上的概念。|![](./assets/09-11.png)|
 
 P26   
 ## Actuating Articulated Rigid Bodies
 
-![](./assets/09-12.png)
-
-
-> &#x2705; 为了驱动角色，可以单独对每个刚体施加力或力矩。  
-
-
-P27  
-## Actuating Articulated Rigid Bodies
-
-![](./assets/09-13.png)
-
-
-> &#x2705; 也可以在关节上施加力矩。  
-
-
+|||
+|---|---|
+|&#x2705; 为了驱动角色，可以单独对每个刚体施加力或力矩。|![](./assets/09-12.png)|
+|&#x2705; 也可以在关节上施加力矩。|![](./assets/09-13.png)|
 
 P29   
 ## Joint Torques  
@@ -173,52 +130,35 @@ P29
 What is a joint torque?   
 How is a joint torque applied?   
 
-
-> &#x2705; 回顾前面公式，力和力矩都是施加在刚体上的，如何施加在关节上。   
+> &#x2705; 回顾前面公式，力和力矩都是施加在刚体上的，如何施加在关节上?   
 
 
 
 P33  
-## Joint Torques
+### 什么是Joint Torques
+
+> &#x2705; 关节上的力矩，可以看作是一个刚体对另一个刚体在关节处施加的成对的力，其合力为零，但可以转化为对另一刚体的力矩。   
+
+![](./assets/09-014.png)
 
 $$
 \sum_{i}^{} f_i=0
 $$
 
-
-![](./assets/09-014.png)
+> &#x2705; 每个力都会对其中一个刚体的质心上产生力矩。  
 
 $$
 \tau _1= \sum _ {i}^{} (r_1+r_i) \times f_i=r_1 \times \sum _ {i}^{}f_i + \sum _ {i}^{}r_i \times f_i
 $$
 
-
-
-> &#x2705; 关节上的力矩，可以看作是一个刚体对另一个刚体在关节处施加的成对的力，其合力为零，但可以转化为对另一刚体的力矩。   
-
-
-
 P34   
-## Joint Torques  
+由于
 
 $$
 \sum _ {i}^{}  f_i=0
 $$
 
-$$
-\tau _1= \sum _ {i}^{} r_i \times f_i
-$$
-
-
-P35  
-## Joint Torques
-
-
-$$
-\sum _ {i}^{}  f_i=0
-$$
-
-![](./assets/09-15.png)
+得： 
 
 $$
 \tau _1= \sum _ {i}^{} r_i \times f_i \quad \quad \quad \quad \tau _2= -\sum _ {i}^{} r_i \times f_i
@@ -226,11 +166,10 @@ $$
 
 
 > &#x2705; 另一个方向同理。   
-
-
+> &#x2705; 力矩跟关节的内置没有关系。  
 
 P36   
-## Joint Torques
+结论：
  
 ![](./assets/09-16.png)
 
@@ -240,7 +179,7 @@ P36
 
 
 P38  
-## Joint Torques
+### 怎样施加Joint Torques
 
 Applying a joint torque \\( \tau\\):   
  - Add \\( \tau\\) to one attached body    
@@ -284,99 +223,68 @@ P40
 
 
 P44   
-## Forward Dynamics vs. Inverse Dynamics
+### Forward Dynamics vs. Inverse Dynamics
   
 ![](./assets/09-18.png)
 
-
+> &#x2705; 前向与后向，是一个运动方程的两种用法。  
+> &#x2705; 仿真器为前向部分，控制后逆向部分。  
 
 P46   
 
-## Fully-Actuated vs. Underactuated
+### Fully-Actuated vs. Underactuated
 
 |||
 |--|--|
 |![](./assets/09-20.png) | ![](./assets/09-21.png)|
 |If #actuators ≥ #dofs, the system is **fully-actuated** | If #actuators < #dofs, the system is **underactuated** |
+|For any \\([x,v,\dot{v} ]\\), there exists an \\(f\\) that produces the motion|For many \\([x,v,\dot{v} ]\\) , there is no such \\(f\\) that produces the motion|
+|&#x2705; 可以精确控制机械臂到达目标状态。|&#x2705; 不借助外力情况，人无法控制 Hips 的状态（位置）。|
 
 
 > &#x2705; ＃actuators：\\(f \\) 和 \\(\tau \\) 的自由度。  
 > &#x2705; #dofs：角色状态的自由度。   
-> &#x2705; 左图：可以精确控制机械臂到达目标状态。   
-> &#x2705; 右图：不借助外力情况，人无法控制 Hips 的位移。   
 > &#x2705; 避免让角色掉入无法控制的状态。   
-
-
-
-P47   
- 
-## Fully-Actuated vs. Underactuated
-
-For any \\([x,v,\dot{v} ]\\), there exists an \\(f\\) that produces the motion
-
-For many \\([x,v,\dot{v} ]\\) , there is no such \\(f\\) that produces the motion
-
-> &#x2705; 无法直接更改根关节状态。    
-
-
 
 P49   
 
-## Feedforward vs. Feedback   
-
-Feedforward control:   
-$$
-f,\tau =\pi (t)
-$$
-
-
- - Apply predefined control signals **without considering the current state** of the system   
- - Assuming unchanging system.    
-   Perturbations may lead to unpredicted results   
-
+### Feedforward vs. Feedback   
 
 ![](./assets/09-22.png)
 
-
-> &#x2705; 如果角色受到挠动而偏离了原计划，无法修正回来。   
-
-
-
-P50  
- 
-## Feedforward vs. Feedback   
-
-Feedforward control:   
-$$
-f,\tau =\pi (s_t,t)
-$$
-
-
- - Adjust control signals based on the current state of the system
- - Certain perturbations are expected.    
-   The feedback signal will be used to improves the performance at the next state.   
-
+|Feedforward control|Feedback control|
+|---|---|
+|\\(f,\tau =\pi (t)\\)|\\(f,\tau =\pi (s_t,t)\\)|
+|Apply predefined control signals **without considering the current state** of the system|Adjust control signals based on the current state of the system|
+|Assuming unchanging system.|Certain perturbations are expected.|
+|Perturbations may lead to unpredicted results<br>&#x2705; 如果角色受到挠动而偏离了原计划，无法修正回来。|The feedback signal will be used to improves the performance at the next state.|
 
 P55   
-## Proportional-Derivative Control
+# Proportional-Derivative Control
+
+> &#x2705; 有反馈，但还是算是前向控制，因为反馈的部分和想控制的部分不完全一致。   
+
+## 简化问题分析
+
+### 问题描述
 
 Compute force \\(f\\) to move the object to the target height    
 
+> &#x2705; 例子：物体只能沿竿上下移动，且受到重力。  
+> &#x2705; 控制目的：设计控制器，使物体在控制力的作用下达到目标高度。   
+
 ![](./assets/09-23-1.png)
 
+### 使用比例控制
+
 ![](./assets/09-23-2.png)
+
+实际上：会产生上下振荡，不会停在目标位置。
+
 ![](./assets/09-23.png)
 
-
-> &#x2705; 有反馈，但还是算是前向控制，因为反馈的部分和想控制的部分不完全一致。   
-> &#x2705; 例子：物体只能沿竿上下移动，且受到重力。  
-> &#x2705; 控制目的：控制力是物体达到目标高度。   
-> &#x2705; 实际上：会产生上下振荡，不会停在目标位置。   
-    
-
-
 P56   
-## Proportional-Derivative Control
+### 比例控制+Damping
 
 ![](./assets/09-24.png)
 
@@ -386,38 +294,27 @@ P56
 
 P57   
 
-## Proportional-Derivative Control
+### 比例微分控制
 
 ![](./assets/09-24-1.png)
 
 > &#x2705; 第一项：比例控制；第二项：微分控制   
 
-
-
-
 P59   
-## Proportional-Derivative Control
+> &#x2705; 存在的问题：为了抵抗重力，一定会存在这样的误差。
 
 ![](./assets/09-26.png)
-
-
-
-> &#x2705; 存在的问题：为了抵抗重力，一定会存在这样的误差。   
-> &#x2705; 增加 \\(k_p\\) 可以减小误差，但会让人看起来很僵硬。  
-
-
+   
 P60   
-
-## Proportional-Derivative Control
 
 Increase stiffness \\(k_p\\) reduces the steady-state error, but can make the system too stiff and numerically unstable    
 
- 
+> &#x2705; 增加 \\(k_p\\) 可以减小误差，但会让人看起来很僵硬。  
 
 
 
 P61   
-## Proportional-Integral-Derivative controller 
+### 比例积分微分控制 Proportional-Integral-Derivative controller 
 
 ![](./assets/09-27.png)  
 ![](./assets/09-28.png)  
@@ -425,30 +322,29 @@ P61
 
 > &#x2705; 解决误差方法：积分项。   
 > &#x2705; 但角色动画通常不用积分项。   
-> &#x2705; 积分项会带来实现的麻烦和控制的不稳定。  
+> &#x2705; 积分项跟历史相关，会带来实现的麻烦和控制的不稳定。  
 
 
 
 P62   
 ## PD Control for Characters
 
+> &#x2705; 前面是 PD 的例子，这里是 PD 在物理仿真角色上的应用，计算在每个关节上施加多少力矩。   
+
 ![](./assets/09-29.png)
 
 ![](./assets/09-30.png)
 
 
-> &#x2705; 前面是 PD 的例子，这里是 PD 在物理仿真角色上的应用，计算在每个关节上施加多少力矩。   
+
 > &#x2705; 通常目标的速度 \\(\bar{q} = 0\\).   
 
-
-
-P63  
-## PD Control for Characters
-
-
+因此：  
 ![](./assets/09-31.png)
 
 
+P63  
+### PD Control for Characters的参数和效果
 
 > &#x2705; \\(K_p\\) 太小：可能无法达到目标状态。   
 > &#x2705; \\(K_p\\) 太大：人体很僵硬。  
@@ -459,28 +355,26 @@ P63
 P66  
 ## Tracking Controllers
 
+> &#x2705; 引入PD Control之后，控制本质上变成了设计 targer state．   
 
 ![](./assets/09-32.png)   
 
-
-> &#x2705; 设计 targer state．   
-
-
 P67  
-## Full-body Tracking Controllers
+### Full-body Tracking Controllers
 
 
 ![](./assets/09-33.png)   
 
 > &#x2705; 设计角色的目标轨迹。  
 > &#x2705; 直接用 PD 控制跟踪动捕数据会有很大的问题，原因：   
-> &#x2705;（1）稳态误差。  
-> &#x2705;（2）欠驱动系统，有一点点误差，后面无法修复。  
+> （1）稳态误差。  
+> （2）运动轨迹跟原轨迹之间会相差一点点相位  
+> （3）欠驱动系统，有一点点误差，后面无法修复。  
 
 
 
 P71  
-## Full-body Tracking Controllers
+### feedforward ？ feedback
 
 Is PD control a **feedforward** control?   
 a **feedback** control?   
@@ -492,7 +386,11 @@ a **feedback** control?
 
 
 P72   
-## Tracking Mocap with Joint Torques   
+## 欠驱动系统
+
+### 欠驱动系统的问题
+
+由于是欠驱动系统，Tracking Mocap with Joint Torques会遇到问题，因为：   
 
 \\(\tau _j\\): joint torques   
 Apply \\(\tau _j\\) to “child” body    
@@ -505,7 +403,7 @@ Apply \\(-\tau _j\\) to “parent” body
 
 
 P73  
-## Tracking Mocap with Root Forces/Torques
+### 解决方法：增加净外力
 
 \\(f_0,\tau _0\\): root force / torque    
 \\(\quad\quad\\)Apply \\(f_0\\) to the root body    
