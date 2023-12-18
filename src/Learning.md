@@ -14,62 +14,44 @@ P2
 
 
 P3  
-## Walking
+# Walking
 
 ![](./assets/11-01.png)
 
 ![](./assets/11-02.png)
 
+> &#x1F50E; **Gait disorders in adults and the elderly**.  
 phases of a walking gait cycle   
 Pirker and Katzenschlager 2017.    
-**Gait disorders in adults and the elderly**.   
+ 
 
 
 P4   
-## Walking
+## Walking VS Running
 
-![](./assets/11-04.png)
-
-Walking: move without *loss of contact*, or flight phases   
-
-P5  
-## Walking   
-
-![](./assets/11-05.png)
-
-$$
-\text{Running  } 
-$$
+|Walking|Running|
+|---|---|
+|![](./assets/11-04.png)<br>Walking: move without *loss of contact*, or flight phases|![](./assets/11-05.png)|
 
 P7  
-## Walking with Static Balance  
+## Walking的几个阶段  
 
-![](./assets/11-6.png)
-
-![](./assets/11-7.png) 
-
-
-P8   
-## Walking with Static Balance   
+|||
+|---|---|
+|![](./assets/11-6.png)|![](./assets/11-7.png)|
+|![](./assets/11-08.png)|![](./assets/11-09.png)|
+|![](./assets/11-10.png)|![](./assets/11-11.png)|
 
 
-![](./assets/11-08.png)
-![](./assets/11-09.png)
-
-P9   
-## Walking with Static Balance  
-
-![](./assets/11-10.png)
-
-![](./assets/11-11.png)
-
-
-> &#x2705; 以上过程假设角色处于 static 状态。   
-> &#x2705; 没有考虑到移动过程中的脚动量。  
+> &#x2705; 以上过程假设角色处于 static 状态。没有考虑到移动过程中的脚的动量。因此只能勉强保持角色稳定。要以非常慢的速度相前移动。    
 
 
 P11   
-## Zero-Moment Point (ZMP)
+# Zero-Moment Point (ZMP)
+
+> &#x2705; 通过ZMP的控制实现比较稳定的走路。  
+
+## 全身受力分析与问题简化
 
 ![](./assets/11-12.png)   
 
@@ -80,7 +62,7 @@ P11
 
 P12  
   
-## Recall: A System of Links and Joints
+### Recall: A System of Links and Joints
 
 ![](./assets/11-13.png)   
 
@@ -88,24 +70,22 @@ $$
 M\dot{v} +C(x,v)=f+f_J
 $$
 
-
-
-
+> &#x2705; 在满足这个公式的前提下，一个部分动了另一个部分就会跟着动。因此可以把问题简化，只分析ankle。  
 
 P15  
-## Zero-Moment Point (ZMP)  
+
+## 脚上受力分析
 
 ![](./assets/11-14.png)   
 
+> &#x2705; 仅分析脚上的力，\\(f_{\text{ankle}}\\) 为 ankle 上的力转化到脚上的力。    
+
 ![](./assets/11-15.png)   
 
-
-> &#x2705; 仅分析脚上的力，\\(f_{\text{ankle}}\\) 为 ankle 上的力短转化到脚上的力。    
 > &#x2705; 地面对脚的力不是施加到某一个点上，但可以根据公式换算成施加到某一点的力。  
 
 
 P17   
-## Zero-Moment Point (ZMP)
 
 Assuming the ground is flat and level    
 so \\(p_i\\) - \\(p\\)  is always in the horizontal plane   
@@ -113,21 +93,11 @@ so \\(p_i\\) - \\(p\\)  is always in the horizontal plane
 
 ![](./assets/11-16.png)   
 
-
-
-
-P18  
-## Zero-Moment Point (ZMP)
+> &#x2705; 把 \\(\tau _{GRF} \\) 分解为与地面垂直部分和与地面平行部分，其中水平的部分为：  
 
 ![](./assets/11-1.png)   
 
-> &#x2705; 把 \\(\tau _{GRF} \\) 分解为与地面垂直部分和与地面平行部分。  
- 
-
-
-P19   
-## Zero-Moment Point (ZMP)
-
+竖直的部分为： 
 
 ![](./assets/11-17.png)   
 
