@@ -93,30 +93,15 @@ so \\(p_i\\) - \\(p\\)  is always in the horizontal plane
 
 ![](./assets/11-16.png)   
 
-> &#x2705; 把 \\(\tau _{GRF} \\) 分解为与地面垂直部分和与地面平行部分，其中水平的部分为：  
+> &#x2705; 把 \\(\tau _{GRF} \\) 分解为与地面垂直部分和与地面平行部分（力矩的方向是指它的旋转轴的方向。），其中垂直的部分为：  
 
 ![](./assets/11-1.png)   
 
-竖直的部分为： 
+水平的部分为： 
 
 ![](./assets/11-17.png)   
 
-
-> &#x2705; 力矩的方向是指它的旋转轴的方向。  
-
-
-
-P20  
-## Zero-Moment Point (ZMP)
-
-![](./assets/11-19.png)   
-
-![](./assets/11-20.png)   
-
-
-![](./assets/11-11-1.png)   
-
-Can we find \\(p\\) such that \\(\tau _{GRF}^{xz}=0\\) ?     
+**Can we find \\(p\\) such that \\(\tau _{GRF}^{xz}=0\\) ?**     
 
 
 P21   
@@ -124,13 +109,7 @@ P21
 
 ![](./assets/11-18.png)   
 
-
-
-
-P22  
-## Zero-Moment Point (ZMP)
-
-![](./assets/11-19.png)     
+当\\(p\\) 为 center pressure时：
 
 $$
 \begin{align*}
@@ -139,41 +118,24 @@ f_{GRF}  & =\sum _{i}^{} f_i \\\\
 \end{align*}
 $$
 
-> &#x2705; \\(p\\) 为 center pressure    
+The position of \\(p\\) is not known, but we assume 以上公式成立。
 
+## ZMP条件下支撑脚的受力分析
 
-
-P24  
-## Zero-Moment Point (ZMP)   
-
-The position of \\(p\\) is not known, but we assume   
-
-$$
-\tau _{GRF}^{xz}=0
-$$
-
-SO
-
-$$
-\tau _{GRF}=\tau _{GRF}^y
-$$
-
-
-
-
-
-P26  
-## Zero-Moment Point (ZMP)
+假设： 支撑脚 should not move in a **stance phase**，且支撑脚与地面完成接触   
+则：在所有力作用下处于静平衡状态。  
 
 ![](./assets/11-20.png)   
 
-The foot should not move in a **stance phase**   
-
 Static Equilibrium:   
+
+静态平衡满足：所有合力为0
 
 $$
 f_{\text{ankle}} + f_{\text{GRF}} + mg = 0  
 $$
+
+静态平衡满足：任选一个参考点，所有合力（力矩）相对于参考点的动量为0，否则会旋转。  
 
 The moment around a reference point \\(o\\):    
 
@@ -182,15 +144,12 @@ $$
 $$
    
 
-> &#x2705; 在所有力作用下处于静平衡状态。  
-> &#x2705; \\(o\\) 是一个参考点。  
+> &#x2705; \\(o\\) 是一个参考点，可以在任意位置  
+> &#x2705; U：ankle 位置。   
+> &#x2705; X：质心位置
+> &#x2705; P：位置未知，高度为 0．  
 
-
-
-
-
-P27   
-## Zero-Moment Point (ZMP)   
+同样只关心水平方向：  
 
 Horizontal components (moment projected onto \\(xz\\) plane):       
 
@@ -199,29 +158,13 @@ $$
 $$
 
 
-> &#x2705; U：ankle 位置， \\(\quad\quad\\) O: 任意位置。   
-> &#x2705; X：质心位置 \\(\quad\quad\quad\\) P：位置未知，高度为 0．  
 > &#x2705; 总力矩为 0，否则人会旋转。   
 
 
 P28   
-## Zero-Moment Point (ZMP)
+## 求解 Zero-Moment Point (ZMP)
 
 We can solve this equation to find \\(p\\)   
-
-
-
-P29    
-> &#x2705; \\(u，O，X\\) 都是已知，\\(p\\) 的高度为 0，只有 \\(P_xP_y\\) 未知且该公式分别在 \\(X\\) 和 \\(Z\\) 上成立，实际上是两个方程。   
-> &#x2705; 两个未知量和两个方程，可以解出 \\(p\\)。   
-
-
-
-
-
-
-P30   
-## Zero-Moment Point (ZMP)   
 
 \\(p\\) is **called Zero-Moment Point (ZMP)** because it makes   
 
@@ -235,28 +178,16 @@ $$
 ((u-o) \times f_{\text{ankle}})^{xz} +( (p-o) \times f_{\text{GRF}} ) ^{xz}+ (x-o)\times mg + \tau _{\text{ankle}}^{xz} = 0
 $$
 
-Only when 𝑝 is within the support polygon!    
+Only when 𝑝 is **within the support polygon**!    
 
 
-> &#x2705; \\(p\\) 满足（1）水平力矩为0.   
-> &#x2705; （2）人整体上平衡。   
-
-
-
-
-
+> &#x2705; \\(p\\) 满足（1）水平力矩为0. （2）人整体上平衡。   
+> &#x2705; \\(u，O，X\\) 都是已知，\\(p\\) 的高度为 0，只有 \\(P_xP_y\\) 未知且该公式分别在 \\(X\\) 和 \\(Z\\) 上成立，实际上是两个方程。   
+> &#x2705; 两个未知量和两个方程，可以解出 \\(p\\)。   
 
 P33   
-## Zero-Moment Point (ZMP)   
 
-If the solution of   
-
-$$
-((u-o) \times f_{\text{ankle}})^{xz} +( (p-o) \times f_{\text{GRF}} ) ^{xz}+ (x-o)\times mg + \tau _{\text{ankle}}^{xz} = 0
-$$
-
-\\(p\\) is outside the support polygon   
-
+如果解出公式得到的\\(p\\) is outside the support polygon，那么：  
 \\(p\\) could NOT be the center of pressure, because all the GRFs 
 are applied within the polygon, so that    
 
@@ -264,31 +195,22 @@ $$
 \tau _{GRF}^{xz}\ne 0
 $$
 
-Or, if \\({p}' \\) is the real center of pressure, we have    
+> &#x2705; 如果求出 \\(p\\) 在 polygon外 则不能平衡，因为不是 center pressure.  
+
+如果选择polygon上的real center of pressure\\({p}' \\) ,那么：  
 
 $$
 ((u-o) \times f_{\text{ankle}})^{xz} +( ({p}'-o) \times f_{\text{GRF}} ) ^{xz}+ (x-o)\times mg + \tau _{\text{ankle}}^{xz} \ne 0
 $$
 
-
 > &#x2705; \\({p}' \ne p\\)，\\({p}'\\) 处水平方向的合外力不为零，脚会翻转人会摔倒。   
-> &#x2705; 如果求出 \\(p\\) 在 polygon 则不能平衡，因为不是 center pressure.  
 
-
-
-P34   
-
-the foot will rotate…    
-
+# Simplified Models
 
 P35   
-## Zero-Moment Point (ZMP)  
+## 关于ZMP的思考  
 
 The existence of ZMP is an indication of dynamic balance We can achieve balanced walking by controlling ZMP But how?    
-
-
-
-
 
 P36   
 ## Simplified Models   
