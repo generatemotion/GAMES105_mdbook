@@ -213,22 +213,20 @@ P35
 The existence of ZMP is an indication of dynamic balance We can achieve balanced walking by controlling ZMP But how?    
 
 P36   
-## Simplified Models   
+## Simplified Models的基本套路   
 
  - Simplify humanoid / biped robot into an abstract model   
     - Often consists of a CoM and a massless mechanism   
     - Need to map the state of the robot to the abstract model   
 
-![](./assets/11-24.png) 
-
-
+> &#x2705; 因此，把最影响平衡的量拿出来，建立简化模型。   
+> &#x2705; 实际上更加复杂，对上半身任何一个部位的干挠，都会影响到脚上的力。  
+ 
  - Plan the control and movement of the model   
     - Optimization   
     - Dynamic programming   
     - Optimal control   
     - MPC   
-
-![](./assets/11-22.png)   
 
  - Track the planned motion of the abstract model   
     - Inverse Kinematics   
@@ -238,145 +236,93 @@ P36
 ![](./assets/11-23.png)   
 
 
-
-> &#x2705; 实际上更加复杂，对上半身任何一个部位的干挠，都会影响到脚上的力。  
-> &#x2705; 因此，把最影响平衡的量拿出来，建立简化模型。   
-
-
-
 P37  
 ## Example: ZMP-Guided Control   
 
+> &#x1F50E; ![](./assets/11-25.png)   
 
 ![](./assets/11-26-1.png)  
 
-![](./assets/11-25.png)   
+> &#x2705; 把机器人简化为桌子和小车，通过控制小车m的运动来控制 ZMP。使 ZMP 满足预定义轨迹。   
 
 ![](./assets/11-26.png)  
 
+> &#x2705; 预定义轨迹的轨迹是指保持在pologon里面。通过优化得到 \\(m\\) 的运动。  
+> &#x2705; 然后通过IK和PD control控制脚的运动。
 
-> &#x2705; 把机器人简化为桌子和小车，通过控制小车来控制 ZMP.   
-> &#x2705; 使 ZMP 满足预定义轨迹，通过优化得到 \\(m\\) 的运动。  
+> &#x2705; ASIMO机器人局限性：(1) 脚必须与地面平行。 (2) 脚必须弯曲。 (3) 整体移动速度慢。  
 
-
-
-P38   
-## Example: ZMP-Guided Control
-
-
-![](./assets/11-27.png)   
-
-> &#x2705; 局限性：(1) 脚必须与地面平行。 (2) 脚必须弯曲。 (3) 整体移动速度慢。  
-
-
-P39   
-## ASIMO
-
-
-> &#x2705; 人的特点是重心偏离再拉回来，这样比始终保持平更省。   
 
 P40  
 
-## Walking == Falling + Step Planning   
+## Inverted Pendulum Model (IPM)
 
+**Walking == Falling + Step Planning**   
 
-
+> &#x2705; 人的特点是重心偏离再拉回来，这样比始终保持平更省。   
 
 P42  
-## Inverted Pendulum Model (IPM)
+### IPM问题
+
+> &#x2705; IPM： 倒立摆模型，控制小车使杆不掉下去。    
 
 ![](./assets/11-27-1.png)   
 
-![](./assets/11-27-2.png)   
+### Step Plan with IPM   
 
-Inverted pendulum on a cart   
-
-> &#x2705; 倒立摆模型，控制小车使杆不掉下去。    
-
-
-P44   
-## Inverted Pendulum Model (IPM)   
-
- - Step Plan with IPM
-
-![](./assets/11-28.png)  
-
-
-
+> &#x1F50E; ![](./assets/11-28.png)  
 
 P45   
-## Inverted Pendulum Model (IPM)
 
- - Step Plan with IPM   
-    - Map CoM of the character and the stance foot as IPM   
-    - Plan the position of the next foot step so that the mass point rests at the top of the pendulum   
-    - Create foot trajectory based on the step plan   
-    - Compute target poses using IK   
+- Map CoM of the character and the stance foot as IPM   
+- Plan the position of the next foot step so that the mass point rests at the top of the pendulum   
+- Create foot trajectory based on the step plan   
+- Compute target poses using IK   
 
 ![](./assets/11-29.png)  
 
-
-
 > &#x2705; 脚到重心是一个倒立摆。  
 > &#x2705; 由于失去平衡，质心有一个向前的速度，通过到一个合适的落脚点，使质心到达脚的正上方刚好到达速度稳定。  
-> &#x2705; 算出脚的目标位置后，插值，IK，PD 控制。   
-
-
+> &#x2705; 算出脚的目标位置后，插值，IK，PD 控制。  
 
 P46   
-## Inverted Pendulum Model (IPM)    
-
- - Step Plan with IPM
 
 ![](./assets/11-30.png)  
 
 
 > &#x2705; 动能转势能，能量守恒．算出高度。   
-> &#x2705; 注意：杆的长度是不确定的，因为腿会弯曲。   
-
+> &#x2757; 注意：杆的长度是不确定的，因为腿会弯曲。   
 
 P47   
 
-## Generalized walking control
-
-> &#x2705; 可以适用于不同角色，不同动作，不同环境交互。   
-
-
-
-
+> &#x2705; 方法优点：可以适用于不同角色，不同动作，不同环境交互。   
 
 P48   
 ## SIMBICON   
 
- - SIMBICON (SIMple BIped Locomotion CONtrol)   
-    - Yin et al. 2007   
+> &#x1F50E; SIMBICON (SIMple BIped Locomotion CONtrol) Yin et al. 2007   
  
 ![](./assets/11-31.png)  
 
 
 > &#x2705; 经典工作，第一个实现了鲁棒的步态控制。  
-
-
-
+> &#x2705; 原理：跟踪控制器上加一个反馈
 
 P49   
-## SIMBICON   
+### Step 1   
 
  - Step 1: develop a cyclical base motion   
     - PD controllers track target angles   
     - FSM (Finite State Machine) or mocap   
 
+> &#x2705; 本质上是一个跟踪控制器，用状态机来实现的跟踪控制器  
 
 ![](./assets/11-32.png)  
 
-> &#x2705; 本质上是一个跟踪控制器。  
-
-
-
-
+> &#x2705; 有四个状态，通过跟踪在4个状态之间切换，也可以用动捕数据来代替
 
 P50   
-## SIMBICON   
+### Step 2   
 
  - Step 2:    
     - control torso and swing-hip wrt world frame   
@@ -385,20 +331,23 @@ P50
 
 
 > &#x2705; 控制目标：上半身保持竖直。  
-> &#x2705; 控制方法：通过 \\(\tau _{A} \\) 和 \\(\tau _{B} \\) 控制 \\(\tau _{\text{torso}} \\).   
+> &#x2705; 控制方法：  
+> 通过保持上半身竖直，计算出\\(\tau _{\text{torso}} \\)。  
+> 通过使B跟踪目标动作，计算出\\(\tau _{B} \\)。  
+> 通过 \\(\tau _{\text{torso}} \\) 和 \\(\tau _{B} \\) 控制 \\(\tau _{A} \\).   
 
 
 
 P51  
-## SIMBICON  
+### Step 3  
 
  - Step 3: COM feedback   
 
 ![](./assets/11-34.png)  
 
-
+> &#x2705; 估计下一个脚步的位置d，使质心处于可控范围内。  
 > &#x2705; \\(d\\) 与 \\(D\\) 有关，但关系复杂，在此处做了简化。   
-> &#x2705; 估计下一个脚步的位置，使质心处于可控范围内。   
+ 
 
 
 
