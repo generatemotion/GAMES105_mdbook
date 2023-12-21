@@ -349,13 +349,7 @@ P51
 > &#x2705; \\(d\\) 与 \\(D\\) 有关，但关系复杂，在此处做了简化。   
  
 
-
-
-
 P52   
-## SIMBICON   
-
- - Step 3: COM feedback    
 
 ![](./assets/11-35.png)  
 
@@ -365,7 +359,7 @@ P52
 
 
 P53   
-## SIMBICON   
+### SIMBICON   
  
 ![](./assets/11-36.png)  
 
