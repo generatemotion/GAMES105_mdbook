@@ -1,7 +1,5 @@
-# Lecture 12
-
 P2   
-## Outline   
+# Outline   
 
  - Optimal Control   
  - Model-based Approaches vs. Model-free Approaches   
@@ -12,51 +10,30 @@ P2
 
 
 P3   
-## Recap: Trajectory Optimization
+## Recap
 
-![](./assets/12-01.png)
-
-
-P4  
-## Recap: Feedforward Control
-
-![](./assets/12-02.png)   
-
+|feedforward|feedback|
+|---|---|
+|![](./assets/12-01.png)|![](./assets/12-04.png)  |
+|![](./assets/12-02.png)|![](./assets/12-03.png) |
 
 > &#x2705; 开环控制：只考虑初始状态。   
 > &#x2705; 前馈控制：考虑初始状态和干挠。   
-
-
-
-P5   
-## Recap: Feedback Control
-
-
-![](./assets/12-03.png)  
-
-
-P7   
-## Recap: Feedback Control
-
-![](./assets/12-04.png)  
-
-
 > &#x2705; 前馈控制优化的是轨迹。  
 > &#x2705; 反馈控制优化的是控制策略，控制策略是一个函数，根据当前状态优化轨迹。  
-
-
 
 P9  
 
 ![](./assets/12-05.png)  
-
 
 > &#x2705; Feedback 类似构造一个场，把任何状态推到目标状态。   
 
 
 
 P10  
-## Constrained Optimization
+# Constrained Optimization
+
+## 问题描述
 
 $$
 \begin{matrix}
@@ -69,9 +46,7 @@ $$
 
 
 P12  
-## Constrained Optimization  
-
-Soft constraint?   
+## 把硬约束转化为软约束  
 
 $$
 \min_{x}  f(x)+ wg(x)
@@ -81,9 +56,15 @@ $$
 
  
 P16   
-## Lagrange Multiplier    
+## Lagrange Multiplier - 把约束条件转化为优化    
+
+> &#x2705; 拉格朗日乘子法。  
 
 ![](./assets/12-08.png)  
+
+> &#x2705; 通过观察可知，极值点位于\\({f}'(x)\\) 与 \\(g\\) 的切线垂直，即 \\({f}' (x)\\) 与 \\({g}' (x)\\) 平行。（充分非必要条件。）   
+
+因此：  
 
 ![](./assets/12-07.png)  
 
@@ -93,22 +74,14 @@ $$
 L(x,\lambda )=f(x)+\lambda ^Tg(x)
 $$
 
-
-
-> &#x2705; 充分非必要条件。  
-> &#x2705; 拉格朗日乘子法。  
-> &#x2705; 极值点：\\({f}'(x)\\) 与 \\(g\\) 的切线垂直，即 \\({f}' (x)\\) 与 \\({g}' (x)\\) 平行。   
-
-
+> &#x2705; 把约束条件转化为优化。   
 
 P18   
 ## Lagrange Multiplier 
 
-
 ![](./assets/12-09-1.png)  
 
-
-> &#x2705; 把约束条件转化为优化。   
+> &#x2705; 这是一个优化问题，通过梯度下降找到极值点。  
 
 
 
